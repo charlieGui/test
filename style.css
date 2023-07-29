@@ -1,0 +1,415 @@
+                                         /*******************************
+                                        *           REGLES COMMUNES    *
+                                        ********************************/
+
+                                        :root{
+                                            --bg-color-blue: #15303D;
+                                            --bg-color-light_blue:#26414E;
+                                            --bg-color-red: #CC2936;
+                                            --bg-color-light: #fAFAFA;
+                                        }
+                                        
+                                        .wrapper{
+                                            max-width: 1280px;
+                                            margin: 0 auto;
+                                        }
+                                        
+                                        *{
+                                            box-sizing: border-box;
+                                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                        }
+                                        
+                                        body{
+                                            background-color: var(--bg-color-blue);
+                                        }
+                                        
+                                        img{
+                                            max-width: 100%;
+                                            height: auto;
+                                        }
+                                        
+                                        nav ul {
+                                            padding-left: 0;
+                                        }
+                                        
+                                        ul li{
+                                            list-style-type: none;
+                                        }
+                                        
+                                        ul a, a{
+                                            text-decoration: none;
+                                           
+                                        }
+                                         header ul a {
+                                            color: var(--bg-color-blue);
+                                         }
+                                        
+                                        #logo h1{
+                                            margin: 0;
+                                        }  
+                                        
+                                        
+                                        
+                                                                            /**************************************
+                                                                            *                HEADER               *
+                                                                             ***************************************/
+                                        
+                                         
+                                           header{
+                                            width: 100%;
+                                            padding-top: 2%;
+                                            background-color: var(--bg-color-light);
+                                            position:sticky;
+                                            overflow: hidden;
+                                            top: 0;
+                                            z-index: 999;
+                                        }  
+                                        
+                                        /* Classe appeler en JS */
+                                         .header_main-change{
+                                            overflow: initial;
+                                        }
+                                        
+                                        .annonce-display-change{
+                                            display: none;
+                                        } 
+                                            /* ****** */
+                                        
+                                         .header_logo{
+                                            position: relative;
+                                            flex-direction: column;
+                                            gap: 12%;
+                                        }
+                                        
+                                        .header_flex{
+                                            display: flex;
+                                            align-items: center;
+                                        }
+                                        
+                                        .header_tel{
+                                          gap: .2em;
+                                        }
+                                        
+                                        .header_tel i {
+                                           margin-top: 2.5%;
+                                           font-size: 1.3em;
+                                           color: rgb(31, 153, 253);
+                                        }
+                                        
+                                         #logo{
+                                            width: 50%;
+                                        } 
+                                        
+                                         .header_tel span{
+                                            font-weight: bold;
+                                            font-size: 1.2em;
+                                        }  
+                                        
+                                        
+                                                                                        /* ANNONCE */
+                                         #annonce i{
+                                            font-size: 1.3em ;
+                                            font-weight: bold;
+                                        }
+                                        
+                                        #annonce{
+                                            width: 100%;
+                                            position: absolute;
+                                            overflow: hidden;
+                                            top: 0;
+                                            font-size: .5em;
+                                            font-weight: bold;
+                                            font-style: italic;
+                                            animation: 10s linear infinite slide;
+                                        }
+                                        
+                                         @keyframes slide {
+                                            from{transform:translateX(-40%)}
+                                            to{transform: translateX(100%);}
+                                        }  
+                                        
+                                                                                            /* MENU BURGER */
+                                                                                            
+                                         #burger{
+                                            margin-top: .6em;
+                                            position: absolute;
+                                            top:0;
+                                            right: 2%;
+                                            width: 25px;            /*taille fixe afin que les span ne se déforme pas */
+                                            cursor: pointer;
+                                            z-index: 999;
+                                        } 
+                                         
+                                        #check:checked + label #span2, #check{
+                                            display: none;
+                                        } 
+                                        
+                                        #burger label > span{
+                                            display: block;
+                                            transform: rotate(0);
+                                            transition: 100ms;
+                                         }
+                                        
+                                        #span1, #span2, #span3{
+                                            background-color: var(--bg-color-blue);
+                                            padding: .10em;
+                                            border-radius: 2px;
+                                        }
+                                        
+                                        #span2{
+                                            margin: 10% 0%;
+                                        }
+                                        
+                                        #check:checked + label #span3{
+                                            transform: rotate(45deg);
+                                            transition: 100ms;
+                                        }
+                                        
+                                        #check:checked + label #span1{
+                                            transform: rotate(-45deg);
+                                            transition: 100ms;
+                                        }
+                                        
+                                        
+                                        
+                                                                                                /* NAVIGATION */
+                                        
+                                        header  > nav{
+                                            position: absolute;
+                                            top: 0%;
+                                            opacity: 0;
+                                            height: 100vh;
+                                            background-color:  var(--bg-color-light);
+                                            width: 100%;
+                                            transition: 300ms;
+                                        }   
+                                        
+                                        /* Appeler en JS */
+                                        .moveMenu{
+                                            opacity: 1;
+                                        }
+                                        
+                                        #nav_menu img{
+                                            margin-top: 2%;
+                                        }
+                                        
+                                        #nav_menu > p{
+                                            position: fixed;
+                                            bottom: 0;
+                                            width: 100%;
+                                            text-align: center;
+                                            color: var(--bg-color-blue);
+                                            font-weight: bold ;
+                                            font-size: .8em;
+                                            font-style: italic;   
+                                        }
+                                        
+                                        #nav_menu > ul{
+                                            margin: 20% 5%;
+                                            height: 55%;    
+                                        } 
+                                        
+                                        header > nav ul li{
+                                            margin:2% 0;
+                                            padding-bottom: 1.5%;
+                                            border-bottom: 1px solid var(--bg-color-red);
+                                        } 
+                                        
+                                                                                                /* MENU DEROULANT */
+                                        
+                                        .header_nav_sousMenu{
+                                            text-align: center;
+                                            background-color: var(--bg-color-light);
+                                            max-height: 0;
+                                            opacity: 0;
+                                            overflow: hidden;
+                                            transition: 200ms linear;
+                                            width: 100%;
+                                            z-index: 999;
+                                        }
+                                        
+                                        #nav_menu li:hover .header_nav_sousMenu{
+                                            max-height: 100%;
+                                            opacity: 1;
+                                            box-shadow: 2px 6px 8px 0px var(--bg-color-blue);
+                                            border-bottom: 4px solid var(--bg-color-red);
+                                        } 
+                                        
+                                        #nav_menu a:hover{
+                                            color:var(--bg-color-red);
+                                        }
+                                        
+                                        .header_nav_sousMenu > li {
+                                            border-bottom: none;
+                                        }   
+                                        
+                                                                                        /*********************************
+                                                                                        *           MAIN ACCUEIL         *
+                                                                                        *********************************/
+                                                                                                /* SECTION DIAPO */
+                                        .accueil{
+                                            background-color: var(--bg-color-blue);
+                                        }
+                                        
+                                        .diapo {
+                                            border: none;
+                                            overflow: hidden;
+                                            padding-top: 2%;
+                                            background-color: #fff;
+                                        }
+                                        
+                                        #main_diapo{
+                                            display: flex;
+                                        }
+                                        
+                                        .main_diapo_slide{
+                                            flex: 1 0 100%;
+                                            opacity: 0;
+                                        }
+                                        
+                                        .main_diapo_slide img{
+                                            height: 100%;
+                                        }
+                                        
+                                        .slide-show{
+                                            opacity: 1;
+                                            transition: 500ms ease-out;
+                                        }  
+                                        
+                                                                                        /*********************************
+                                                                                        *            SECTION 1               *
+                                                                                        **********************************/
+                                        
+                                        .main_bloc{
+                                            margin-top: 5%;
+                                            padding: 5%;
+                                        }
+                                        
+                                        .main_content{
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            width: 100%;
+                                            padding: 10% 5%;
+                                            margin-bottom: 5%;
+                                            background-color: var(--bg-color-light_blue)
+                                        }
+                                        
+                                        .main_logo{
+                                            margin-bottom: 5%;
+                                            width: 25%;
+                                        }
+                                        
+                                        .main_title{
+                                            margin-left: 5%;
+                                            align-self: flex-start;
+                                            color: var(--bg-color-light);
+                                        }
+                                        
+                                        .main_border{
+                                            margin: 0 5%;
+                                            border-left: 3px solid var(--bg-color-light);
+                                        }
+                                        
+                                        .main_border_change{
+                                            margin: 0 5%;
+                                            border-right: 2px solid var(--bg-color-light);
+                                        }
+                                        
+                                        .main_border_change :first-child{
+                                            margin-left: 0;
+                                        }
+                                        
+                                        .main_bloc p{
+                                            margin: 0 5% 15% 5%;
+                                            color: var(--bg-color-light);
+                                            font-size: .75em;
+                                            line-height: 1.3em;
+                                        }
+                                        
+                                        .main_bloc article{
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                        }
+                                        
+                                        .cta_btn{
+                                            border: 1px solid var(--bg-color-red);
+                                            background-color: var(--bg-color-blue);
+                                            color: var(--bg-color-light);
+                                            font-size: .8em;
+                                            padding: .5em 3.1em;
+                                        }
+                                        
+                                        .cta_btn-change{
+                                            padding: .5em 1em .5em 1.5em
+                                        }
+                                        
+                                        .cta_btn i{
+                                            line-height: .5em;
+                                            vertical-align: -.25em;
+                                            margin-left: 15%;
+                                            color: var(--bg-color-red);
+                                            font-size: 1.5em;
+                                        }
+                                        
+                                         .cta_btn-change i{
+                                            margin-left: 0;
+                                        }
+                                        
+                                        .main_bloc img[src*="handicap"]{
+                                            margin-bottom:10%;
+                                        }
+                                        
+                                                                                        /*************************
+                                                                                        *       FOOTER           *
+                                                                                        **************************/
+                                        
+                                        .main_footer{
+                                            padding: 0 5% 1%;
+                                        }
+                                        
+                                        hr{
+                                            width:95%;
+                                            margin: 0 auto;
+                                        }
+                                        
+                                        .flex_footer{
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                        }
+                                        
+                                        div.flex_footer, .main_footer nav{
+                                            margin-top: 5%;
+                                        }
+                                        .main_footer{
+                                            display: flex;
+                                            flex-direction: column;
+                                        }
+                                           
+                                         
+                                        .main_footer h4{
+                                            color: var(--bg-color-red);
+                                            margin-bottom: 3%;
+                                        }
+                                        
+                                        .main_footer a, address, i{
+                                            color: var(--bg-color-light);
+                                        }
+                                        
+                                        .flex_footer a[href*="facebook"]{
+                                            margin-top: 0;
+                                            font-size: 2em;
+                                            margin: 0 auto;
+                                        }
+                                        
+                                        .main_footer > p{
+                                            font-size: .65em;
+                                            text-align: center;
+                                            color: var(--bg-color-red);
+                                            text-transform: uppercase;
+                                            letter-spacing: 2%;
+                                        }
+                                        
+                                        

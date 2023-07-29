@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+
+               
+             
+<body>
+    <div class="wrapper">
+        <header id="header_main">
+            <div id="annonce">
+                <span >BIENVENUE A BORD...</span>
+                <i class="fi fi-rr-car-side"></i>
+            </div>
+            <div class="header_logo header_flex" id="header_menu">
+                <a href="#" id="logo">
+                    <h1><img  src="image/logoAbcd.png" widh="50%" alt="ABCD Taxi"></h1>
+                </a>
+                <div class="header_tel header_flex" >
+                    <i class="fi fi-sr-circle-phone-flip"></i>
+                    <span>0676540726</span>
+                </div>
+                <div id="burger">
+                    <input type="checkbox" id="check">
+                        <label for="check">
+                            <span id="span1"></span><span id="span2"></span><span id="span3"></span>
+                        </label>
+                </div>
+                
+            </div>
+            <nav id="nav_menu">
+                <img src="image/logoAbcd.png" alt="ABCD Taxi" width="25%">
+                <ul>
+                     <li><a href="#">Accueil</a></li>
+                     <li><a href="#">Réservation<i class="fi fi-rs-angle-small-down"></i></a>
+                        <ul class="header_nav_sousMenu">
+                            <li><a href="#">Réserver un transport</a></li>
+                            <li><a href="#">Annuler un transport</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="#">A propos</a></li>
+                     <li><a href="#">Contact</a></li>
+                </ul>
+                <p id="abcd">Arrivez Bien à Chaque Destination</p>
+            </nav>
+        </header>
+        <main class="accueil">
+            <!---------------------------- Contenur diapo  ----------------------------------->
+   <section class="diapo">
+      <div id ="main_diapo">
+            <div class="main_diapo_slide slide-show">
+               <img   id="screen" src="image/diapo1.webp"  alt="taxi">
+            </div>
+            <div class="main_diapo_slide">
+               <img src="image/diapo2.webp" alt="taxi">
+            </div>
+            <div class="main_diapo_slide">
+               <img src="image/diapo3.webp" alt="taxi">
+            </div>
+         </div>
+   </section>
+
+               <!--------------------------- BLOC PRINCIPAL ------------------------------------>
+
+   <section class="main_bloc">
+      <div class="main_content">
+         <div class="main_logo">
+            <img src="image/logo-resa.svg" alt="logo réservation">
+         </div>
+        
+         <h3 class="main_title">Besoin d'un transport?</h3>
+         <article class="main_border">
+            <p>ABCD Taxi vous propose un service simple et rapide de réservation en ligne en 3 clics&nbsp;: <span>Accéder</span>, Bookez et Choisissez la Destination&nbsp;!
+               <br><br>Vous bénéficiez instantanément d'un chiffrage de course.<br><br>
+               Jusqu'à 1 heure avant votre départ (sous réserve du temps de trajet en approche), vous choisissez le crénau qui vous convient le mieux.<br><br>
+               Une modification ou une annulation&nbsp;? laissez-vous guider!
+            </p>
+            <div>
+            <button class="cta_btn ">RESERVER<i class="fi fi-rr-arrow-small-right"></i></button>
+            </div>
+         </article>
+      </div>
+      <div class="main_content">
+         <div class="main_logo">
+            <img src="image/logo-eve.png" alt="logo évènement">
+         </div>
+        
+         <h3 class="main_title">Un allié de l'évènement</h3>
+         <article class="main_border_change">
+            <p>Une soirée? Un anniversaire ou un mariage à fêter&nbsp;?<br><br> ABCD Taxi vous suit dans vos projet et vous propose de vous emmener/ramener dans vos plus beaux moments.
+               <br><br>Dites-nous tout sur vos prestations souhaitées afin d'organiser ensemble et de miser sur la sérénité.
+            </p>
+            <div>
+            <button class="cta_btn cta_btn-change">NOUS CONTACTER <i class="fi fi-rr-arrow-small-right"></i></button>
+            </div>
+        </article>
+      </div>
+      <div class="main_content">
+         <div class="main_logo">
+            <img src="image/logo-handicap.png" alt="logo transport medical">
+            <img src="image/logo-conventionne" alt="logo taxi conventioné">
+         </div>
+        
+         <h3 class="main_title">Transports médicaux</h3>
+         <article class="main_border">
+            <p>Conventionné auprés de toutes les caisses d'assurance maladie, ABCD Taxi est en mesure de vous accompagner dans votre parcours de soins,
+               sur prescription médicale, et sans avance de frais.<br><br>
+               Pour toute consultation, hospitalisation, séance de kinésithérapie ou orthophonie, etc. ABCD Taxi, votre partenaire santé&nbsp;!
+            </p>
+            <div>
+            <button class="cta_btn cta_btn-change">NOUS CONTACTER <i class="fi fi-rr-arrow-small-right"></i></button>
+            </div>
+        </article>
+      </div>
+   </section>
+</main>
+
+<footer class="main_footer">
+    <hr>
+    <div>
+       <div class="flex_footer">
+          <h4>Nous suivre</h4>
+           <a href="www.facebook.com"><i class="fi fi-brands-facebook"></i></a> 
+       </div>  
+       <div class="flex_footer">
+          <h4>Nous situer</h4>
+          <address>1, lotissement l'Abricotine<br> 26800 PORTE LES VALENCES</address>
+       </div>
+    </div>  
+
+    <div class="flex_footer">
+       <h4>Contact</h4>
+       <div>
+         <i class="fi fi-tr-phone-call"></i>
+         <a href="tel:0664142034">0664142034</a>
+      </div>
+      <div>
+         <i class="fi fi-rr-envelope-download"></i>  
+         <a href="mailto:abcd.taxi.26@orange.fr">abcd.taxi.26@orange.fr</a>
+      </div>
+    </div>  
+    <nav>
+       <ul class="flex_footer">
+         <li><a href="#">Accueil</a></li>
+         <li><a href="#">Réserver un transport</a></li>
+         <li><a href="#">Annuler un transport</a></li>
+         <li><a href="#">A propos</a></li>
+         <li><a href="#">Contact</a></li>     
+         </ul>
+    </nav>
+    <p>mentions légales | Tous droits réservés&copy;</p>
+ </footer>
+ </div>
+</body>
+</html>
