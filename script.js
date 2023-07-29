@@ -5,15 +5,21 @@
 function lessMenu(){
     var logo = document.getElementById('logo');
     var menu = document.getElementById('header_menu');
+    let burger = document.getElementById('burger');
+    var header = document.getElementById('header_main');
     var stickPosition = logo.getBoundingClientRect().top; 
     
     window.addEventListener('scroll', ()=>{
-       if(window.scrollY >= stickPosition + 51 ){
-            logo.style.width="25%";
-            menu.style.flexDirection="row";
+       if(window.scrollY > stickPosition  ){
+        menu.style.flexDirection="row";
+        header.classList.add("header-shadow");
+        logo.style.width="15%";
+        burger.classList.remove('burger-position');
            }else {
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
+                burger.classList.add('burger-position');
+                header.classList.remove("header-shadow");
             }
         });
     }
