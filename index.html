@@ -20,43 +20,43 @@
              
 <body>
     <div class="wrapper">
-        <header id="header_main">
-            <div id="annonce">
-                <span >BIENVENUE A BORD...</span>
-                <i class="fi fi-rr-car-side"></i>
-            </div>
-            <div class="header_logo header_flex" id="header_menu">
-                <a href="#" id="logo">
-                    <h1><img  src="image/logo-noir.jpg" widh="50%" alt="ABCD Taxi"></h1>
-                </a>
-                <div class="header_tel header_flex" >
-                    <i class="fi fi-sr-circle-phone-flip"></i>
-                    <a href="tel:0664142034">06 64 14 20 34</a>
-                </div>
-                <div id="burger">
-                    <input type="checkbox" id="check">
-                        <label for="check">
-                            <span id="span1"></span><span id="span2"></span><span id="span3"></span>
-                        </label>
-                </div>
-                
-            </div>
-            <nav id="nav_menu">
-                <!-- <img src="image/logoAbcd.png" alt="ABCD Taxi" width="25%"> -->
-                <ul>
-                     <li><a href="#">Accueil</a></li>
-                     <li><a href="#">Réservation<i class="fi fi-rs-angle-small-down"></i></a>
-                        <ul class="header_nav_sousMenu">
-                            <li><a href="#">Réserver un transport</a></li>
-                            <li><a href="#">Annuler un transport</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="#">A propos</a></li>
-                     <li><a href="#">Contact</a></li>
-                </ul>
-                <p id="abcd">Arrivez Bien à Chaque Destination</p>
-            </nav>
-        </header>
+      <header id="header_main">
+         <div id="annonce">
+             <span >BIENVENUE A BORD...</span>
+             <i class="fi fi-rr-car-side"></i>
+         </div>
+         <div class="header_logo header_flex" id="header_menu">
+             <a href="#" id="logo">
+                 <h1><img  src="logo/logo-abcd.png" widh="50%" alt="ABCD Taxi"></h1>
+             </a>
+             <div class="header_tel header_flex" >
+             <i class="fi fi-sr-circle-phone"></i>
+                 <a href="tel:0664142034">06 64 14 20 34</a>
+             </div>
+             <div id="burger" class="burger-position">
+                 <input type="checkbox" id="check">
+                     <label for="check">
+                         <span id="span1"></span><span id="span2"></span><span id="span3"></span>
+                     </label>
+             </div>
+             
+         </div>
+         <nav id="nav_menu">
+             <!-- <img src="image/logo-noir.png" alt="ABCD Taxi" width="25%"> -->
+             <ul>
+                  <li><a href="#">Accueil</a></li>
+                  <li><a href="#">Réservation<i class="fi fi-rs-angle-small-down"></i></a>
+                     <ul class="header_nav_sousMenu">
+                         <li><a href="#">Réserver un transport</a></li>
+                         <li><a href="#">Annuler un transport</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">A propos</a></li>
+                  <li><a href="#">Contact</a></li>
+             </ul>
+             <p id="abcd">Arrivez Bien à Chaque Destination</p>
+         </nav>
+     </header> 
         <main class="accueil">
             <!---------------------------- Contenur diapo  ----------------------------------->
    <section class="diapo">
@@ -78,7 +78,7 @@
    <section class="main_bloc">
       <div class="main_content">
          <div class="main_logo">
-            <img src="image/logo-resa.svg" alt="logo réservation">
+            <img src="logo/logo-resa.svg" alt="logo réservation">
          </div>
         
          <h3 class="main_title">ABCD Taxi : je vais où vous allez</h3>
@@ -96,7 +96,7 @@
       </div>
       <div class="main_content">
          <div class="main_logo">
-            <img src="image/logo-eve.png" alt="logo évènement">
+            <img src="logo/logo-eve.png" alt="logo évènement">
          </div>
         
          <h3 class="main_title">ABCD Taxi : l'allié de vos soirées</h3>
@@ -111,8 +111,8 @@
       </div>
       <div class="main_content">
          <div class="main_logo">
-            <img src="image/logo-handicap.png" alt="logo transport medical">
-            <img src="image/logo-conventionne.png" alt="logo taxi conventioné">
+            <img src="logo/logo-handicap.png" alt="logo transport medical">
+            <img src="logo/logo-conventionne.png" alt="logo taxi conventioné">
          </div>
         
          <h3 class="main_title">ABCD Taxi : votre partenaire santé</h3>
@@ -134,7 +134,10 @@
    <div>
       <div class="flex_footer">
          <h4>Nous suivre</h4>
-          <a href="www.facebook.com"><i class="fi fi-brands-facebook"></i></a> 
+         <div class="row_footer">
+            <a href="www.facebook.com"><i class="fi fi-brands-facebook"></i></a>
+            <a href="#"><i class="fi fi-brands-instagram"></i></a>
+         </div>
       </div>  
       <div class="flex_footer">
          <h4>Nous situer</h4>
