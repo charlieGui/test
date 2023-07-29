@@ -13,7 +13,7 @@ function lessMenu(){
        if(window.scrollY > stickPosition  ){
         menu.style.flexDirection="row";
         header.classList.add("header-shadow");
-        logo.style.width="25%";
+        logo.style.width="20%";
         burger.classList.remove('burger-position');
            }else {
                 logo.style.width="50%";
