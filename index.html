@@ -59,20 +59,25 @@
      </header> 
         <main class="accueil">
             <!---------------------------- Contenur diapo  ----------------------------------->
-   <section class="diapo">
-      <div id ="main_diapo">
-            <div class="main_diapo_slide slide-show">
-               <img   id="screen" src="image/diapo1.webp"  alt="taxi">
-            </div>
-            <div class="main_diapo_slide">
-               <img src="image/diapo2.webp" alt="taxi">
-            </div>
-            <div class="main_diapo_slide">
-               <img src="image/diapo3.webp" alt="taxi">
-            </div>
-         </div>
-   </section>
-
+            <section class="diapo">
+               <div id ="main_diapo">
+                     <picture class="main_diapo_slide slide-show">
+                        <source srcset="image/diapo1-small.jpg" media="(max-width:576px)">
+                        <source srcset="image/diapo1-medium.jpg" media="(max-width:1080px)">
+                        <img   id="screen" src="image/diapo1.webp"  alt="taxi">
+                     </picture>
+                     <picture class="main_diapo_slide">
+                        <source srcset="image/diapo2-small.jpg" media="(max-width:576px)">
+                        <source srcset="image/diapo2-medium.jpg" media="(max-width:1080px)">
+                        <img src="image/diapo2.webp" alt="taxi">
+                     </picture>
+                     <picture class="main_diapo_slide">
+                        <source srcset="image/diapo3-small.jpg" media="(max-width:576px)">
+                        <source srcset="image/diapo3-medium.jpg" media="(max-width:1080px)">
+                        <img src="image/diapo3.webp" alt="taxi">
+                     </picture>
+                  </div>
+            </section>
                <!--------------------------- BLOC PRINCIPAL ------------------------------------>
 
    <section class="main_bloc">
