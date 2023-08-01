@@ -385,7 +385,7 @@ hr{
                                                 **************************/
 
 .main_footer{
-    padding: 0 5% 1%;
+    padding: 5% 5% 1%;
     font-size: .9em;
 }
 
@@ -393,21 +393,26 @@ hr{
     align-items: flex-start;
 }
 
-div.flex_footer, .main_footer nav{
-    margin-top: 5%;
+.flex_footer:not(.main_footer > div :first-child), .main_footer nav{
+    margin-top: 8%;
 }
-    
+
+.main_footer address{
+    margin-bottom: 8%;
+}
+
 .main_footer h4{
     color: var(--bg-color-red);
     margin-bottom: 2%;
 }
 
 .row_footer{
-    gap: 5%;    
+    margin-top: 1%;
+     gap: 10%;    
 }
 
 .row_footer a{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-left:10%;
 }
 
