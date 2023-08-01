@@ -11,7 +11,7 @@ function smallHead(){
    
     window.addEventListener('scroll', ()=>{
        if(window.scrollY > stickPosition){
-            logo.style.width="20%";
+            logo.style.width="25%";
             menu.style.flexDirection="row";
             header.classList.add("header-shadow");
             burger.classList.remove('burger-position');

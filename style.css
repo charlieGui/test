@@ -278,7 +278,7 @@ header > nav ul li{
 .diapo {
     border: none;
     overflow: hidden;
-    padding-top: 2%;
+    padding: 5% 0 3%;
     background-color: var(--bg-color-black)
 }
 
