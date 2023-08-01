@@ -2,19 +2,19 @@
 // Récupère la position du logo.
 // Un scroll Y détecté de 50px reduit le logo et paramètre un flexboxRow
 
-function lessMenu(){
-    var logo = document.getElementById('logo');
-    var menu = document.getElementById('header_menu');
+function smallHead(){
+    let logo = document.getElementById('logo');
+    let menu = document.getElementById('header_menu');
     let burger = document.getElementById('burger');
-    var header = document.getElementById('header_main');
-    var stickPosition = logo.getBoundingClientRect().top; 
-    
+    let header = document.getElementById('header');
+    let stickPosition = header.getBoundingClientRect().top; 
+   
     window.addEventListener('scroll', ()=>{
-       if(window.scrollY > stickPosition  ){
-        menu.style.flexDirection="row";
-        header.classList.add("header-shadow");
-        logo.style.width="25%";
-        burger.classList.remove('burger-position');
+       if(window.scrollY > stickPosition){
+            logo.style.width="20%";
+            menu.style.flexDirection="row";
+            header.classList.add("header-shadow");
+            burger.classList.remove('burger-position');
            }else {
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
@@ -27,15 +27,15 @@ function lessMenu(){
 // Declenche le slide du Menu Mobile lors du clic sur le burger
 function sideMenu(){
     var sideBar = document.querySelector('nav');
-    var header =  document.getElementById('header_main')
+    var header =  document.getElementById('header')
     var checkMenu = document.querySelector('input[type=checkbox]');
     
         checkMenu.addEventListener('click', ()=>{
-        sideBar.classList.toggle('moveMenu');
-        document.getElementById('annonce').classList.toggle('annonce-display-change');
-        header.classList.toggle('header_main-change');
+            sideBar.classList.toggle('moveMenu');
+            document.getElementById('annonce').classList.toggle('annonce-display-change');
+            header.classList.toggle('header_main-change');
         });
-    }
+}
 
     /***
      * Récupère les slide du diapo et gère le défilement.
@@ -89,6 +89,6 @@ function diaporama(){
 
 window.addEventListener('load', ()=>{
     diaporama();
-    lessMenu();
+    smallHead();
     sideMenu();
 });

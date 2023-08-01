@@ -3,10 +3,11 @@
                                         ********************************/
 
  :root{
-    --bg-color-blue: #15303D;
-    --bg-color-light_blue:#26414E;
-    --bg-color-red: #CC2936;
-    --bg-color-light: #fAFAFA;
+    --bg-color-black: #000;
+    --bg-color-d-black:#111;
+    --bg-color-btn: #222;
+    --bg-color-light: #fafafa;
+    --bg-color-red:#CC2936;
 }
 
 .wrapper{
@@ -14,14 +15,18 @@
     margin: 0 auto;
 }
 
+
 *{
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
 }
 
 body{
-    background-color: #000;
-    /* padding: 1%; */
+    background-color: var(--bg-color-black);
+}
+
+body:not(h4){
+    color: var(--bg-color-light);
 }
 
 img{
@@ -37,18 +42,24 @@ ul li{
     list-style-type: none;
 }
 
-ul a, a{
+ a{
     text-decoration: none;
-   
+    color: var(--bg-color-light);
 }
- header ul a {
-    color: var(--bg-color-blue);
- }
 
 #logo h1{
     margin: 0;
 }  
 
+.flex_row{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex_col{
+    display: flex;
+    flex-flow: column wrap;
+}
 
 
                                     /**************************************
@@ -56,20 +67,23 @@ ul a, a{
                                      ***************************************/
 
  
-   header{
+header{
     width: 100%;
     padding: 3% 0;
-    background-color: #000;
+    background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
     top: 0;
-    z-index: 999;
-}  
+}
 
+header, #logo, .header_tel a{
+    z-index: 800;
+}
 /* Classe appeler en JS */
 .header-shadow{
-    box-shadow:0px 5px 10px -8px #fff ;
+    box-shadow:0px 5px 10px -8px var(--bg-color-light) ;
 }
+
  .header_main-change{
     overflow: initial;
 }
@@ -77,63 +91,48 @@ ul a, a{
 .annonce-display-change{
     display: none;
 } 
-    /* ****** */
+ /* ****** */
 
  .header_logo{
     position: relative;
-    flex-direction: column;
-   margin-left: 2%;
-}
-
-.header_flex{
-    display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2% 0 0 2%;
 }
 
-
 .header_tel{
-  gap: .4em;
+    align-items: center;
+    gap: .4em;
 }
 
 .header_tel i {
    margin-top: 2.5%;
    font-size: 1.3em;
-   color: #fff;
 }
 
- #logo{
+#logo{
     width: 50%;
 } 
 
  .header_tel a{
-    color: var(--bg-color-light);
     font-size: 1.2em;
-   
 }  
 
+   
+                                    /*                Annonce              *
+                                     ***************************************/
 
-                                                /* ANNONCE */
- #annonce i{
-    font-size: 1.3em ;
-    font-weight: bold;
+#annonce{
+    position: fixed;
+    font-size: .65rem;
+    width: 100%;
+    top: 0;
+    animation: 10s linear infinite slide;
 }
 
 #annonce span{
-    font-size: .65rem;
-    color: #fff;
-}
-
-#annonce{
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    font-size: .5em;
-    font-weight: bold;
     font-style: italic;
-    animation: 10s linear infinite slide;
-}
+ }
 
  @keyframes slide {
     from{transform:translateX(-40%)}
@@ -142,13 +141,17 @@ ul a, a{
 
                                                     /* MENU BURGER */
 
+                                                 
+ 
+ 
 .burger-position{
-    margin-top: .6em;
     position: absolute;
+    margin-top: .6em;
     top:10%;
-    right: 0;
+    right: 0;  
 }
- #burger{
+
+#burger{
     width: 25px; 
     margin-right: 5%;  
     margin-left: 12%;       /*afin de centrer le numero de tel par rapport au contenu*/
@@ -166,6 +169,14 @@ ul a, a{
     transition: 100ms;
  }
 
+ #check:checked + label #span3{
+    transform: rotate(45deg);
+}
+
+#check:checked + label #span1{
+    transform: rotate(-45deg);
+}
+
 #span1, #span2, #span3{
     background-color: var(--bg-color-light);
     padding: .05em;
@@ -176,17 +187,6 @@ ul a, a{
     margin: 15% 0%;
 }
 
-#check:checked + label #span3{
-    transform: rotate(45deg);
-    transition: 100ms;
-}
-
-#check:checked + label #span1{
-    transform: rotate(-45deg);
-    transition: 100ms;
-}
-
-
 
                                                         /* NAVIGATION */
 
@@ -195,7 +195,7 @@ header  > nav{
     top: 0%;
     opacity: 0;
     height: 100vh;
-    background-color:  #111;
+    background-color:  var(--bg-color-d-black);
     width: 100%;
     transition: 300ms;
 }   
@@ -203,28 +203,21 @@ header  > nav{
 /* Appeler en JS */
 .moveMenu{
     opacity: 1;
+    z-index: 800;
 }
-
-#nav_menu img{
-    margin-top: 2%;
-}
+    /******/
 
 #nav_menu > p{
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    color: #fff;
-    font-weight: bold ;
-    font-size: .8em;
-    font-style: italic;   
+    font: bold italic .9em Helvetica, Arial, sans-serif; ;
 }
 
 #nav_menu ul a{
     display: block;
     padding: 10% 0 1%;
-    font-size: 1em;
-    color: #fff;
     text-transform: uppercase;
 }
 
@@ -233,48 +226,46 @@ header  > nav{
 } 
 
 header > nav ul li{
-    /* margin:10% 0; */
     padding-bottom: 1.5%;
     border-bottom: 1px solid var(--bg-color-red);
 } 
 
                                                         /* MENU DEROULANT */
 
-.header_nav_sousMenu{
-    text-align: center;
-    background-color: #111;
-    position: absolute;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: 500ms linear;
-    width: 100%;
-    z-index: 999;
-}
-
-#nav_menu li:hover .header_nav_sousMenu {
-    max-height: 50%;
-    opacity: 1;
-} 
-
-#nav_menu li:hover i[class*="fi-rs-angle"]{
-    color: red;
+#nav_menu ul{
+    position: relative;
 }
 
 /* Animation chevron */
- #nav_menu li:hover span{
+#nav_menu li span{
     display: inline-block;
-    transform: rotate(-180deg) translateY(30%);
+    transform: rotate(0) translateY(0);
     transform-origin: center;
-    transition: 1s;
+    transition: 200ms;
+}
+ #nav_menu li:hover span{
+    transform: rotate(-180deg) translateY(30%);
 } 
 
 #nav_menu a:hover{
     color: #cac037
 }
-.header_nav_sousMenu  li a{
-    padding: initial;
+
+.header_nav_sousMenu{
+    text-align: center;
+    background-color: var(--bg-color-d-black);
+    max-height: 0;
+    opacity: .2;
+    overflow: hidden;
+  
+    z-index: 999;
 }
+
+#nav_menu li:hover .header_nav_sousMenu {
+    max-height: 100%;
+    opacity: 1;
+    transition: 3s;
+} 
 
 .header_nav_sousMenu > li {
     border-bottom: none;
@@ -283,21 +274,12 @@ header > nav ul li{
                                                 /*********************************
                                                 *           MAIN ACCUEIL         *
                                                 *********************************/
-                                                        /* SECTION DIAPO */
-.accueil{
-    background-color: #000;
-}
 
 .diapo {
     border: none;
     overflow: hidden;
     padding-top: 2%;
-    margin: 0 1%; /*temporaire */
-    background-color: #000;
-}
-
-#main_diapo{
-    display: flex;
+    background-color: var(--bg-color-black)
 }
 
 .main_diapo_slide{
@@ -319,18 +301,15 @@ header > nav ul li{
                                                 **********************************/
 
 .main_bloc{
-    /* margin-top: 5%; */
-    padding: 5%;
+   padding: 5%;
 }
 
 .main_content{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 10% 2%;
     margin-bottom: 5%;
-    background-color: #111;
+    background-color: var(--bg-color-d-black);
 }
 
 .main_logo{
@@ -341,9 +320,7 @@ header > nav ul li{
 .main_title{
     margin-left: 2%;
     align-self: flex-start;
-    color: var(--bg-color-light);
-    font-size: 1.1em;
-    font-style: italic;
+    font: italic 1.3em Helvetica, Arial, sans-serif;
 }
 
 .main_border{
@@ -362,20 +339,17 @@ header > nav ul li{
 
 .main_bloc p{
     margin: 0 5% 15% 5%;
-    color: var(--bg-color-light);
     font-size: .9em;
     line-height: 1.3em;
 }
 
 .main_bloc article{
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .cta_btn{
     border: 1px solid var(--bg-color-red);
-    background-color: #222;
+    background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
     font-size: .8em;
     padding: .5em 3.1em;
@@ -401,51 +375,39 @@ header > nav ul li{
     margin-bottom:10%;
 }
 
+hr{
+    width:90%;
+    margin: 0 auto;
+}
+
                                                 /*************************
                                                 *       FOOTER           *
                                                 **************************/
 
 .main_footer{
     padding: 0 5% 1%;
-}
-
-hr{
-    width:90%;
-    margin: 0 auto;
+    font-size: .9em;
 }
 
 .flex_footer{
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
 }
 
 div.flex_footer, .main_footer nav{
     margin-top: 5%;
 }
-.main_footer{
-    display: flex;
-    flex-direction: column;
-}
-   
- 
+    
 .main_footer h4{
     color: var(--bg-color-red);
     margin-bottom: 2%;
 }
 
-.main_footer a, address, i{
-    color: var(--bg-color-light);
-    font-size: .9em;
-}
-
 .row_footer{
-    display: flex;
-    gap: 2%;    
+    gap: 5%;    
 }
 
 .row_footer a{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-left:10%;
 }
 
