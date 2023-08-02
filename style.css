@@ -1,7 +1,4 @@
-                                               /*******************************
-                                        *           REGLES COMMUNES    *
-                                        ********************************/
-
+ 
  :root{
     --bg-color-black: #000;
     --bg-color-d-black:#111;
@@ -42,12 +39,12 @@ ul li{
     list-style-type: none;
 }
 
- a{
+a{
     text-decoration: none;
     color: var(--bg-color-light);
 }
 
-#logo h1{
+ h1{
     margin: 0;
 }  
 
@@ -76,7 +73,7 @@ header{
     top: 0;
 }
 
-header, #logo, .header_tel a{
+header, .header_logo :first-child, a.flex_row{
     z-index: 800;
 }
 /* Classe appeler en JS */
@@ -100,23 +97,20 @@ header, #logo, .header_tel a{
     margin: 2% 0 0 2%;
 }
 
-.header_tel{
+a.flex_row{
     align-items: center;
     gap: .4em;
 }
 
-.header_tel i {
+a.flex_row i {
    margin-top: 2.5%;
-   font-size: 1.3em;
+   font-size: 1.2em;
 }
 
-#logo{
+.header_logo > a{
     width: 50%;
 } 
 
- .header_tel a{
-    font-size: 1.2em;
-}  
 
    
                                     /*                Annonce              *
@@ -241,8 +235,9 @@ header > nav ul li{
     display: inline-block;
     transform: rotate(0) translateY(0);
     transform-origin: center;
-    transition: 200ms;
+    transition: 100ms;
 }
+
  #nav_menu li:hover span{
     transform: rotate(-180deg) translateY(30%);
 } 
@@ -257,14 +252,13 @@ header > nav ul li{
     max-height: 0;
     opacity: .2;
     overflow: hidden;
-  
     z-index: 999;
 }
 
 #nav_menu li:hover .header_nav_sousMenu {
     max-height: 100%;
     opacity: 1;
-    transition: 3s;
+    transition: 1s;
 } 
 
 .header_nav_sousMenu > li {
@@ -393,12 +387,8 @@ hr{
     align-items: flex-start;
 }
 
-.flex_footer:not(.main_footer > div :first-child), .main_footer nav{
-    margin-top: 8%;
-}
-
-.main_footer address{
-    margin-bottom: 8%;
+footer.main_footer > div, .main_footer nav{
+   margin-bottom: 5%;
 }
 
 .main_footer h4{
@@ -413,11 +403,10 @@ hr{
 
 .row_footer a{
     font-size: 1.8rem;
-    margin-left:10%;
+    margin-left:8%;
 }
 
 .main_footer > p{
-    margin-top: 10%;
     font-size: .65em;
     text-align: center;
     color: var(--bg-color-red);
