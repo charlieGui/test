@@ -48,6 +48,7 @@ a{
     margin: 0;
 }  
 
+
 .flex_row{
     display: flex;
     flex-flow: row nowrap;
@@ -66,14 +67,14 @@ a{
  
 header{
     width: 100%;
-    padding: 3% 0;
+    padding:1% 0;
     background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
     top: 0;
 }
 
-header, .header_logo :first-child, a.flex_row{
+header, .header_logo :first-child, .flex_row a{
     z-index: 800;
 }
 /* Classe appeler en JS */
@@ -94,21 +95,24 @@ header, .header_logo :first-child, a.flex_row{
     position: relative;
     align-items: center;
     justify-content: space-between;
-    margin: 2% 0 0 2%;
+    margin: 0% 0 0 2%;
 }
 
-a.flex_row{
+
+
+.flex_row {
     align-items: center;
     gap: .4em;
     font-size: 1.2em;
 }
-
-a.flex_row i {
-   margin-top: 2.5%;
+.flex_row > i {
+   margin-top: 2.4%;
+   font-size: 1.5rem;
 }
 
 .header_logo > a{
     width: 50%;
+    margin-top: 1%;
 } 
 
 
@@ -141,7 +145,7 @@ a.flex_row i {
 .burger-position{
     position: absolute;
     margin-top: .6em;
-    top:10%;
+    top:12%;
     right: 0;  
 }
 
@@ -272,7 +276,7 @@ header > nav ul li{
 .diapo {
     border: none;
     overflow: hidden;
-    padding: 5% 0 3%;
+    padding: 3% 0 3%;
     background-color: var(--bg-color-black)
 }
 
