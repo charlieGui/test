@@ -1,67 +1,74 @@
 "use strict"
-// Récupère la position du logo.
-// Un scroll Y détecté de 50px reduit le logo et paramètre un flexboxRow
 
-function smallHead(){
-    let logo = document.getElementById('logo');
-    let menu = document.getElementById('header_menu');
-    let burger = document.getElementById('burger');
-    let header = document.getElementById('header');
-    let stickPosition = header.getBoundingClientRect().top; 
-   
+/**
+ * Fonction qui gère le rétrécissement de la navigation au scroll
+ */
+
+var header;
+function lessMenu(){
+   let menu, logo, burger, stickPosition;
+
+    header = document.getElementById('header');
+    menu = header.firstElementChild.nextElementSibling;
+    logo = menu.firstElementChild;
+    burger = menu.lastElementChild;
+    stickPosition = header.getBoundingClientRect().top; 
+    
     window.addEventListener('scroll', ()=>{
        if(window.scrollY > stickPosition){
-            logo.style.width="25%";
-            menu.style.flexDirection="row";
-            header.classList.add("header-shadow");
-            burger.classList.remove('burger-position');
+        logo.style.width="25%";
+        menu.style.flexDirection="row";
+        header.classList.add("header-shadow");
+        burger.classList.remove('burger-position');
            }else {
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
                 burger.classList.add('burger-position');
                 header.classList.remove("header-shadow");
-            }
-        });
-    }
+        }
+    });
+}
 
-// Declenche le slide du Menu Mobile lors du clic sur le burger
+/**
+ * Fonction qui gère l'ouverture du menu Mobile au clic
+ */
+
 function sideMenu(){
-    var sideBar = document.querySelector('nav');
-    var header =  document.getElementById('header')
-    var checkMenu = document.querySelector('input[type=checkbox]');
+    let sideBar,checkMenu, welcome;
     
-        checkMenu.addEventListener('click', ()=>{
-            sideBar.classList.toggle('moveMenu');
-            document.getElementById('annonce').classList.toggle('annonce-display-change');
-            header.classList.toggle('header_main-change');
+    checkMenu = document.getElementById('check');
+    sideBar = header.lastElementChild;
+    welcome = header.firstElementChild;
+  
+    checkMenu.addEventListener('click', ()=>{
+        sideBar.classList.toggle('moveMenu');
+        welcome.classList.toggle('annonce-display-change');
+        header.classList.toggle('header_main-change');
         });
 }
 
     /***
-     * Récupère les slide du diapo et gère le défilement.
-     * Joute et retire les classe afin de paramètrer le fondu via l'opacité.
+     * 
+     * Fonction qui gère l'affichage et le timing du diaporama
      */
 function diaporama(){
-    let slider = document.getElementsByClassName('main_diapo_slide');
-    let slide = document.getElementById('main_diapo');
-    var start;
-    // Calcule la largeur de l'affichage du diapo
-    let slideWidth = slide.getBoundingClientRect().width;
-    let count = 0;
-
+    let slide, slideWidth, slider, decal, start, count=0;
+     
+    slide = document.getElementById('main_diapo');
+    slider = document.querySelectorAll('picture.main_diapo_slide');
+    slideWidth = slide.getBoundingClientRect().width;
+  
     function diapoRun(){
-       
-    // Boucle sur les items de Slider afin de retirer toutes classe slide-show afin d'avori l'effet de transition
-    // avant de le rajouter individuellement.
+    // Boucle sur les items de slider afin de retirer toutes classe slide-show afin d'avoir l'effet de transition
         for(let i=0; i<slider.length; ++i){
             slider[i].classList.remove('slide-show');
         }
 
         count++;
         slider[count].classList.add('slide-show');
-        //  Calcule le décalage : largeur de l'affichage - le produit de ce dernier par l'index du slider;
+        //  Calcule le décalage : largeur de l'affichage - le produit de ce dernier par l'index du slider(count);
         //  Puis décale en fonction de la largeur calculer.
-        let decal = -slideWidth * count;
+         decal = -slideWidth * count;
         slide.style.transform=`translateX( ${decal}px)`;
         if(count == (slider.length - 1)){
             count = -1;
@@ -79,7 +86,6 @@ function diaporama(){
     
     slide.addEventListener('mouseover', stopTimer);
     slide.addEventListener('mouseout', startTimer);
-
     //permet le redimensionnement de la fenetre pour le responsive
     window.addEventListener('resize', ()=>{
         slideWidth= slide.getBoundingClientRect().width;
@@ -88,7 +94,8 @@ function diaporama(){
 }
 
 window.addEventListener('load', ()=>{
+   
     diaporama();
-    smallHead();
+    lessMenu();
     sideMenu();
 });
