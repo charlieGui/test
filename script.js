@@ -16,7 +16,7 @@ function lessMenu(){
     
     window.addEventListener('scroll', ()=>{
        if(window.scrollY > stickPosition){
-        logo.style.width="25%";
+        logo.style.width="15%";
         menu.style.flexDirection="row";
         header.classList.add("header-shadow");
         burger.classList.remove('burger-position');
@@ -68,7 +68,7 @@ function diaporama(){
         slider[count].classList.add('slide-show');
         //  Calcule le décalage : largeur de l'affichage - le produit de ce dernier par l'index du slider(count);
         //  Puis décale en fonction de la largeur calculer.
-         decal = -slideWidth * count;
+        decal = -slideWidth * count;
         slide.style.transform=`translateX( ${decal}px)`;
         if(count == (slider.length - 1)){
             count = -1;

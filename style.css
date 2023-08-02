@@ -67,7 +67,8 @@ a{
  
 header{
     width: 100%;
-    padding:1% 0;
+    /* padding:1% 0; */
+    padding: 2% 5%;
     background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
@@ -95,7 +96,7 @@ header, .header_logo :first-child, .flex_row a{
     position: relative;
     align-items: center;
     justify-content: space-between;
-    margin: 0% 0 0 2%;
+    /* margin: 0% 0 0 2%; */
 }
 
 .header_logo div.flex_row {
@@ -150,8 +151,9 @@ header, .header_logo :first-child, .flex_row a{
 
 #burger{
     width: 6vw; /*25px */
-    margin-right: 5%;  
-    margin-left: 12%;       /*afin de centrer le numero de tel par rapport au contenu*/
+    /* margin-right: 5%;  
+    margin-left: 12%;       afin de centrer le numero de tel par rapport au contenu */
+    margin-left: 8%;
     cursor: pointer;
     z-index: 999;
 } 
