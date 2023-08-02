@@ -100,11 +100,11 @@ header, .header_logo :first-child, a.flex_row{
 a.flex_row{
     align-items: center;
     gap: .4em;
+    font-size: 1.2em;
 }
 
 a.flex_row i {
    margin-top: 2.5%;
-   font-size: 1.2em;
 }
 
 .header_logo > a{
