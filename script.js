@@ -16,7 +16,7 @@ function lessMenu(){
     
     window.addEventListener('scroll', ()=>{
        if(window.scrollY > stickPosition){
-        logo.style.width="15%";
+        logo.style.width="20%";
         menu.style.flexDirection="row";
         header.classList.add("header-shadow");
         burger.classList.remove('burger-position');

@@ -68,7 +68,7 @@ a{
 header{
     width: 100%;
     /* padding:1% 0; */
-    padding: 2% 5%;
+    padding:  2%0% 2%;
     background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
@@ -104,10 +104,14 @@ header, .header_logo :first-child, .flex_row a{
     gap: .4em;
     font-size: 4.5vw; /* 1.2rem */
 }
-
-.flex_row > i {
-   margin-top: 2.4%;
-   font-size: 5.7vw; /*1.5em*/
+#display-phone{
+    display: none;
+}
+ a.flex_row i {
+    margin-top: 3%;
+  
+   /* font-size: 5.7vw; 1.5em */
+   font-size: 6.8vw;
 }
 
 .header_logo > a{
@@ -154,6 +158,7 @@ header, .header_logo :first-child, .flex_row a{
     /* margin-right: 5%;  
     margin-left: 12%;       afin de centrer le numero de tel par rapport au contenu */
     margin-left: 8%;
+    margin-right: 3%;
     cursor: pointer;
     z-index: 999;
 } 
