@@ -3,7 +3,7 @@
     --bg-color-black: #000;
     --bg-color-d-black:#111;
     --bg-color-btn: #222;
-    --bg-color-light: #fafafa;
+    --bg-color-light:#fafafa;
     --bg-color-red:#CC2936;
 }
 
@@ -66,8 +66,7 @@ a{
  
 header{
     width: 100%;
-    /* padding:1% 0; */
-    /* padding:  2%; */
+    padding: 2% 0% 4%;
     background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
@@ -80,6 +79,7 @@ header, .header_logo :first-child, .flex_row a{
 /* Classe appeler en JS */
 .header-shadow{
     box-shadow:0px 5px 10px -8px var(--bg-color-light) ;
+    padding: initial;
 }
 
  .header_main-change{
@@ -95,16 +95,9 @@ header, .header_logo :first-child, .flex_row a{
     position: relative;
     align-items: center;
     justify-content: space-between;
-    
     padding:  1% 2%;
-    /* margin: 0% 0 0 2%; */
 }
 
-/* /* .header_logo div.flex_row {
-    align-items: center;
-    gap: .4em;
-    font-size: 4.5vw; /* 1.2rem 
-} */
 .display-phone{ 
     display: none;
 }
@@ -114,8 +107,6 @@ a.flex_row span{
 
  a.flex_row > i {
   line-height: .25em;
-   
-   /* font-size: 5.7vw; 1.5em */
    font-size: 6.8vw;
 }
  a.flex_row{
@@ -137,7 +128,7 @@ align-items: center;
     font-size: .65rem;
     width: 100%;
     top: 0;
-    animation: 10s linear infinite slide;
+    animation: slide 5s  linear 3s infinite;
 }
 
 #annonce span{
@@ -157,13 +148,13 @@ align-items: center;
 .burger-position{
     position: absolute;
     margin-top: .6em;
-    top:13%;
+    top:9%;
     right: 2%;  
 }
 
 #burger{
-    width: 6vw; /*25px */
-    margin-left: 8%;
+    width: 6.5vw; /*25px */
+    margin-left: 13%;
     margin-right: 4%;
     cursor: pointer;
     z-index: 999;
@@ -176,7 +167,7 @@ align-items: center;
 #burger label > span{
     display: block;
     transform: rotate(0);
-    transition: 100ms;
+    transition: 300ms;
  }
 
  #check:checked + label #span3{
@@ -251,7 +242,7 @@ header > nav ul li{
     display: inline-block;
     transform: rotate(0) translateY(0);
     transform-origin: center;
-    transition: 100ms;
+    transition: 600ms;
 }
 
  #nav_menu li:hover span{
@@ -274,7 +265,7 @@ header > nav ul li{
 #nav_menu li:hover .header_nav_sousMenu {
     max-height: 100%;
     opacity: 1;
-    transition: 1s;
+    transition: 1.5s;
 } 
 
 .header_nav_sousMenu > li {
@@ -288,7 +279,6 @@ header > nav ul li{
 .diapo{
     border: none;
     overflow: hidden;
-    padding-top: 3%;
     background-color: var(--bg-color-black)
 }
 
@@ -350,7 +340,7 @@ header > nav ul li{
 .main_bloc p{
     margin: 0 5% 15% 5%;
     font-size: .9em;
-    line-height: 1.3em;
+    line-height: 1.5em;
 }
 
 .main_bloc article{
@@ -400,6 +390,7 @@ hr{
 .main_footer{
     padding: 5% 5% 1%;
     font-size: .9em;
+    line-height: 1.4em;
 }
 
 .flex_footer{
