@@ -68,7 +68,7 @@ a{
 header{
     width: 100%;
     /* padding:1% 0; */
-    padding:  2%0% 2%;
+    /* padding:  2%; */
     background-color: var(--bg-color-black);
     position:sticky;
     overflow: hidden;
@@ -96,24 +96,32 @@ header, .header_logo :first-child, .flex_row a{
     position: relative;
     align-items: center;
     justify-content: space-between;
+    padding:  2%;
     /* margin: 0% 0 0 2%; */
 }
 
-.header_logo div.flex_row {
+/* /* .header_logo div.flex_row {
     align-items: center;
     gap: .4em;
-    font-size: 4.5vw; /* 1.2rem */
-}
-#display-phone{
+    font-size: 4.5vw; /* 1.2rem 
+} */
+.display-phone{ 
     display: none;
 }
- a.flex_row i {
-    margin-top: 3%;
-  
+a.flex_row span{
+    font-size: 4.8vw;
+}
+
+ a.flex_row > i {
+  line-height: .25em;
+   
    /* font-size: 5.7vw; 1.5em */
    font-size: 6.8vw;
 }
-
+ a.flex_row{
+  gap: .4em;
+align-items: center;
+ }
 .header_logo > a{
     width: 50%;
     margin-top: 1%;
@@ -149,16 +157,14 @@ header, .header_logo :first-child, .flex_row a{
 .burger-position{
     position: absolute;
     margin-top: .6em;
-    top:12%;
-    right: 0;  
+    top:13%;
+    right: 2%;  
 }
 
 #burger{
     width: 6vw; /*25px */
-    /* margin-right: 5%;  
-    margin-left: 12%;       afin de centrer le numero de tel par rapport au contenu */
     margin-left: 8%;
-    margin-right: 3%;
+    margin-right: 4%;
     cursor: pointer;
     z-index: 999;
 } 

@@ -6,24 +6,27 @@
 
 var header;
 function lessMenu(){
-   let menu, logo, burger, stickPosition;
+   let menu, logo, burger, phone, stickPosition;
 
     header = document.getElementById('header');
     menu = header.firstElementChild.nextElementSibling;
     logo = menu.firstElementChild;
     burger = menu.lastElementChild;
+    phone = logo.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top; 
     
     window.addEventListener('scroll', ()=>{
        if(window.scrollY > stickPosition){
-        logo.style.width="20%";
-        menu.style.flexDirection="row";
-        header.classList.add("header-shadow");
-        burger.classList.remove('burger-position');
+            logo.style.width="20%";
+            menu.style.flexDirection="row";
+            header.classList.add("header-shadow");
+            phone.classList.add('display-phone');
+            burger.classList.remove('burger-position');
            }else {
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
                 burger.classList.add('burger-position');
+                phone.classList.remove('display-phone');
                 header.classList.remove("header-shadow");
         }
     });
