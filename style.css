@@ -128,7 +128,7 @@ align-items: center;
     font-size: .65rem;
     width: 100%;
     top: 0;
-    animation: slide 5s  linear 3s infinite;
+    animation: slide 15s  linear  infinite;
 }
 
 #annonce span{
