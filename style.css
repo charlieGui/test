@@ -95,7 +95,8 @@ header, .header_logo :first-child, .flex_row a{
     position: relative;
     align-items: center;
     justify-content: space-between;
-    padding:  2%;
+    
+    padding:  1% 2%;
     /* margin: 0% 0 0 2%; */
 }
 
