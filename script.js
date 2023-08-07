@@ -6,30 +6,94 @@
 
 var header;
 function lessMenu(){
-   let menu, logo, burger, phone, stickPosition;
+   let menu, logo, burger, phone, stickPosition, slide;
 
     header = document.getElementById('header');
     menu = header.firstElementChild.nextElementSibling;
     logo = menu.firstElementChild;
     burger = menu.lastElementChild;
     phone = logo.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling;
-    stickPosition = header.getBoundingClientRect().top; 
+    slide = document.getElementById('main_diapo');
+   let slideBottom =  slide.getBoundingClientRect().top;
+    stickPosition = header.getBoundingClientRect().bottom;
+    let height =  header.clientHeight;
+let hauteur =   (height * 30 /100);
+console.log(hauteur);
+//   var oldValue = 0;
+//     var pos = 50;
+// let newValue;
+//     window.addEventListener('scroll', (e)=>{
+//          newValue = window.scrollY;
+//         if(oldValue - newValue < 0){
+//             if(newValue > stickPosition && pos > 23){
+//                 console.log(stickPosition);
+//                 --pos;
+//                 logo.style.width=`${pos}%`;
+               
+//                 if(pos == 23){
+//                 menu.style.flexDirection="row";
+//                 header.classList.add("header-shadow");
+//                 phone.classList.add('display-phone');
+//                 burger.classList.remove('burger-position');
+//                 }
+//                 }
+//                 // oldValue = newValue;
+//             }else if(oldValue - newValue > 0 && newValue <= topHeader){
+//                 console.log(pos);
+//                     ++pos;
+//                     logo.style.width=`${pos}%`;
+//                     menu.style.flexDirection="column";
+//                     burger.classList.add('burger-position');
+//                     phone.classList.remove('display-phone');
+//                     header.classList.remove("header-shadow");
+                   
+//             }
+//         oldValue = newValue;
+//         });
+       
+//     }
+        
+
+        
+                      
+        
+
+   
+        // if(topSlide == window.scrollY  && nb <= 50){
+        //     ++nb;
+        // logo.style.width = nb.toString()  + "%";
+         
+        // console.log("topSlide : " + topSlide);
+        // console.log("bottom : "  + bottomHeader);
+        
+        // logo.style.width="50%";
+       
     
+           
+
+
     window.addEventListener('scroll', ()=>{
-       if(window.scrollY > stickPosition){
+        if(window.scrollY > hauteur){
+           
+            header.classList.add('hideHeader');
             logo.style.width="23%";
             menu.style.flexDirection="row";
             header.classList.add("header-shadow");
             phone.classList.add('display-phone');
             burger.classList.remove('burger-position');
-           }else {
+        }else {
+                header.classList.remove('hideHeader');
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
                 burger.classList.add('burger-position');
                 phone.classList.remove('display-phone');
                 header.classList.remove("header-shadow");
         }
+       
     });
+
+    console.log(logo.style.width);
+    
 }
 
 /**
