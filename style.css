@@ -152,13 +152,13 @@ header .flex_row span{
 .burger-position{
     position: absolute;
     margin-top: .6em;
-    top:9%;
-    right: 2%;  
+    top:8.5%;
+    right: 1.8%;  
 }
 
 #burger{
     width: 6.5vw; /*25px */
-    margin-left: 13%;
+    margin-left: 12%;
     margin-right: 4%;
     cursor: pointer;
     z-index: 999;
