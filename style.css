@@ -1,4 +1,6 @@
- 
+                                    /************************************************
+                                    *              REGLES COMMUNES                  *           
+                                    *************************************************/
  :root{
     --bg-color-black: #000;
     --bg-color-d-black:#111;
@@ -58,10 +60,13 @@ a{
     flex-flow: column wrap;
 }
 
+/* *************************************************************************************************************************************
+*                                                               ACCUEIL                                                                *
+****************************************************************************************************************************************/
 
-                                    /**************************************
-                                    *                HEADER               *
-                                     ***************************************/
+                                                /**************************************
+                                                *                HEADER               *
+                                                ***************************************/
 
  
 header{
@@ -89,6 +94,7 @@ header, .header_logo :first-child, header .flex_row a{
 .annonce-display-change{
     display: none;
 } 
+
  /* ****** */
 
  .header_logo{
@@ -147,8 +153,6 @@ header .flex_row span{
                                                     /* MENU BURGER */
 
                                                  
- 
- 
 .burger-position{
     position: absolute;
     margin-top: .6em;
@@ -397,12 +401,8 @@ hr{
     line-height: 1.4em;
 }
 
-.flex_footer{
-    align-items: flex-start;
-}
-
-footer.main_footer > div, .main_footer nav{
-   margin-bottom: 5%;
+footer > div.flex_row{
+    flex-direction: column;
 }
 
 .main_footer h4{
@@ -410,17 +410,20 @@ footer.main_footer > div, .main_footer nav{
     margin-bottom: 2%;
 }
 
-.row_footer{
-    margin-top: 1%;
-     gap: 10%;    
+ footer .flex_row{
+    gap: 3%;
 }
 
-.row_footer a{
+footer .flex_col a >i{
     font-size: 1.8rem;
-    margin-left:8%;
+}
+
+.main_footer nav{
+    margin-top: 2%;
 }
 
 .main_footer > p{
+    margin-top: 5%;
     font-size: .65em;
     text-align: center;
     color: var(--bg-color-red);
@@ -429,4 +432,93 @@ footer.main_footer > div, .main_footer nav{
 }
 
 
-                                        
+/**************************************************************************************************************************************
+*                                                                                                                                     *
+*                                                           MEDIA QUERIES                                                             *
+*                                                                                                                                     *
+***************************************************************************************************************************************/
+
+                                                    /*************************************
+                                                    *               TABLETTE             *
+                                                    **************************************/
+
+@media only screen and (min-width:576px) and (max-width:1023px){
+   
+/* *************************************************************************************************************************************
+*                                                               ACCUEIL                                                                *
+****************************************************************************************************************************************/
+
+                                                /**************************************
+                                                *                HEADER               *
+                                                ***************************************/
+    #nav_menu ul a{
+        font-size: 1.3em;
+    }
+
+    .main_content{
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .main_footer, .main_content p, #nav_menu > p{
+        font-size: 1rem;
+    }
+                                                /*********************************
+                                                *            SECTION 1            *
+                                                **********************************/
+
+    .main_content .main_logo:not(img[src*="logo-eve"]){
+        order: 1;
+    }
+
+    .main_logo{
+        margin-bottom: 0;
+    }
+    div.main_logo{
+        width: 50%;
+    }
+
+    .main_content article{
+        width: 90%;
+    }
+
+    .main_border button{
+        align-self: flex-start;
+        margin-left:5%;
+    }
+
+    .main_border_change button {
+        align-self: flex-end;
+        margin-right: 5%
+    }
+
+                                                    /*************************
+                                                    *       FOOTER           *
+                                                    **************************/
+    footer > div.flex_row{
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .main_footer h4{
+        margin-bottom: 4%;
+    }
+   
+   footer nav.flex_col{
+        text-align: left;
+    }
+
+    footer nav.flex_col, .reverse-order > div:last-child{
+        margin-top: 20%;
+    }
+
+    .reverse-order{
+        order: 1;
+    }
+
+    .reverse-order .flex_row{
+        justify-content: center;
+    }
+
+}

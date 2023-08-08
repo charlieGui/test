@@ -22,14 +22,15 @@ function lessMenu(){
             header.classList.add("header-shadow");
             phone.classList.add('display-phone');
             burger.classList.remove('burger-position');
-        }else {
+        }
+        else {
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
                 burger.classList.add('burger-position');
                 phone.classList.remove('display-phone');
                 header.classList.remove("header-shadow");
         }
-    })    
+    }) ;   
 }
 
 /**
