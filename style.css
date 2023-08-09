@@ -98,11 +98,13 @@ header, .header_logo :first-child, header .flex_row a{
  /* ****** */
 
  .header_logo{
+    display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
     padding:  1% 2%;
 }
+
 
 .display-phone{ 
     display: none;
@@ -115,7 +117,7 @@ header .flex_row span{
 .flex_row i[class*="circle-phone"] {
     line-height: .25em;
     vertical-align: middle;
-    font-size: 6.8vw;
+    font-size:6.8vw;
 }
 
  header .flex_row{
@@ -363,7 +365,7 @@ header > nav ul li{
     background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
     font: italic 1.3em Helvetica, Arial, sans-serif;
-    padding: .3em 3em;
+    padding: .4em 3em;
     font-size: .9em;
 }
 
@@ -404,6 +406,7 @@ hr{
 
 footer > div.flex_row{
     flex-direction: column;
+   
 }
 
 .main_footer h4{
@@ -457,7 +460,27 @@ footer .flex_col a >i{
     .main_content p, #nav_menu > p{
         font-size: 1.19em;
     }
+    header{
+        padding: initial;
+    }
 
+    header .flex_row{
+        gap: .6em;
+    }
+    header .flex_col{
+        flex-direction: row;
+    }
+    .burger-position{
+        position: initial;
+    }
+    #burger{
+        margin-left: 8%;
+    }
+
+    .header_logo > a{
+        width:  23%;
+    }
+   
     .main_content{
         flex-wrap: nowrap;
         flex-direction: row;

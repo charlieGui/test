@@ -15,6 +15,7 @@ function lessMenu(){
     phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top;
 
+  if(window.innerWidth < 576){
     window.addEventListener('scroll', ()=>{
         if(window.scrollY > stickPosition){
             logo.style.width="23%";
@@ -23,14 +24,16 @@ function lessMenu(){
             phone.classList.add('display-phone');
             burger.classList.remove('burger-position');
         }
-        else {
+        else{
                 logo.style.width="50%";
                 menu.style.flexDirection="column";
                 burger.classList.add('burger-position');
                 phone.classList.remove('display-phone');
                 header.classList.remove("header-shadow");
         }
-    }) ;   
+    }); 
+}
+   
 }
 
 /**
