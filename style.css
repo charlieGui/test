@@ -113,9 +113,9 @@ header .flex_row span{
 }
 
 .flex_row i[class*="circle-phone"] {
-  line-height: .25em;
-  vertical-align: middle;
-   font-size: 6.8vw;
+    line-height: .25em;
+    vertical-align: middle;
+    font-size: 6.8vw;
 }
 
  header .flex_row{
@@ -138,6 +138,8 @@ header .flex_row span{
     font-size: .65rem;
     width: 100%;
     top: 0;
+    -moz-animation: slide 15s  linear  infinite;
+    -webkit-animation: slide 15s  linear  infinite;
     animation: slide 15s  linear  infinite;
 }
 
@@ -273,6 +275,8 @@ header > nav ul li{
 #nav_menu li:hover .header_nav_sousMenu {
     max-height: 100%;
     opacity: 1;
+    -moz-transition: 1.5s;
+    -webkit-transition: 1.5s;
     transition: 1.5s;
 } 
 
@@ -347,27 +351,24 @@ header > nav ul li{
 
 .main_bloc p{
     margin: 0 5% 15% 5%;
-    font-size: .9em;
+    /* font-size: .9em; */
     line-height: 1.5em;
 }
 
 .main_bloc article{
     align-items: center;
 }
-#test{
-    width: 50%;
-    margin: 0 auto;
-}
+
 .cta_btn{
     border: 1px solid var(--bg-color-red);
     background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
-    font-size: .8em;
     padding: .7em 3.5em;
+
 }
 
 .cta_btn-change{
-    padding: .5em 1.5em .5em 2em
+    padding: .7em 1.5em .7em 2em
 }
 
 .cta_btn i{
@@ -451,8 +452,9 @@ footer .flex_col a >i{
                                                 /**************************************
                                                 *                HEADER               *
                                                 ***************************************/
-    #nav_menu ul a{
-        font-size: 1.3em;
+    #nav_menu ul a, .main_footer,
+    .main_content p, #nav_menu > p{
+        font-size: 1.19em;
     }
 
     .main_content{
@@ -460,9 +462,6 @@ footer .flex_col a >i{
         flex-direction: row;
     }
 
-    .main_footer, .main_content p, #nav_menu > p{
-        font-size: 1.3rem;
-    }
                                                 /*********************************
                                                 *            SECTION 1            *
                                                 **********************************/
@@ -517,6 +516,7 @@ footer .flex_col a >i{
     footer .flex_col a >i{
         font-size: 2.5rem;
     }    
+
     footer nav.flex_col, .reverse-order > div:last-child{
         margin-top: 20%;
     }
