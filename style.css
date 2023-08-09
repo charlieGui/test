@@ -231,7 +231,7 @@ header  > nav{
 }
 
 #nav_menu > ul{
-    margin: 50% 5%;
+    margin: 50% 5% 0;
 } 
 
 header > nav ul li{
@@ -363,11 +363,11 @@ header > nav ul li{
     background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
     font-size: .8em;
-    padding: .5em 3.1em;
+    padding: .7em 3.5em;
 }
 
 .cta_btn-change{
-    padding: .5em 1em .5em 1.5em
+    padding: .5em 1.5em .5em 2em
 }
 
 .cta_btn i{
@@ -461,12 +461,15 @@ footer .flex_col a >i{
     }
 
     .main_footer, .main_content p, #nav_menu > p{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
                                                 /*********************************
                                                 *            SECTION 1            *
                                                 **********************************/
 
+    
+    
+    
     .main_content .main_logo:not(img[src*="logo-eve"]){
         order: 1;
     }
@@ -475,13 +478,12 @@ footer .flex_col a >i{
         margin-bottom: 0;
     }
     div.main_logo{
-        width: 50%;
+        width: 60%;
     }
 
-    .main_content article{
-        width: 90%;
+    .main_logo{
+        width: 20%;
     }
-
     .main_border button{
         align-self: flex-start;
         margin-left:5%;
@@ -501,6 +503,9 @@ footer .flex_col a >i{
         text-align: center;
     }
 
+    .main_content h3{
+        font-size: 2em;
+    }
     .main_footer h4{
         margin-bottom: 4%;
     }
@@ -509,6 +514,9 @@ footer .flex_col a >i{
         text-align: left;
     }
 
+    footer .flex_col a >i{
+        font-size: 2.5rem;
+    }    
     footer nav.flex_col, .reverse-order > div:last-child{
         margin-top: 20%;
     }
