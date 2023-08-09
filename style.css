@@ -351,7 +351,7 @@ header > nav ul li{
 
 .main_bloc p{
     margin: 0 5% 15% 5%;
-    /* font-size: .9em; */
+    font-size: .9em;
     line-height: 1.5em;
 }
 
@@ -363,12 +363,12 @@ header > nav ul li{
     border: 1px solid var(--bg-color-red);
     background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
-    padding: .7em 3.5em;
+    padding: .5em 3.5em;
 
 }
 
 .cta_btn-change{
-    padding: .7em 1.5em .7em 2em
+    padding: .5em 1.5em .5em 2em
 }
 
 .cta_btn i{
