@@ -1,7 +1,7 @@
 "use strict"
 
 /**
- *onction qui gère le rétrécissement de la navigation au scroll
+ *Fonction qui gère le rétrécissement de la navigation au scroll
  */
 
 var header;
@@ -15,25 +15,24 @@ function lessMenu(){
     phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top;
 
-  if(window.innerWidth < 576){
-    window.addEventListener('scroll', ()=>{
-        if(window.scrollY > stickPosition){
-            logo.style.width="23%";
-            menu.style.flexDirection="row";
-            header.classList.add("header-shadow");
-            phone.classList.add('display-phone');
-            burger.classList.remove('burger-position');
-        }
-        else{
-                logo.style.width="50%";
-                menu.style.flexDirection="column";
-                burger.classList.add('burger-position');
-                phone.classList.remove('display-phone');
-                header.classList.remove("header-shadow");
-        }
-    }); 
-}
-   
+    if(window.innerWidth < 576){
+        window.addEventListener('scroll', ()=>{
+            if(window.scrollY > stickPosition){
+                logo.style.width="23%";
+                menu.style.flexDirection="row";
+                header.classList.add("header-shadow");
+                phone.classList.add('display-phone');
+                burger.classList.remove('burger-position');
+            }
+            else{
+                    logo.style.width="50%";
+                    menu.style.flexDirection="column";
+                    burger.classList.add('burger-position');
+                    phone.classList.remove('display-phone');
+                    header.classList.remove("header-shadow");
+            }
+        }); 
+    }   
 }
 
 /**
@@ -46,7 +45,7 @@ function sideMenu(){
     checkMenu = document.getElementById('check');
     sideBar = header.lastElementChild;
     welcome = header.firstElementChild;
-  
+
     checkMenu.addEventListener('click', ()=>{
         sideBar.classList.toggle('moveMenu');
         welcome.classList.toggle('annonce-display-change');

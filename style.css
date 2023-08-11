@@ -140,6 +140,7 @@ header .flex_row span{
 } 
 
 
+
    
                                     /*                Annonce              *
                                      ***************************************/
@@ -212,9 +213,11 @@ header .flex_row span{
 
                                                         /* NAVIGATION */
 
-header  > nav{
+
+ header > nav {
+    
     position: absolute;
-    top: 0%;
+    top: 0;
     opacity: 0;
     height: 100vh;
     background-color:  var(--bg-color-d-black);
@@ -247,7 +250,7 @@ header  > nav{
     margin: 50% 5% 0;
 } 
 
-header > nav ul li{
+header nav ul > li{
     padding-bottom: 1.5%;
     border-bottom: 1px solid var(--bg-color-red);
 } 
@@ -573,4 +576,66 @@ footer .flex_col a >i{
         justify-content: center;
     }
 
+}
+
+@media only screen and (min-width: 1024px){
+    header .flex_col{
+        flex-direction: row;
+    }
+    header{
+        padding: 0 2%;
+        box-shadow:0px 5px 10px -8px var(--bg-color-light) ;
+    }
+    .header_logo{
+        padding:  0 1%;
+    }
+    .header_logo > a{
+        width:  20%;
+    
+    }
+    
+    #burger{
+        display: none;
+    }
+    header .flex_row{
+        gap: 1em;
+        align-items: center;
+     }
+    .flex_row i[class*="circle-phone"]{
+        font-size: 4.6vw;
+    }
+
+    header .flex_row span{
+        font-size: 3.8vw;
+    }
+
+
+    #nav_menu ul{
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+    }
+    #nav_menu .header_nav_sousMenu{
+        display: none;
+    }
+
+    #nav_menu ul li{
+        padding: 0;
+    }
+    #nav_menu ul a{
+        padding: 0;
+        
+    }
+
+    #nav_menu{
+        position: initial;
+       opacity: 1;
+       height: initial;
+      
+       transition: none;
+      padding: 1% 0;
+        background-color:  var(--bg-color-black);
+       
+       
+    }   
 }
