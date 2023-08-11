@@ -39,6 +39,7 @@ body:not(h4){
 
 img{
     max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -121,12 +122,14 @@ header, .header_logo :first-child, header .flex_row a{
 
 header .flex_row span{
     font-size: 4.8vw;
+    font-style: italic;
 }
 
 .flex_row i[class*="circle-phone"] {
     line-height: .25em;
     vertical-align: middle;
     font-size:6.8vw;
+    color: var(--bg-color-red);
 }
 
  header .flex_row{
@@ -264,13 +267,16 @@ header nav ul > li{
 /* Animation chevron */
 #nav_menu li span{
     display: inline-block;
-    transform: rotate(0) translateY(0);
+    transform: rotate(0) translate(0, 0);
     transform-origin: center;
     transition: 600ms;
 }
+#nav_menu li span i{
+   vertical-align: -.10em;
+}
 
  #nav_menu li:hover span{
-    transform: rotate(-180deg) translateY(30%);
+    transform: rotate(-90deg) translate(20%, 10%);
 } 
 
 #nav_menu a:hover{
@@ -470,14 +476,20 @@ footer .flex_col a >i{
                                                 ***************************************/
     #nav_menu ul a, .main_footer,
     .main_content p, #nav_menu > p{
-        font-size: 1.19em;
+        font-size: 1em;
     }
     header{
         padding: initial;
     }
 
     .flex_row i[class*="circle-phone"]{
-        font-size: 5.6vw;
+        font-size: 4.6vw;
+        color: var(--bg-color-red);
+      
+    }
+    header .flex_row span{
+        font-size: 3.8vw;
+        font-style: italic;
     }
     header .flex_row{
         gap: .6em;
@@ -579,40 +591,57 @@ footer .flex_col a >i{
 }
 
 @media only screen and (min-width: 1024px){
+
+    #nav_menu ul a, .main_footer,
+    .main_content p, #nav_menu > p{
+        font-size: 1rem;
+    }
+
     header .flex_col{
         flex-direction: row;
+        justify-content: flex-start;
+        width: 50%;
+        gap: 3em;
+
     }
+
     header{
+        display: flex;
+        align-items: center;
         padding: 0 2%;
-        box-shadow:0px 5px 10px -8px var(--bg-color-light) ;
+        position: static;
     }
-    .header_logo{
-        padding:  0 1%;
+
+    .header_logo {
+        padding:  0;
     }
+
     .header_logo > a{
-        width:  20%;
-    
+        width:  40%;
     }
     
     #burger{
         display: none;
     }
+
     header .flex_row{
-        gap: 1em;
+        /* gap: 1em; */
         align-items: center;
      }
     .flex_row i[class*="circle-phone"]{
-        font-size: 4.6vw;
+        font-size: 1.9vw;
+        color: var(--bg-color-red);
     }
 
     header .flex_row span{
-        font-size: 3.8vw;
+        font-size: 1.8vw;
+        font-style: italic;
     }
 
 
     #nav_menu ul{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         margin: 0;
     }
     #nav_menu .header_nav_sousMenu{
@@ -621,21 +650,26 @@ footer .flex_col a >i{
 
     #nav_menu ul li{
         padding: 0;
+        border-bottom: none;
     }
+   
+
     #nav_menu ul a{
         padding: 0;
-        
+        text-transform: initial;
     }
 
     #nav_menu{
         position: initial;
-       opacity: 1;
-       height: initial;
+        opacity: 1;
+        height: initial;
       
-       transition: none;
-      padding: 1% 0;
+        padding: 1% 0;
         background-color:  var(--bg-color-black);
-       
-       
     }   
+
+    #nav_menu > P{
+        display: none;
+    }
+
 }
