@@ -590,7 +590,19 @@ footer .flex_col a >i{
 
 }
 
+                                                    /*************************************
+                                                    *               DESKTOP             *
+                                                    **************************************/
+
 @media only screen and (min-width: 1024px){
+       
+/* *************************************************************************************************************************************
+*                                                               ACCUEIL                                                                *
+****************************************************************************************************************************************/
+
+                                                /**************************************
+                                                *                HEADER               *
+                                                ***************************************/
 
     #nav_menu ul a, .main_footer,
     .main_content p, #nav_menu > p{
@@ -652,7 +664,7 @@ footer .flex_col a >i{
         padding: 0;
         border-bottom: none;
     }
-   
+  
 
     #nav_menu ul a{
         padding: 0;
@@ -663,7 +675,6 @@ footer .flex_col a >i{
         position: initial;
         opacity: 1;
         height: initial;
-      
         padding: 1% 0;
         background-color:  var(--bg-color-black);
     }   
@@ -671,5 +682,45 @@ footer .flex_col a >i{
     #nav_menu > P{
         display: none;
     }
+   .main_bloc{
+   padding: 2%;
+   }
+    .main_content{
+       padding: 2% 2% 5%;
+        flex-wrap:nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2%;
+    }
 
+    .main_content .main_logo:not(img[src*="logo-eve"]){
+        order: 1;
+    }
+
+    .main_logo{
+        margin-bottom: 0;
+        width: 15%;
+    }
+
+    .main_title{
+       font-size: 1.8rem;
+    }
+    div.main_logo{
+        width: 20%;
+    }
+
+    .main_border button{
+        margin-left:5%;
+        
+    }
+
+    .main_border button {
+        align-self: flex-end;
+        margin-right: 5%
+    }
+
+    .main_border_change button {
+        align-self: flex-start;
+        margin-right: 5%
+    }
 }
