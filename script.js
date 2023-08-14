@@ -99,8 +99,17 @@ function diaporama(){
     })
 }
 
+function activeLink(){
+    let link = document.querySelectorAll('#nav_menu a');
+    console.log(link);
+    link.forEach((el)=>{
+        el.addEventListener('click', ()=>{
+            el.classList.add('border-link');
+        });
+    })
+}
 window.addEventListener('load', ()=>{
-   
+   activeLink();
     diaporama();
     lessMenu();
     sideMenu();

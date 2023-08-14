@@ -128,7 +128,7 @@ header .flex_row span{
 .flex_row i[class*="circle-phone"] {
     line-height: .25em;
     vertical-align: middle;
-    font-size:6.8vw;
+    font-size: 6.8vw;
     color: var(--bg-color-red);
 }
 
@@ -226,6 +226,7 @@ header .flex_row span{
     background-color:  var(--bg-color-d-black);
     width: 100%;
     transition: 300ms;
+   
 }   
 
 /* Appeler en JS */
@@ -260,13 +261,15 @@ header nav ul > li{
 
                                                         /* MENU DEROULANT */
 
-#nav_menu ul{
+#nav_menu > ul{
     position: relative;
 }
 
 /* Animation chevron */
 #nav_menu li span{
     display: inline-block;
+    line-height: -1em;
+    vertical-align: -.05em;
     transform: rotate(0) translate(0, 0);
     transform-origin: center;
     transition: 600ms;
@@ -287,9 +290,8 @@ header nav ul > li{
     text-align: center;
     background-color: var(--bg-color-d-black);
     max-height: 0;
-    opacity: .2;
-    overflow: hidden;
-    z-index: 999;
+    opacity: 0;
+    /* z-index: 999; */
 }
 
 #nav_menu li:hover .header_nav_sousMenu {
@@ -311,7 +313,7 @@ header nav ul > li{
 .diapo{
     border: none;
     overflow: hidden;
-    background-color: var(--bg-color-black)
+    background-color: var(--bg-color-black);
 }
 
 .main_diapo_slide{
@@ -541,6 +543,8 @@ footer .flex_col a >i{
         font-size: 1.7em;
     }
 
+    
+
     .main_border button{
         align-self: flex-start;
         margin-left:5%;
@@ -573,7 +577,7 @@ footer .flex_col a >i{
     }
 
     footer .flex_col a >i{
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }    
 
     footer nav.flex_col, .reverse-order > div:last-child{
@@ -611,10 +615,10 @@ footer .flex_col a >i{
 
     header .flex_col{
         flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: flex-start;
-        width: 50%;
         gap: 3em;
-
+        flex: 1 1 50%;
     }
 
     header{
@@ -622,6 +626,7 @@ footer .flex_col a >i{
         align-items: center;
         padding: 0 2%;
         position: static;
+        overflow: initial;
     }
 
     .header_logo {
@@ -629,17 +634,13 @@ footer .flex_col a >i{
     }
 
     .header_logo > a{
-        width:  40%;
+        width:  30%;
     }
     
     #burger{
         display: none;
     }
 
-    header .flex_row{
-        /* gap: 1em; */
-        align-items: center;
-     }
     .flex_row i[class*="circle-phone"]{
         font-size: 1.9vw;
         color: var(--bg-color-red);
@@ -650,25 +651,59 @@ footer .flex_col a >i{
         font-style: italic;
     }
 
-
-    #nav_menu ul{
+    #nav_menu{
+        flex: 1 0 65%;
+    }
+    #nav_menu > ul{
         display: flex;
         justify-content: space-evenly;
         margin: 0;
+    
     }
-    #nav_menu .header_nav_sousMenu{
-        display: none;
+    #nav_menu li span {
+     line-height: -1em;
+     vertical-align: -.15em;
     }
-
-    #nav_menu ul li{
+   
+   header  #nav_menu li{
+        text-align: center;
+        width: 100%;
         padding: 0;
         border-bottom: none;
+        position: relative;
     }
-  
+
+
+    header nav ul.header_nav_sousMenu {
+    position: absolute;
+    max-height: 0px;
+    width: 100%;
+    opacity: initial;
+    background-color: var(--bg-color-black);
+    overflow: hidden;
+    padding: 0;
+    transition: .8s ease;
+   z-index: 999;    /** Afin de se superposer aux images en absolute **/
+    }
+
+    #nav_menu li:hover .header_nav_sousMenu {
+       max-height: 5.5em;
+       border-bottom: 4px solid var(--bg-color-red);
+       transition: .8s ease;
+    }
+   
 
     #nav_menu ul a{
-        padding: 0;
         text-transform: initial;
+        padding: 5%;
+    }
+    
+    .border-link{
+       border-top: 2px solid var(--bg-color-red);
+    }
+
+    .header_nav_sousMenu li{
+        padding: .5em 5em;
     }
 
     #nav_menu{
@@ -682,6 +717,7 @@ footer .flex_col a >i{
     #nav_menu > P{
         display: none;
     }
+
    .main_bloc{
    padding: 2% 0;
    }
@@ -698,10 +734,9 @@ footer .flex_col a >i{
     }
 
     .main_content div{
-        width: 52%;
+        width: 50%;
     }
 
-  
     .main_logo{
         margin-bottom: 0;
         width: 15%;
@@ -720,12 +755,42 @@ footer .flex_col a >i{
     }
 
     .main_border button {
-        align-self: flex-end;
+        align-self: center;
         margin-right: 5%
     }
 
     .main_border_change button {
-        align-self: flex-start;
+        align-self: center;
         margin-right: 5%
+    }
+
+    /* FOOTER */
+    .main_footer{
+        padding-top: 2%;
+    }
+    footer > div.flex_row{
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: start;
+    }
+
+   .main_footer h4{
+        margin-bottom: 4%;
+    }
+   
+   footer nav.flex_col{
+        text-align: left;
+    }
+
+    footer .flex_col a >i{
+        font-size: 1.8rem;
+    }    
+
+    footer nav.flex_col, .reverse-order > div:last-child{
+        margin-top: 20%;
+    }
+
+    .reverse-order{
+        order: 1;
     }
 }
