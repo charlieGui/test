@@ -314,8 +314,11 @@ header nav ul > li{
     border: none;
     overflow: hidden;
     background-color: var(--bg-color-black);
+    position: relative;
 }
-
+.main_diapo{
+   
+}
 .main_diapo_slide{
     flex: 1 0 100%;
     opacity: 0;
@@ -323,6 +326,7 @@ header nav ul > li{
 
 .main_diapo_slide img{
     height: 100%;
+   
 }
 
 .slide-show{
@@ -336,17 +340,45 @@ header nav ul > li{
 }
 .dot{
     cursor: pointer;
-    padding: .2em;
+    padding: .1em;
     width: 1em;
     margin: 0 2px;
-    background-color: var(--bg-color-d-black);
-    /* border-radius: 50%; */
+    background-color: var(--bg-color-d-light);
     display: inline-block;
     transition:  0.6s ease;
 }
 
 .active{
     background-color: var(--bg-color-red);
+}
+.next{
+    right: 2%;
+}
+
+.prev{
+    left: 2%;
+}
+
+.diapo > a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.6vw;
+    height: 4.6vw;
+    font-size: 3.17vw;
+    text-align: center;
+    border: 1px solid white;
+    background-color: transparent;
+    opacity: .3;
+    border-radius: 50%;
+    color: black;
+}
+
+.prev:hover, .next:hover{
+    opacity: 1;
 }
                                                 /*********************************
                                                 *            SECTION 1               *
