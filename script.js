@@ -53,73 +53,83 @@ function sideMenu(){
         });
 }
 
-    /***
-     * 
-     * Fonction qui gère l'affichage et le timing du diaporama
+    /**
+     *Fonction qui gère l'affichage et le timing du diaporama 
      */
 function diaporama(){
-    let slide, slideWidth, slider, decal, start, next, dots, count=0;
+    let slide,  slider, decal, start, next, prev, dots, slideWidth, count=0;
      
     slide = document.getElementById('main_diapo');
     slider = document.querySelectorAll('picture.main_diapo_slide');
     slideWidth = slide.getBoundingClientRect().width;
     dots = document.querySelectorAll('span.dot');
     next = document.querySelector('a.next');
+    prev = document.querySelector('a.prev');
    
-        console.log(next);
-   
-    function diapoRun(){
-    // Boucle sur les items de slider afin de retirer toutes classe slide-show afin d'avoir l'effet de transition
-        for(let i=0; i<slider.length; ++i){
-            slider[i].classList.remove('slide-show');
-            dots[i].classList.remove('active');
-        }
-       
-        count++;
-        dots[count].classList.add('active');
-        slider[count].classList.add('slide-show');
-        nextSlide(decal);
-
+    // Fonction qui fait défiler vers la droite.
+   function slideNext(){
+    count++;
+    if(count == slider.length){
+        count = 0;
     }
-        //  Calcule le décalage : largeur de l'affichage - le produit de ce dernier par l'index du slider(count);
-        //  Puis décale en fonction de la largeur calculer.
-        
-    function nextSlide(next){
-       
-        next = -slideWidth * count;
-        slide.style.transform=`translateX( ${next}px)`;
-        if(count == (slider.length - 1)){
-            count = -1;
-        }
+        nextSlide(decal, slideWidth, count, slide);
+        setClass(dots, slider);
     }
 
-    function startTimer(){
-        start = setInterval(diapoRun, 6000);
+    // Fais défiler vers la gauche
+    function slidePrev(){
+        count--;
+        if(count < 0){
+            count= slider.length -1;
+        }
+        nextSlide(decal, slideWidth, count, slide);
+        setClass(dots, slider);
+   }
+
+    // Fonction qui supprime les classes en bouclant et les rajoute
+    // selon l'index de count
+    function setClass(dt, sl){
+        for(let i=0; i<sl.length; ++i){
+            sl[i].classList.remove('slide-show');
+            dt[i].classList.remove('active');
+        }
+        dt[count].classList.add('active');
+        sl[count].classList.add('slide-show');
+       }
+
+    // Fonction qui décale les slides
+    function nextSlide(dec, slw, ct, sl){
+        dec = -slw * ct;
+        sl.style.transform=`translateX( ${dec}px)`;
+    }
+
+    // Les timers
+   function startTimer(){
+        start = setInterval(slideNext, 6000);
     }
 
     function stopTimer(){
         clearInterval(start);
     }   
-
     startTimer();
-   
-    
     slide.addEventListener('mouseover', stopTimer);
     slide.addEventListener('mouseout', startTimer);
-    
+    next.addEventListener('click', slideNext)
+    prev.addEventListener('click', slidePrev);
+
     //permet le redimensionnement de la fenetre pour le responsive
     window.addEventListener('resize', ()=>{
         slideWidth= slide.getBoundingClientRect().width;
-        diapoRun();
+        slideNext();
     })
 }
 
 /**
- * Au clic supprime la classe active si elle existe, sinon l'ajoute
+ * Fonction qui gère les l'ajout de classe des liens de menus
  */
 function activeLink(){
     let link = document.querySelectorAll('#nav_menu a');
-    console.log(link);
+
     link.forEach((el)=>{
        el.addEventListener('click', ()=>{
             link.forEach((active)=>{
