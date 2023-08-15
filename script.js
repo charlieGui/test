@@ -58,20 +58,25 @@ function sideMenu(){
      * Fonction qui gère l'affichage et le timing du diaporama
      */
 function diaporama(){
-    let slide, slideWidth, slider, decal, start, count=0;
+    let slide, slideWidth, slider, decal, start, dots, count=0;
      
     slide = document.getElementById('main_diapo');
     slider = document.querySelectorAll('picture.main_diapo_slide');
     slideWidth = slide.getBoundingClientRect().width;
-  
+    dots = document.getElementsByClassName('dot');
+
     function diapoRun(){
     // Boucle sur les items de slider afin de retirer toutes classe slide-show afin d'avoir l'effet de transition
         for(let i=0; i<slider.length; ++i){
             slider[i].classList.remove('slide-show');
+            dots[i].classList.remove('active');
         }
-
+       
         count++;
+        dots[count].classList.add('active');
+        console.log(count);
         slider[count].classList.add('slide-show');
+       
         //  Calcule le décalage : largeur de l'affichage - le produit de ce dernier par l'index du slider(count);
         //  Puis décale en fonction de la largeur calculer.
         decal = -slideWidth * count;
@@ -80,14 +85,15 @@ function diaporama(){
             count = -1;
         }
     }
-       
     function startTimer(){
         start = setInterval(diapoRun, 6000);
     }
 
     function stopTimer(){
         clearInterval(start);
-    }
+    }   
+        
+    
     startTimer();
     
     slide.addEventListener('mouseover', stopTimer);
@@ -99,15 +105,23 @@ function diaporama(){
     })
 }
 
+/**
+ * Au clic supprime la classe active si elle existe, sinon l'ajoute
+ */
 function activeLink(){
     let link = document.querySelectorAll('#nav_menu a');
     console.log(link);
     link.forEach((el)=>{
-        el.addEventListener('click', ()=>{
+       el.addEventListener('click', ()=>{
+            link.forEach((active)=>{
+                if(active.classList.contains('border-link'))
+                active.classList.remove('border-link');
+            });
             el.classList.add('border-link');
         });
     })
 }
+
 window.addEventListener('load', ()=>{
    activeLink();
     diaporama();

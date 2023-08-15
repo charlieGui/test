@@ -330,12 +330,30 @@ header nav ul > li{
     transition: 500ms ease-out;
 }  
 
+.slide-dot{
+    text-align: center;
+    margin: 1% 0;
+}
+.dot{
+    cursor: pointer;
+    padding: .2em;
+    width: 1em;
+    margin: 0 2px;
+    background-color: var(--bg-color-d-black);
+    /* border-radius: 50%; */
+    display: inline-block;
+    transition:  0.6s ease;
+}
+
+.active{
+    background-color: var(--bg-color-red);
+}
                                                 /*********************************
                                                 *            SECTION 1               *
                                                 **********************************/
 
 .main_bloc{
-   padding: 5%;
+   padding: 2%;
 }
 
 .main_content{
@@ -382,6 +400,7 @@ header nav ul > li{
 
 .cta_btn{
     border: 1px solid var(--bg-color-red);
+    border-radius: 5px;
     background-color: var(--bg-color-btn);
     color: var(--bg-color-light);
     font: italic 1.3em Helvetica, Arial, sans-serif;
@@ -389,8 +408,13 @@ header nav ul > li{
     font-size: .9em;
 }
 
-.cta_btn-change{
-    padding: .3rem 1rem .3rem 1rem;
+.cta_btn, .cta_btn i{
+    transition: .4s;
+}
+
+.cta_btn:hover{
+     border: 1px solid var(--bg-color-light);
+     color: #cac037;
 }
 
 .cta_btn i{
@@ -399,6 +423,14 @@ header nav ul > li{
     margin-left: 5%;
     color: var(--bg-color-red);
     font-size: 1.5em;
+}
+
+.cta_btn:hover  i{
+    color:var(--bg-color-light);
+}
+
+.cta_btn-change{
+    padding: .3rem 1rem .3rem 1rem;
 }
 
  .cta_btn-change i{
@@ -447,13 +479,15 @@ footer .flex_col a >i{
     margin-top: 2%;
 }
 
+.main_footer > p, .main_footer p > a{
+    color: var(--bg-color-red);
+}
+
 .main_footer > p{
     margin-top: 5%;
     font-size: .65em;
     text-align: center;
-    color: var(--bg-color-red);
     text-transform: uppercase;
-    letter-spacing: 2%;
 }
 
 
@@ -663,6 +697,7 @@ footer .flex_col a >i{
     #nav_menu li span {
      line-height: -1em;
      vertical-align: -.15em;
+    
     }
    
    header  #nav_menu li{
@@ -695,15 +730,21 @@ footer .flex_col a >i{
 
     #nav_menu ul a{
         text-transform: initial;
-        padding: 5%;
+        padding:  5% 0;
+    
     }
     
     .border-link{
-       border-top: 2px solid var(--bg-color-red);
+       border-bottom: 2px solid var(--bg-color-red);
+       color: #cac037;
     }
 
     .header_nav_sousMenu li{
         padding: .5em 5em;
+    }
+
+    #nav_menu  > ul  li:nth-child(2) a{
+     padding-bottom: .25em;
     }
 
     #nav_menu{
@@ -746,7 +787,7 @@ footer .flex_col a >i{
        font-size: 1.8rem;
     }
     div.main_logo{
-        width: 15%;
+        width: 13%;
     }
 
     .main_border button{
@@ -792,5 +833,9 @@ footer .flex_col a >i{
 
     .reverse-order{
         order: 1;
+    }
+
+    .main_footer > p{
+        margin-top: 2%;
     }
 }
