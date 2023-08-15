@@ -106,6 +106,7 @@ function diaporama(){
     
     slide.addEventListener('mouseover', stopTimer);
     slide.addEventListener('mouseout', startTimer);
+    
     //permet le redimensionnement de la fenetre pour le responsive
     window.addEventListener('resize', ()=>{
         slideWidth= slide.getBoundingClientRect().width;
