@@ -141,7 +141,51 @@ function activeLink(){
     })
 }
 
+function scrollToTop(){
+    let arrow = document.createElement('i');
+    arrow.setAttribute('class', 'fi fi-rs-angle-up');
+    let styles={
+        'position': 'fixed',
+        'right': '2.5%',
+        'display':'none',                               // application de regles .css
+        'bottom':'1.25%',
+        'font-size':'1.5em',
+        'color' : 'white',
+        'opacity':'.2',
+    }
+    
+    Object.assign(arrow.style, styles);
+    document.body.append(arrow);
+
+    window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 50){
+            arrow.style.display = "block";
+        }
+        else{
+            arrow.style.display = "none";
+        }
+    })
+
+    arrow.addEventListener('click', ()=>{
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:'smooth'
+        });
+    })
+    
+    arrow.addEventListener('mouseover', ()=>{
+        arrow.style.opacity = '.9';
+    })
+    arrow.addEventListener('mouseleave', ()=>{
+        arrow.style.opacity = '.2';
+    })
+    
+    
+
+}
 window.addEventListener('load', ()=>{
+    scrollToTop();
    activeLink();
     diaporama();
     lessMenu();
