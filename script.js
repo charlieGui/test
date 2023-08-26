@@ -21,14 +21,14 @@ function lessMenu(){
                 logo.style.width="23%";
                 menu.style.flexDirection="row";
                 header.classList.add("header-shadow");
-                phone.classList.add('display-phone');
-                burger.classList.remove('burger-position');
+                phone.classList.add('is-hide');
+                burger.classList.remove('header__burger-position');
             }
             else{
                     logo.style.width="50%";
                     menu.style.flexDirection="column";
-                    burger.classList.add('burger-position');
-                    phone.classList.remove('display-phone');
+                    burger.classList.add('header__burger-position');
+                    phone.classList.remove('is-hide');
                     header.classList.remove("header-shadow");
             }
         }); 
@@ -48,7 +48,7 @@ function sideMenu(){
 
     checkMenu.addEventListener('click', ()=>{
         sideBar.classList.toggle('moveMenu');
-        welcome.classList.toggle('annonce-display-change');
+        welcome.classList.toggle('is-hide');
         header.classList.toggle('header_main-change');
         });
 }
@@ -60,11 +60,11 @@ function diaporama(){
     let slide,  slider, decal, start, next, prev, dots, slideWidth, count=0;
      
     slide = document.getElementById('main_diapo');
-    slider = document.querySelectorAll('picture.main_diapo_slide');
+    slider = document.querySelectorAll('picture.diapo__slide');
     slideWidth = slide.getBoundingClientRect().width;
-    dots = document.querySelectorAll('span.dot');
-    next = document.querySelector('a.next');
-    prev = document.querySelector('a.prev');
+    dots = document.querySelectorAll('span.slide__dot__item');
+    next = document.querySelector('a.diapo__next');
+    prev = document.querySelector('a.diapo__prev');
    
     // Fonction qui fait défiler vers la droite.
    function slideNext(){
@@ -133,28 +133,18 @@ function activeLink(){
     link.forEach((el)=>{
        el.addEventListener('click', ()=>{
             link.forEach((active)=>{
-                if(active.classList.contains('border-link'))
-                active.classList.remove('border-link');
+                if(active.classList.contains('active-link'))
+                active.classList.remove('active-link');
             });
-            el.classList.add('border-link');
+            el.classList.add('active-link');
         });
     })
+    console.log(link);
 }
 
 function scrollToTop(){
     let arrow = document.createElement('i');
-    arrow.setAttribute('class', 'fi fi-rs-angle-up');
-    let styles={
-        'position': 'fixed',
-        'right': '2.5%',
-        'display':'none',                               // application de regles .css
-        'bottom':'1.25%',
-        'font-size':'1.5em',
-        'color' : 'white',
-        'opacity':'.2',
-    }
-    
-    Object.assign(arrow.style, styles);
+    arrow.setAttribute('class', 'fi fi-rs-angle-up backToTop');
     document.body.append(arrow);
 
     window.addEventListener('scroll', ()=>{
