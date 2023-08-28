@@ -1,0 +1,80 @@
+// Font 
+@font-face {
+    font-family: 'Sansation';
+    src: url('font/Sansation_Regular.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$color-primary :#000;
+$color-secondary : #111;
+$color-btn : #222;
+$color-light: #fafafa;
+$color-red: #CC2936;
+$color-hover: #cac037;
+
+@mixin tablet-only{
+    @media only screen and (min-width: 576px) and (max-width: 1023px){
+        @content;
+    }
+}
+@mixin desktop-only{
+    @media only screen and (min-width: 1024px){
+        @content;
+    }
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: $color-primary;
+}
+
+body:not(h4){
+    color: $color-light;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+nav {
+    ul {
+        padding-left: 0;
+    }
+} 
+
+ul {
+    li {
+        list-style-type: none;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: $color-light;
+}
+
+.flex_row{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex_col{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.flexDroite{
+    display: block;;
+}

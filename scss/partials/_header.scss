@@ -1,0 +1,319 @@
+.header{
+    width: 100%;
+    padding: 2% 0% 4%;
+    background-color: $color-primary;
+    position:sticky;
+    overflow: hidden;
+    top: 0;
+    @include tablet-only{
+        padding: initial;
+        .flex_col{
+            flex-direction: row;
+        }
+    }
+    @include desktop-only{
+        display: flex;
+        align-items: center;
+        padding: 0 2%;
+        position: static;
+        overflow: initial;
+       
+            border-bottom: 2px solid $color-red;
+        .flex_col{
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 3em;
+            flex: 1 1 50%;
+        }
+    }
+    &__annonce{
+        display: none;  //Temporaire
+        position: fixed;
+        font-size: .65rem;
+        width: 100%;
+        top: 0;
+        -moz-animation: slide 15s  linear  infinite;
+        -webkit-animation: slide 15s  linear  infinite;
+        animation: slide 15s  linear  infinite;
+        span{
+            font-style: italic;
+        }
+        @keyframes slide {
+            from{transform:translateX(-40%)}
+            to{transform: translateX(100%);}
+        }
+    }
+    &__logo{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        padding:  1% 2%;
+        h1{
+            margin: 0; 
+        }
+        @include desktop-only{
+            padding: 0;
+        }
+    }
+    &__logo > a{
+        width:50%;
+        margin-top: 1%;
+        @include tablet-only{
+            width:23%;
+        }
+        @include desktop-only{
+            width:  30%;
+        }
+    }
+    &__nav{
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        height: 100vh;
+        background-color: $color-primary;
+        width: 100%;
+        transition: .3s;
+        @include desktop-only{
+            flex: 1 0 65%;
+        }
+         &-item{
+                padding-bottom: 1.5%;
+                border-bottom: 1px solid $color-red;
+            }
+    }
+    .flex_row{
+        gap: .4em;
+        align-items: center;
+        @include tablet-only{
+            gap: .6em;
+        }
+        i{
+            line-height: .25em;
+            vertical-align: middle;
+            font-size: 6.8vw;
+            color: $color-red;
+            @include tablet-only{
+                font-size: 4.6vw;
+            }
+            @include desktop-only{
+                font-size: 1.9vw;
+            }
+        }
+        span{
+            font-size: 4.8vw;
+            font-style: italic;
+            @include tablet-only{
+                font-size: 3.8vw;
+            }
+            @include desktop-only{
+                font-size: 1.8vw;
+            }
+        }
+    }
+}
+
+.header, .header__logo :first-child, .header .flex_row a{
+    z-index: 800;
+}
+
+/* Classe appeler en JS */
+.header-shadow{
+    box-shadow:0px 5px 10px -8px $color-light ;
+    padding: initial;
+}
+
+.header_main-change{
+    overflow: initial;
+}
+
+.is-hide{
+    display: none;
+} 
+
+.moveMenu{
+    opacity: 1;
+    z-index: 800;
+}
+
+
+.backToTop{
+    position:fixed;
+        right:2.5%;
+        display:none;                               
+        bottom:1.25%;
+        font-size :1.5em;
+        color :$color-light;
+        opacity: .2;
+}
+ /* ****** */
+
+
+// MENU BURGER
+.header__burger{
+    width: 6.5%;
+    margin-left: 12.5%;
+    margin-right: 4%;
+    z-index: 999;
+    @include tablet-only{
+        width: 6%;
+        margin-left: 8%;
+    }
+    @include desktop-only{
+        display: none;
+    }
+    &-position{
+        position: absolute;
+        // margin-top: .6em;
+        top:13.3%;
+        right: 1.8%;
+        @include tablet-only{
+            margin-top: 0;
+            position: initial;
+        }
+    }
+    span{
+        display: block;
+        transform: rotate(0);
+        transition: .3s;
+        background-color: $color-light;
+        padding: .05em;
+        border-radius: 2px;
+    }
+    &__check:checked + label #span2, #check{
+        display: none;
+    } 
+    &__check:checked + label{
+        #span1{
+            transform: rotate(-45deg);
+        }
+        #span3{
+            transform: rotate(45deg);
+        }
+    }
+} 
+
+#span2{
+    margin: 15% 0%;
+}
+
+// NAVIGATION
+.header__nav{
+    @include desktop-only{
+        position: initial;
+        opacity: 1;
+        height: initial;
+        padding: 1% 0;
+        background-color: $color-primary;
+        .active-link{
+            transform: scale(1.5) translateY(-8%);
+            font-style: italic;
+            color: $color-hover;
+         }
+    }
+    &-bottom{
+        @include desktop-only{
+            padding-bottom: .25em;
+        }
+    }
+    &-list {
+        margin: 50% 5% 0;
+        position: relative;
+        @include desktop-only{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0;
+        }
+        a  {
+            display: block;
+            padding: 10% 0 1%;
+            text-transform: uppercase;
+            @include tablet-only{
+                font-size: 1em;
+            }
+            @include desktop-only{
+                text-transform: initial;
+                padding: 10% 0 1%;
+            }
+        }
+    }
+    &__sousMenu{
+        text-align: center;
+        background-color: $color-primary;
+        max-height: 0;
+        overflow: hidden;
+        transition: .2s;
+        & li{
+            border-bottom: none;
+        }
+        & a{
+            padding: 5% 0;
+            @include desktop-only{
+                padding: 5% 0;}
+        }
+        @include desktop-only{
+            position: absolute;
+            max-height: 0px;
+            width: 100%;
+            opacity: initial;
+            background-color: $color-primary;
+            overflow: hidden;
+            padding: 0;
+            z-index: 999;   
+        }
+    }
+    &-item{
+        span{
+            display: inline-block;
+            vertical-align: -.2em;
+            transform: rotate(0) translate(0, 0);
+            transform-origin: center;
+            transition: .3s;
+            @include desktop-only{
+                vertical-align: -.35em;
+            }
+            i{
+                vertical-align: .1em;
+            }
+        }
+        &:hover{
+            span{
+                transform: rotate(-90deg) translate(20%, 10%);
+            }
+            .header__nav__sousMenu {
+                max-height: 500px;
+                transition: .7s  ;
+                @include desktop-only{
+                    padding-top: .5em;
+                    max-height: 5.5em;
+                    border-bottom: 4px solid $color-red;
+                    transition: .3s;
+                }
+            }
+        }
+        @include desktop-only{
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            border-bottom: none;
+            position: relative;
+        }
+    }
+    a:hover{
+        color: $color-hover;
+    }
+    & > p{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font: bold italic .9em Helvetica, Arial, sans-serif;
+        @include tablet-only{
+            font-size: 1em;
+        }
+        @include desktop-only{
+            display: none;
+        }
+    }
+}
