@@ -225,7 +225,7 @@ a {
 
 /* ****** */
 .header__burger {
-  width: 6.5%;
+  width: 6.5vw;
   margin-left: 12%;
   margin-right: 4%;
   z-index: 999;
