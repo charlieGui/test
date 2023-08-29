@@ -243,7 +243,7 @@ a {
 }
 .header__burger-position {
   position: absolute;
-  top: 13.3%;
+  top: 13.5%;
   right: 1.8%;
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
