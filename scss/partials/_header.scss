@@ -1,3 +1,33 @@
+// Classes JS
+.header-shadow{
+    box-shadow:0px 5px 10px -8px $color-light ;
+    padding: initial;
+}
+
+.header_main-change{
+    overflow: initial;
+}
+
+.is-hide{
+    display: none;
+} 
+
+.moveMenu{
+    opacity: 1;
+    z-index: 800;
+}
+
+.backToTop{
+    position:fixed;
+        right:2.5%;
+        display:none;                               
+        bottom:1.25%;
+        font-size :1.5em;
+        color :$color-light;
+        opacity: .2;
+}
+
+// HEADER
 .header{
     width: 100%;
     padding: 2% 0% 4%;
@@ -37,7 +67,6 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        // padding:  1% 2%;
         h1{
             margin: 0; 
         }
@@ -47,7 +76,6 @@
         }
         @include desktop-only{
             flex-flow: row wrap;
-            padding: 0;
         }
     }
     &__logo > a{
@@ -57,7 +85,7 @@
             width:23%;
         }
         @include desktop-only{
-            width:  30%;
+            width:  35%;
         }
     }
     &__nav{
@@ -111,63 +139,29 @@
     z-index: 800;
 }
 
-/* Classe appeler en JS */
-.header-shadow{
-    box-shadow:0px 5px 10px -8px $color-light ;
-    padding: initial;
-}
-
-.header_main-change{
-    overflow: initial;
-}
-
-.is-hide{
-    display: none;
-} 
-
-.moveMenu{
-    opacity: 1;
-    z-index: 800;
-}
-
-
-.backToTop{
-    position:fixed;
-        right:2.5%;
-        display:none;                               
-        bottom:1.25%;
-        font-size :1.5em;
-        color :$color-light;
-        opacity: .2;
-}
- /* ****** */
 
 
 // MENU BURGER
 .header__burger{
-    width: 6.5%;
-    height: 6.5%;
+    width: 5.5%;
+    height: 5.5%;
     margin-left: 12%;
     margin-right: 4%;
     position: relative;
     z-index: 999;
     transition: transform .3s;
-   
     @include tablet-only{
-        width: 6%;
-        margin-left: 8%;
+      transform: translateX(0%);
     }
     @include desktop-only{
         display: none;
     }
     &-position{
         position: absolute;
-        top: 12.5%;
+        top: 13%;
         right: 0%;
         @include tablet-only{
-            margin-top: 0;
             position: initial;
-            width: 6%;
         }
     }
     span{
@@ -180,7 +174,6 @@
         height: .15em;
         transform: translateX(-50%) translateY(-50%);
         transition: background .3s, transform .3s;
-        
          
         &::before, &::after{
             content: "";
@@ -194,6 +187,7 @@
             background-color: $color-light;
             transform-origin: 50% 50%;
         }
+
         &::after{
             transform: translateY(6px);
         }
@@ -201,7 +195,7 @@
     
     &.burger{
         transform: rotate(180deg);
-        transition: .3s ;
+        transition: .2s ;
         span{
         background-color: transparent;
 
@@ -256,7 +250,7 @@
             }
             @include desktop-only{
                 text-transform: initial;
-                padding: 10% 0 1%;
+                padding: 8% 0 3%;
             }
         }
     }

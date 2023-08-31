@@ -51,6 +51,34 @@ a {
   flex-flow: column wrap;
 }
 
+.header-shadow {
+  box-shadow: 0px 5px 10px -8px #fafafa;
+  padding: initial;
+}
+
+.header_main-change {
+  overflow: initial;
+}
+
+.is-hide {
+  display: none;
+}
+
+.moveMenu {
+  opacity: 1;
+  z-index: 800;
+}
+
+.backToTop {
+  position: fixed;
+  right: 2.5%;
+  display: none;
+  bottom: 1.25%;
+  font-size: 1.5em;
+  color: #fafafa;
+  opacity: 0.2;
+}
+
 .header {
   width: 100%;
   padding: 2% 0% 4%;
@@ -112,7 +140,6 @@ a {
 @media only screen and (min-width: 1024px) {
   .header__logo {
     flex-flow: row wrap;
-    padding: 0;
   }
 }
 .header__logo > a {
@@ -126,7 +153,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   .header__logo > a {
-    width: 30%;
+    width: 35%;
   }
 }
 .header__nav {
@@ -191,39 +218,9 @@ a {
   z-index: 800;
 }
 
-/* Classe appeler en JS */
-.header-shadow {
-  box-shadow: 0px 5px 10px -8px #fafafa;
-  padding: initial;
-}
-
-.header_main-change {
-  overflow: initial;
-}
-
-.is-hide {
-  display: none;
-}
-
-.moveMenu {
-  opacity: 1;
-  z-index: 800;
-}
-
-.backToTop {
-  position: fixed;
-  right: 2.5%;
-  display: none;
-  bottom: 1.25%;
-  font-size: 1.5em;
-  color: #fafafa;
-  opacity: 0.2;
-}
-
-/* ****** */
 .header__burger {
-  width: 6.5%;
-  height: 6.5%;
+  width: 5.5%;
+  height: 5.5%;
   margin-left: 12%;
   margin-right: 4%;
   position: relative;
@@ -232,8 +229,7 @@ a {
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
   .header__burger {
-    width: 6%;
-    margin-left: 8%;
+    transform: translateX(0%);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -243,14 +239,12 @@ a {
 }
 .header__burger-position {
   position: absolute;
-  top: 12.5%;
+  top: 13%;
   right: 0%;
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
   .header__burger-position {
-    margin-top: 0;
     position: initial;
-    width: 6%;
   }
 }
 .header__burger span {
@@ -281,7 +275,7 @@ a {
 }
 .header__burger.burger {
   transform: rotate(180deg);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .header__burger.burger span {
   background-color: transparent;
@@ -339,7 +333,7 @@ a {
 @media only screen and (min-width: 1024px) {
   .header__nav-list a {
     text-transform: initial;
-    padding: 10% 0 1%;
+    padding: 8% 0 3%;
   }
 }
 .header__nav__sousMenu {
