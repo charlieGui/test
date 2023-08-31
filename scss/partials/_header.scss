@@ -1,31 +1,5 @@
 // Classes JS
-.header-shadow{
-    box-shadow:0px 5px 10px -8px $color-light ;
-    padding: initial;
-}
 
-.header_main-change{
-    overflow: initial;
-}
-
-.is-hide{
-    display: none;
-} 
-
-.moveMenu{
-    opacity: 1;
-    z-index: 800;
-}
-
-.backToTop{
-    position:fixed;
-        right:2.5%;
-        display:none;                               
-        bottom:1.25%;
-        font-size :1.5em;
-        color :$color-light;
-        opacity: .2;
-}
 
 // HEADER
 .header{
@@ -66,7 +40,6 @@
     &__logo{
         justify-content: space-between;
         align-items: center;
-        position: relative;
         h1{
             margin: 0; 
         }
@@ -139,7 +112,33 @@
     z-index: 800;
 }
 
+.header-shadow{
+    box-shadow:0px 5px 10px -8px $color-light ;
+    padding: initial;
+}
 
+.header_main-change{
+    overflow: initial;   
+}
+
+.is-hide{
+    display: none;
+} 
+
+.moveMenu{
+    opacity: 1;
+    z-index: 800;
+}
+
+.backToTop{
+        position:fixed;
+        right:2.5%;
+        display:none;                               
+        bottom:1.25%;
+        font-size :1.5em;
+        color :$color-light;
+        opacity: .2;
+}
 
 // MENU BURGER
 .header__burger{
@@ -152,13 +151,14 @@
     transition: transform .3s;
     @include tablet-only{
       transform: translateX(0%);
+      width: 4.5%;
     }
     @include desktop-only{
         display: none;
     }
     &-position{
         position: absolute;
-        top: 13%;
+        top: 15.4%;
         right: 0%;
         @include tablet-only{
             position: initial;
