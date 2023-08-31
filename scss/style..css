@@ -445,6 +445,7 @@ a {
   border: 1px solid #fafafa;
   border-radius: 50%;
   background-color: #000;
+  padding-bottom: 0.5%;
   opacity: 0.1;
   transition: 0.6s;
 }
@@ -458,6 +459,7 @@ a {
   .diapo > a {
     width: 2em;
     height: 2em;
+    padding-bottom: 0.1%;
   }
 }
 .diapo__next {
