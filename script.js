@@ -35,22 +35,27 @@ function lessMenu(){
     }   
 }
 
+
 /**
  * Fonction qui gère l'ouverture du menu Mobile au clic
  */
 
 function sideMenu(){
-    let sideBar,checkMenu, welcome;
+    let sideBar, welcome, checkBurger;
     
-    checkMenu = document.getElementById('check');
+    
+    checkBurger = document.querySelector('.header__burger');
     sideBar = header.lastElementChild;
     welcome = header.firstElementChild;
-
-    checkMenu.addEventListener('click', ()=>{
+    console.log(checkBurger);
+    checkBurger.addEventListener('click', ()=>{
+        checkBurger.classList.toggle('burger');
+        // checkBurger.classList.toggle('active');
         sideBar.classList.toggle('moveMenu');
         welcome.classList.toggle('is-hide');
         header.classList.toggle('header_main-change');
         });
+
 }
 
     /**

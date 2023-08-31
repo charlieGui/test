@@ -7,25 +7,16 @@
     top: 0;
     @include tablet-only{
         padding: initial;
-        .flex_col{
-            flex-direction: row;
-        }
     }
     @include desktop-only{
         display: flex;
+        flex-flow: row nowrap;
         align-items: center;
         padding: 0 2%;
         position: static;
         overflow: initial;
-       
-            border-bottom: 2px solid $color-red;
-        .flex_col{
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            gap: 3em;
-            flex: 1 1 50%;
-        }
+        border-bottom: 2px solid $color-red;
+        gap: 3em;    
     }
     &__annonce{
         display: none;  //Temporaire
@@ -33,8 +24,6 @@
         font-size: .65rem;
         width: 100%;
         top: 0;
-        -moz-animation: slide 15s  linear  infinite;
-        -webkit-animation: slide 15s  linear  infinite;
         animation: slide 15s  linear  infinite;
         span{
             font-style: italic;
@@ -45,15 +34,19 @@
         }
     }
     &__logo{
-        display: flex;
-        position: relative;
-        align-items: center;
         justify-content: space-between;
-        padding:  1% 2%;
+        align-items: center;
+        position: relative;
+        // padding:  1% 2%;
         h1{
             margin: 0; 
         }
+        @include tablet-only{
+            padding: initial;
+            flex-flow: row wrap;
+        }
         @include desktop-only{
+            flex-flow: row wrap;
             padding: 0;
         }
     }
@@ -84,8 +77,8 @@
             }
     }
     .flex_row{
-        gap: .4em;
         align-items: center;
+        gap: .4em;
         @include tablet-only{
             gap: .6em;
         }
@@ -153,9 +146,13 @@
 // MENU BURGER
 .header__burger{
     width: 6.5%;
-    margin-left: 12.5%;
+    height: 6.5%;
+    margin-left: 12%;
     margin-right: 4%;
+    position: relative;
     z-index: 999;
+    transition: transform .3s;
+   
     @include tablet-only{
         width: 6%;
         margin-left: 8%;
@@ -165,38 +162,63 @@
     }
     &-position{
         position: absolute;
-        // margin-top: .6em;
-        top:13.3%;
-        right: 1.8%;
+        top: 12.5%;
+        right: 0%;
         @include tablet-only{
             margin-top: 0;
             position: initial;
+            width: 6%;
         }
     }
     span{
+        position: absolute;
         display: block;
-        transform: rotate(0);
-        transition: .3s;
+        top: 50%;
+        left: 50%;
         background-color: $color-light;
-        padding: .05em;
-        border-radius: 2px;
-    }
-    &__check:checked + label #span2, #check{
-        display: none;
-    } 
-    &__check:checked + label{
-        #span1{
-            transform: rotate(-45deg);
+        width: 100%;
+        height: .15em;
+        transform: translateX(-50%) translateY(-50%);
+        transition: background .3s, transform .3s;
+        
+         
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            transform: translateY(-6px);
+            display: block;
+            width: 100%;
+            height: .15em;
+            background-color: $color-light;
+            transform-origin: 50% 50%;
         }
-        #span3{
-            transform: rotate(45deg);
+        &::after{
+            transform: translateY(6px);
+        }
+    }
+    
+    &.burger{
+        transform: rotate(180deg);
+        transition: .3s ;
+        span{
+        background-color: transparent;
+
+        }
+        span::before, span::after{
+            background-color: $color-red;
+        }
+        span::before{
+            transform: rotate(45deg) translateY(0);
+        }
+        span::after{
+            transform: rotate(-45deg) translateY(0);
         }
     }
 } 
 
-#span2{
-    margin: 15% 0%;
-}
+
 
 // NAVIGATION
 .header__nav{

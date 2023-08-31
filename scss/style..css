@@ -51,10 +51,6 @@ a {
   flex-flow: column wrap;
 }
 
-.flexDroite {
-  display: block;
-}
-
 .header {
   width: 100%;
   padding: 2% 0% 4%;
@@ -67,25 +63,17 @@ a {
   .header {
     padding: initial;
   }
-  .header .flex_col {
-    flex-direction: row;
-  }
 }
 @media only screen and (min-width: 1024px) {
   .header {
     display: flex;
+    flex-flow: row nowrap;
     align-items: center;
     padding: 0 2%;
     position: static;
     overflow: initial;
     border-bottom: 2px solid #CC2936;
-  }
-  .header .flex_col {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
     gap: 3em;
-    flex: 1 1 50%;
   }
 }
 .header__annonce {
@@ -94,8 +82,6 @@ a {
   font-size: 0.65rem;
   width: 100%;
   top: 0;
-  -moz-animation: slide 15s linear infinite;
-  -webkit-animation: slide 15s linear infinite;
   animation: slide 15s linear infinite;
 }
 .header__annonce span {
@@ -110,17 +96,22 @@ a {
   }
 }
 .header__logo {
-  display: flex;
-  position: relative;
-  align-items: center;
   justify-content: space-between;
-  padding: 1% 2%;
+  align-items: center;
+  position: relative;
 }
 .header__logo h1 {
   margin: 0;
 }
+@media only screen and (min-width: 576px) and (max-width: 1023px) {
+  .header__logo {
+    padding: initial;
+    flex-flow: row wrap;
+  }
+}
 @media only screen and (min-width: 1024px) {
   .header__logo {
+    flex-flow: row wrap;
     padding: 0;
   }
 }
@@ -157,8 +148,8 @@ a {
   border-bottom: 1px solid #CC2936;
 }
 .header .flex_row {
-  gap: 0.4em;
   align-items: center;
+  gap: 0.4em;
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
   .header .flex_row {
@@ -232,9 +223,12 @@ a {
 /* ****** */
 .header__burger {
   width: 6.5%;
-  margin-left: 12.5%;
+  height: 6.5%;
+  margin-left: 12%;
   margin-right: 4%;
+  position: relative;
   z-index: 999;
+  transition: transform 0.3s;
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
   .header__burger {
@@ -249,35 +243,57 @@ a {
 }
 .header__burger-position {
   position: absolute;
-  top: 13.3%;
-  right: 1.8%;
+  top: 12.5%;
+  right: 0%;
 }
 @media only screen and (min-width: 576px) and (max-width: 1023px) {
   .header__burger-position {
     margin-top: 0;
     position: initial;
+    width: 6%;
   }
 }
 .header__burger span {
+  position: absolute;
   display: block;
-  transform: rotate(0);
-  transition: 0.3s;
+  top: 50%;
+  left: 50%;
   background-color: #fafafa;
-  padding: 0.05em;
-  border-radius: 2px;
+  width: 100%;
+  height: 0.15em;
+  transform: translateX(-50%) translateY(-50%);
+  transition: background 0.3s, transform 0.3s;
 }
-.header__burger__check:checked + label #span2, .header__burger #check {
-  display: none;
+.header__burger span::before, .header__burger span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-6px);
+  display: block;
+  width: 100%;
+  height: 0.15em;
+  background-color: #fafafa;
+  transform-origin: 50% 50%;
 }
-.header__burger__check:checked + label #span1 {
-  transform: rotate(-45deg);
+.header__burger span::after {
+  transform: translateY(6px);
 }
-.header__burger__check:checked + label #span3 {
-  transform: rotate(45deg);
+.header__burger.burger {
+  transform: rotate(180deg);
+  transition: 0.3s;
 }
-
-#span2 {
-  margin: 15% 0%;
+.header__burger.burger span {
+  background-color: transparent;
+}
+.header__burger.burger span::before, .header__burger.burger span::after {
+  background-color: #CC2936;
+}
+.header__burger.burger span::before {
+  transform: rotate(45deg) translateY(0);
+}
+.header__burger.burger span::after {
+  transform: rotate(-45deg) translateY(0);
 }
 
 @media only screen and (min-width: 1024px) {

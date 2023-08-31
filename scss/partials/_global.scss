@@ -24,6 +24,13 @@ $color-hover: #cac037;
     }
 }
 
+// @mixin flex-box($display: null, $flow: null, $justify: null, $align: null){
+//     display: $display;
+//     flex-flow:  $flow;
+//     justify-content: $justify;
+//     align-items: $align;
+//     }
+
 .wrapper{
     max-width: 1280px;
     margin: 0 auto;
@@ -73,8 +80,4 @@ a{
 .flex_col{
     display: flex;
     flex-flow: column wrap;
-}
-
-.flexDroite{
-    display: block;;
 }
