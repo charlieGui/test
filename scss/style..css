@@ -86,25 +86,6 @@ a {
     gap: 3em;
   }
 }
-.header__annonce {
-  display: none;
-  position: fixed;
-  font-size: 0.65rem;
-  width: 100%;
-  top: 0;
-  animation: slide 15s linear infinite;
-}
-.header__annonce span {
-  font-style: italic;
-}
-@keyframes slide {
-  from {
-    transform: translateX(-40%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
 .header__logo {
   justify-content: space-between;
   align-items: center;
@@ -207,7 +188,7 @@ a {
   display: none;
 }
 
-.moveMenu {
+.showMenu {
   opacity: 1;
   z-index: 800;
 }

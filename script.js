@@ -1,35 +1,35 @@
-"use strict"
+'use strict';
 
 /**
- *Fonction qui gère le rétrécissement de la navigation au scroll
+ *Fonction qui ajoute des styles afin d'adapter le menuMobile au scroll
  */
 
 var header;
-function lessMenu(){
-   let menu, logo, burger, phone, stickPosition;
+function headerChange(){
+    let logoBox, logo, burger, phone, stickPosition;
 
     header = document.getElementById('header');
-    menu = header.firstElementChild.nextElementSibling;
-    logo = menu.firstElementChild;
-    burger = menu.lastElementChild;
+    logoBox = header.firstElementChild;
+    logo = logoBox.firstElementChild;
+    burger = logoBox.lastElementChild;
     phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top;
 
     if(window.innerWidth < 576){
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
-                logo.style.width="23%";
-                menu.style.flexDirection="row";
-                header.classList.add("header-shadow");
+                logo.style.width='23%';
+                logoBox.style.flexDirection='row';
+                header.classList.add('header-shadow');
                 phone.classList.add('is-hide');
                 burger.classList.remove('header__burger-position');
             }
             else{
-                    logo.style.width="50%";
-                    menu.style.flexDirection="column";
-                    burger.classList.add('header__burger-position');
-                    phone.classList.remove('is-hide');
-                    header.classList.remove("header-shadow");
+                logo.style.width='50%';
+                logoBox.style.flexDirection='column';
+                burger.classList.add('header__burger-position');
+                phone.classList.remove('is-hide');
+                header.classList.remove('header-shadow');
             }
         }); 
     }   
@@ -40,28 +40,22 @@ function lessMenu(){
  * Fonction qui gère l'ouverture du menu Mobile au clic
  */
 
-function sideMenu(){
-    let sideBar, welcome, checkBurger;
-    
+function displayMenu(){
+    let navMobile, checkBurger;
     
     checkBurger = document.querySelector('.header__burger');
-    sideBar = document.querySelector('.header__nav');
-    welcome = header.firstElementChild;
-    console.log(checkBurger);
+    navMobile = document.querySelector('.header__nav');
     checkBurger.addEventListener('click', ()=>{
         checkBurger.classList.toggle('burger');
-        // checkBurger.classList.toggle('active');
-        sideBar.classList.toggle('moveMenu');
-        welcome.classList.toggle('is-hide');
+        navMobile.classList.toggle('showMenu');
         header.classList.toggle('header_main-change');
-        });
-console.log(sideBar);
+    });
 }
 
-    /**
-     *Fonction qui gère l'affichage et le timing du diaporama 
-     */
-function diaporama(){
+/**
+*Fonction qui gère l'affichage et le timing du diaporama 
+*/
+function slideShow(){
     let slide,  slider, decal, start, next, prev, dots, slideWidth, count=0;
      
     slide = document.getElementById('main_diapo');
@@ -71,11 +65,11 @@ function diaporama(){
     next = document.querySelector('a.diapo__next');
     prev = document.querySelector('a.diapo__prev');
     // Fonction qui fait défiler vers la droite.
-   function slideNext(){
-    count++;
-    if(count == slider.length){
-        count = 0;
-    }
+    function slideNext(){
+        count++;
+        if(count == slider.length){
+            count = 0;
+        }
         nextSlide(decal, slideWidth, count, slide);
         setClass(dots, slider);
     }
@@ -88,7 +82,7 @@ function diaporama(){
         }
         nextSlide(decal, slideWidth, count, slide);
         setClass(dots, slider);
-   }
+    }
 
     // Fonction qui supprime les classes en bouclant et les rajoute
     // selon l'index de count
@@ -99,7 +93,7 @@ function diaporama(){
         }
         dt[count].classList.add('active');
         sl[count].classList.add('slide-show');
-       }
+    }
 
     // Fonction qui décale les slides
     function nextSlide(dec, slw, ct, sl){
@@ -108,7 +102,7 @@ function diaporama(){
     }
 
     // Les timers
-   function startTimer(){
+    function startTimer(){
         start = setInterval(slideNext, 6000);
     }
 
@@ -118,14 +112,14 @@ function diaporama(){
     startTimer();
     slide.addEventListener('mouseover', stopTimer);
     slide.addEventListener('mouseout', startTimer);
-    next.addEventListener('click', slideNext)
+    next.addEventListener('click', slideNext);
     prev.addEventListener('click', slidePrev);
 
     //permet le redimensionnement de la fenetre pour le responsive
     window.addEventListener('resize', ()=>{
-        slideWidth= slide.getBoundingClientRect().width;
+        slideWidth = slide.getBoundingClientRect().width;
         slideNext();
-    })
+    });
 }
 
 /**
@@ -135,15 +129,14 @@ function activeLink(){
     let link = document.querySelectorAll('#nav_menu a');
 
     link.forEach((el)=>{
-       el.addEventListener('click', ()=>{
+        el.addEventListener('click', ()=>{
             link.forEach((active)=>{
                 if(active.classList.contains('active-link'))
-                active.classList.remove('active-link');
+                    active.classList.remove('active-link');
             });
             el.classList.add('active-link');
         });
-    })
-    console.log(link);
+    });
 }
 
 function scrollToTop(){
@@ -153,12 +146,12 @@ function scrollToTop(){
 
     window.addEventListener('scroll', ()=>{
         if(window.scrollY > 50){
-            arrow.style.display = "block";
+            arrow.style.display = 'block';
         }
         else{
-            arrow.style.display = "none";
+            arrow.style.display = 'none';
         }
-    })
+    });
 
     arrow.addEventListener('click', ()=>{
         window.scrollTo({
@@ -166,22 +159,20 @@ function scrollToTop(){
             left:0,
             behavior:'smooth'
         });
-    })
+    });
     
     arrow.addEventListener('mouseover', ()=>{
         arrow.style.opacity = '.9';
-    })
+    });
     arrow.addEventListener('mouseleave', ()=>{
         arrow.style.opacity = '.2';
-    })
-    
-    
-
+    });
 }
+
 window.addEventListener('load', ()=>{
     scrollToTop();
-   activeLink();
-    diaporama();
-    lessMenu();
-    sideMenu();
+    activeLink();
+    slideShow();
+    headerChange();
+    displayMenu();
 });
