@@ -24,12 +24,12 @@
         transition: .6s;
         @include tablet-only{
             width: 1.5em;
-            height: 1.5em;
+            height: 1.5em; 
+            padding-bottom: .1%;
         }
         @include desktop-only{
             width: 2em;
             height: 2em;
-            padding-bottom: .1%;
         }
     }
     &__next{
@@ -80,7 +80,6 @@
     padding: 2% 0;
     p{
         margin: 0 5% 15% 5%;
-        // font-size: .9em;
         line-height: 1.5em;
     }
     article{
@@ -98,18 +97,14 @@
      margin-bottom: 3%;
      background-color: $color-secondary;
      border-radius: 20px;
-    font-size: .9em;
+    font-size: 1rem;
     
      @include tablet-only{
        flex-flow: row nowrap;
-        p {font-size: 1em;}
         &--change-width{width: 75%;}
     }
     @include desktop-only{
-        font-size: 1rem;
         padding: 2% 2% 5%;
-        flex-wrap:nowrap;
-        flex-direction: row;
         justify-content: space-around;
         margin-bottom: 2%;
         &--change-width{width: 50%;}
@@ -124,9 +119,7 @@
             &--change{width: 20%; }
         } 
         @include desktop-only{
-            margin-bottom: 0;
             width: 15%;
-            &:not(img[src*="logo-eve"]) {order: 1;}
             &--change{width: 13%; }
         }
      }
@@ -135,9 +128,6 @@
         font-style: italic;
         font-size:1.3em;
         @include tablet-only{
-            font-size: 1.7em;
-        }
-        @include desktop-only{
             font-size: 1.7em;
         }
     }
@@ -166,6 +156,9 @@
             align-self: flex-start;
             margin-left:5%;
             &--right{align-self: flex-end; margin-right: 5%;}
+        }
+        @include desktop-only{
+            align-self: center;
         }
         &:hover{
             border: 1px solid $color-light;

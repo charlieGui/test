@@ -23,18 +23,12 @@
         .flex_row{gap: 3%;}
     }
     @include desktop-only{
-        font-size: 1rem;
-        &--space-between{margin-bottom: 20%;}
-        &--reverse{order: 1;}
-        .flex_row{gap: 3%;}
+       &__icon--center{justify-content: flex-start;}
     }
     &-title{
         color: $color-red;
         margin-bottom: 2%;
         @include tablet-only{
-            margin-bottom: 4%;
-        }
-        @include desktop-only{
             margin-bottom: 4%;
         }
     }
@@ -65,7 +59,6 @@
             text-align: center;
         }
         @include desktop-only{
-            flex-direction: row;
             justify-content: space-around;
             text-align: start;
         }

@@ -69,7 +69,7 @@ a {
   overflow: hidden;
   top: 0;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header {
     padding: initial;
   }
@@ -112,14 +112,9 @@ a {
 .header__logo h1 {
   margin: 0;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__logo {
     padding: initial;
-    flex-flow: row wrap;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .header__logo {
     flex-flow: row wrap;
   }
 }
@@ -127,7 +122,7 @@ a {
   width: 50%;
   margin-top: 1%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__logo > a {
     width: 23%;
   }
@@ -159,7 +154,7 @@ a {
   align-items: center;
   gap: 0.4em;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header .flex_row {
     gap: 0.6em;
   }
@@ -170,7 +165,7 @@ a {
   font-size: 6.8vw;
   color: #CC2936;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header .flex_row i {
     font-size: 4.6vw;
   }
@@ -184,7 +179,7 @@ a {
   font-size: 4.8vw;
   font-style: italic;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header .flex_row span {
     font-size: 3.8vw;
   }
@@ -226,7 +221,7 @@ a {
   z-index: 999;
   transition: transform 0.3s;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__burger {
     transform: translateX(0%);
     width: 4.5%;
@@ -242,7 +237,7 @@ a {
   top: 15.4%;
   right: 0%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__burger-position {
     position: initial;
   }
@@ -303,11 +298,6 @@ a {
     color: #cac037;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .header__nav-bottom {
-    padding-bottom: 0.25em;
-  }
-}
 .header__nav-list {
   margin: 50% 5% 0;
   position: relative;
@@ -324,7 +314,7 @@ a {
   padding: 10% 0 1%;
   text-transform: uppercase;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__nav-list a {
     font-size: 1em;
   }
@@ -414,7 +404,7 @@ a {
   text-align: center;
   font: bold italic 0.9em Helvetica, Arial, sans-serif;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .header__nav > p {
     font-size: 1em;
   }
@@ -451,17 +441,17 @@ a {
   opacity: 0.1;
   transition: 0.6s;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .diapo > a {
     width: 1.5em;
     height: 1.5em;
+    padding-bottom: 0.1%;
   }
 }
 @media only screen and (min-width: 1024px) {
   .diapo > a {
     width: 2em;
     height: 2em;
-    padding-bottom: 0.1%;
   }
 }
 .diapo__next {
@@ -527,14 +517,11 @@ a {
   margin-bottom: 3%;
   background-color: #111;
   border-radius: 20px;
-  font-size: 0.9em;
+  font-size: 1rem;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .main__content {
     flex-flow: row nowrap;
-  }
-  .main__content p {
-    font-size: 1em;
   }
   .main__content--change-width {
     width: 75%;
@@ -542,10 +529,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   .main__content {
-    font-size: 1rem;
     padding: 2% 2% 5%;
-    flex-wrap: nowrap;
-    flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2%;
   }
@@ -557,7 +541,7 @@ a {
   margin-bottom: 10%;
   width: 25%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .main__content-logo {
     margin-bottom: 0;
     width: 20%;
@@ -571,11 +555,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   .main__content-logo {
-    margin-bottom: 0;
     width: 15%;
-  }
-  .main__content-logo:not(img[src*=logo-eve]) {
-    order: 1;
   }
   .main__content-logo--change {
     width: 13%;
@@ -586,12 +566,7 @@ a {
   font-style: italic;
   font-size: 1.3em;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
-  .main__content-title {
-    font-size: 1.7em;
-  }
-}
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 576px) {
   .main__content-title {
     font-size: 1.7em;
   }
@@ -616,7 +591,7 @@ a {
   font-size: 0.9em;
   padding: 0.4em 3em;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .main__content-btn {
     font-size: 1em;
     align-self: flex-start;
@@ -625,6 +600,11 @@ a {
   .main__content-btn--right {
     align-self: flex-end;
     margin-right: 5%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .main__content-btn {
+    align-self: center;
   }
 }
 .main__content-btn:hover {
@@ -669,7 +649,7 @@ a {
   flex-wrap: nowrap;
   gap: 1%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .footer {
     font-size: 1rem;
   }
@@ -687,29 +667,15 @@ a {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .footer {
-    font-size: 1rem;
-  }
-  .footer--space-between {
-    margin-bottom: 20%;
-  }
-  .footer--reverse {
-    order: 1;
-  }
-  .footer .flex_row {
-    gap: 3%;
+  .footer__icon--center {
+    justify-content: flex-start;
   }
 }
 .footer-title {
   color: #CC2936;
   margin-bottom: 2%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
-  .footer-title {
-    margin-bottom: 4%;
-  }
-}
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 576px) {
   .footer-title {
     margin-bottom: 4%;
   }
@@ -717,7 +683,7 @@ a {
 .footer__nav {
   margin-top: 2%;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .footer__nav {
     text-align: left;
   }
@@ -738,7 +704,7 @@ a {
 .footer > div.flex_row {
   flex-direction: column;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
+@media only screen and (min-width: 576px) {
   .footer > div.flex_row {
     flex-direction: row;
     justify-content: space-evenly;
@@ -747,7 +713,6 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   .footer > div.flex_row {
-    flex-direction: row;
     justify-content: space-around;
     text-align: start;
   }

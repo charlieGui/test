@@ -14,7 +14,7 @@ $color-red: #CC2936;
 $color-hover: #cac037;
 
 @mixin tablet-only{
-    @media only screen and (min-width: 576px) and (max-width: 1023px){
+    @media only screen and (min-width: 576px){
         @content;
     }
 }

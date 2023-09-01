@@ -47,9 +47,6 @@
             padding: initial;
             flex-flow: row wrap;
         }
-        @include desktop-only{
-            flex-flow: row wrap;
-        }
     }
     &__logo > a{
         width:50%;
@@ -130,8 +127,6 @@
     z-index: 800;
 }
 
-
-
 // MENU BURGER
 .header__burger{
     width: 5.5%;
@@ -204,7 +199,6 @@
 } 
 
 
-
 // NAVIGATION
 .header__nav{
     @include desktop-only{
@@ -218,11 +212,6 @@
             font-style: italic;
             color: $color-hover;
          }
-    }
-    &-bottom{
-        @include desktop-only{
-            padding-bottom: .25em;
-        }
     }
     &-list {
         margin: 50% 5% 0;
