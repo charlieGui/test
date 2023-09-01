@@ -1,16 +1,32 @@
+
 .footer{
     padding: 2% 5% 0;
-    font-size: .9em;
+    font-size: .9rem;
     line-height: 1.4em;
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: .02em;
+        margin-bottom: 3%;
+        background-color: rgba(250, 250, 250, .5);
+    }
+    .flex_row{
+        flex-wrap: nowrap;
+        gap: 1%;
+    }
     @include tablet-only{
-        font-size: 1em;
+        font-size: 1rem;
         &--reverse{order: 1;}
         &__icon--center{justify-content: center;}
         &--space-between{margin-bottom: 20%;}
+        .flex_row{gap: 3%;}
     }
     @include desktop-only{
+        font-size: 1rem;
         &--space-between{margin-bottom: 20%;}
         &--reverse{order: 1;}
+        .flex_row{gap: 3%;}
     }
     &-title{
         color: $color-red;
@@ -28,7 +44,7 @@
             text-align: left;
         }
     }
-    & > p{
+    > p{
         margin-top: 5%;
         font-size: .65em;
         text-align: center;
@@ -38,14 +54,10 @@
             color: $color-red;
         }
     }
-    .flex_row{
-        -webkit-gap-gap: 3%;
-        gap: 3%;
-    }
     &-icon{
         font-size: 1.8rem;
     }
-    & > div.flex_row{
+    > div.flex_row{
         flex-direction: column;
         @include tablet-only{
             flex-direction: row;

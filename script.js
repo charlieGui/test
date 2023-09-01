@@ -45,7 +45,7 @@ function sideMenu(){
     
     
     checkBurger = document.querySelector('.header__burger');
-    sideBar = header.lastElementChild;
+    sideBar = document.querySelector('.header__nav');
     welcome = header.firstElementChild;
     console.log(checkBurger);
     checkBurger.addEventListener('click', ()=>{
@@ -55,7 +55,7 @@ function sideMenu(){
         welcome.classList.toggle('is-hide');
         header.classList.toggle('header_main-change');
         });
-
+console.log(sideBar);
 }
 
     /**
@@ -70,7 +70,6 @@ function diaporama(){
     dots = document.querySelectorAll('span.slide__dot__item');
     next = document.querySelector('a.diapo__next');
     prev = document.querySelector('a.diapo__prev');
-   
     // Fonction qui fait défiler vers la droite.
    function slideNext(){
     count++;
