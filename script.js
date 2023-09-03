@@ -1,12 +1,13 @@
 'use strict';
 
+
 /**
  *Fonction qui ajoute des styles afin d'adapter le menuMobile au scroll
  */
 
 var header;
 function headerChange(){
-    let logoBox, logo, burger, phone, stickPosition;
+    let logoBox, logo, burger, phone, stickPosition, chaine;
 
     header = document.getElementById('header');
     logoBox = header.firstElementChild;
@@ -15,7 +16,17 @@ function headerChange(){
     phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top;
 
-    if(window.innerWidth < 576){
+    function currentPage(ch){
+        ch = location.href;
+        console.log(ch);
+        ch = ch.split('/').pop();
+        console.log(ch);
+        return ch;
+    }
+    
+    if(window.innerWidth < 576){ 
+       
+        if(currentPage(chaine) == 'index.html'){  /*Version mobile */
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
                 logo.style.width='23%';
@@ -32,7 +43,14 @@ function headerChange(){
                 header.classList.remove('header-shadow');
             }
         }); 
-    }   
+        }else{
+            logo.style.width='23%';
+            logoBox.style.flexDirection='row';
+            header.classList.add('header-shadow');
+            phone.classList.add('is-hide');
+            burger.classList.remove('header__burger-position');
+        }
+    }
 }
 
 
@@ -60,10 +78,11 @@ function slideShow(){
      
     slide = document.getElementById('main_diapo');
     slider = document.querySelectorAll('picture.diapo__slide');
-    slideWidth = slide.getBoundingClientRect().width;
     dots = document.querySelectorAll('span.slide__dot__item');
     next = document.querySelector('a.diapo__next');
     prev = document.querySelector('a.diapo__prev');
+    if(slide){
+    slideWidth = slide.getBoundingClientRect().width;
     // Fonction qui fait défiler vers la droite.
     function slideNext(){
         count++;
@@ -120,6 +139,7 @@ function slideShow(){
         slideWidth = slide.getBoundingClientRect().width;
         slideNext();
     });
+}
 }
 
 /**
