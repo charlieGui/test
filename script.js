@@ -16,39 +16,49 @@ function headerChange(){
     phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
     stickPosition = header.getBoundingClientRect().top;
 
-    function currentPage(ch){
+// # a la fin du href ???
+    function currentPage(ch){ 
         ch = location.href;
         console.log(ch);
         ch = ch.split('/').pop();
         console.log(ch);
         return ch;
     }
+
+    function addClass(el, cl){
+        el.classList.add(cl);
+    }
+    function removeClass(el, cl){
+        el.classList.remove(cl);
+    }
+    function smallHeader(){
+        logo.style.width='23%';
+        logoBox.style.flexDirection='row';
+        addClass(header, 'header-shadow');
+        addClass(phone, 'is-hide');
+        removeClass(burger, 'header__burger-position');
+    }
     
+    function xlHeader(){
+        logo.style.width='50%';
+        logoBox.style.flexDirection='column';
+        addClass(burger, 'header__burger-position');
+        removeClass(phone, 'is-hide');
+        removeClass(header, 'header-shadow');
+    }
     if(window.innerWidth < 576){ 
        
         if(currentPage(chaine) == 'index.html'){  /*Version mobile */
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
-                logo.style.width='23%';
-                logoBox.style.flexDirection='row';
-                header.classList.add('header-shadow');
-                phone.classList.add('is-hide');
-                burger.classList.remove('header__burger-position');
+                smallHeader();
             }
             else{
-                logo.style.width='50%';
-                logoBox.style.flexDirection='column';
-                burger.classList.add('header__burger-position');
-                phone.classList.remove('is-hide');
-                header.classList.remove('header-shadow');
+                xlHeader();
             }
         }); 
         }else{
-            logo.style.width='23%';
-            logoBox.style.flexDirection='row';
-            header.classList.add('header-shadow');
-            phone.classList.add('is-hide');
-            burger.classList.remove('header__burger-position');
+            smallHeader();
         }
     }
 }
