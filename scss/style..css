@@ -622,18 +622,6 @@ a {
   justify-content: space-around;
 }
 
-.main__content-btn {
-  padding: 0.2rem 0.8rem;
-}
-
-.main__content-btn-iLeft {
-  margin-right: 0.3em;
-}
-
-.main__content-btn-iRight {
-  margin-left: 0.3em;
-}
-
 .footer {
   padding: 2% 5% 0;
   font-size: 0.9rem;
