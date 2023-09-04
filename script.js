@@ -6,7 +6,7 @@
  */
 
 var header;
-function headerChange(){
+function headerSize(){
     let logoBox, logo, burger, phone, stickPosition, chaine;
 
     header = document.getElementById('header');
@@ -28,10 +28,12 @@ function headerChange(){
     function addClass(el, cl){
         el.classList.add(cl);
     }
+
     function removeClass(el, cl){
         el.classList.remove(cl);
     }
-    function smallHeader(){
+
+    function headerSmall(){
         logo.style.width='23%';
         logoBox.style.flexDirection='row';
         addClass(header, 'header-shadow');
@@ -39,30 +41,30 @@ function headerChange(){
         removeClass(burger, 'header__burger-position');
     }
     
-    function xlHeader(){
+    function headerXl(){
         logo.style.width='50%';
         logoBox.style.flexDirection='column';
         addClass(burger, 'header__burger-position');
         removeClass(phone, 'is-hide');
         removeClass(header, 'header-shadow');
     }
-    if(window.innerWidth < 576){ 
+
+    if(window.innerWidth < 576) { /*Version mobile */
        
-        if(currentPage(chaine) == 'index.html'){  /*Version mobile */
+        if(currentPage(chaine) == 'index.html') {  
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
-                smallHeader();
+                headerSmall();
             }
-            else{
-                xlHeader();
+            else {
+                headerXl();
             }
         }); 
-        }else{
-            smallHeader();
+        }else {
+            headerSmall();
         }
     }
 }
-
 
 /**
  * Fonction qui gère l'ouverture du menu Mobile au clic
@@ -91,10 +93,24 @@ function slideShow(){
     dots = document.querySelectorAll('span.slide__dot__item');
     next = document.querySelector('a.diapo__next');
     prev = document.querySelector('a.diapo__prev');
+
     if(slide){
-    slideWidth = slide.getBoundingClientRect().width;
-    // Fonction qui fait défiler vers la droite.
-    function slideNext(){
+        
+        slideWidth = slide.getBoundingClientRect().width;
+        startTimer();
+        slide.addEventListener('mouseover', stopTimer);
+        slide.addEventListener('mouseout', startTimer);
+        next.addEventListener('click', slideNext);
+        prev.addEventListener('click', slidePrev);
+
+        //Redimensionne la fenetre pour le responsive
+        window.addEventListener('resize', ()=>{
+            slideWidth = slide.getBoundingClientRect().width;
+            slideNext();
+        });
+    }
+     // Fonction qui fait défiler vers la droite.
+     function slideNext(){
         count++;
         if(count == slider.length){
             count = 0;
@@ -138,18 +154,7 @@ function slideShow(){
     function stopTimer(){
         clearInterval(start);
     }   
-    startTimer();
-    slide.addEventListener('mouseover', stopTimer);
-    slide.addEventListener('mouseout', startTimer);
-    next.addEventListener('click', slideNext);
-    prev.addEventListener('click', slidePrev);
 
-    //permet le redimensionnement de la fenetre pour le responsive
-    window.addEventListener('resize', ()=>{
-        slideWidth = slide.getBoundingClientRect().width;
-        slideNext();
-    });
-}
 }
 
 /**
@@ -203,6 +208,6 @@ window.addEventListener('load', ()=>{
     scrollToTop();
     activeLink();
     slideShow();
-    headerChange();
+    headerSize();
     displayMenu();
 });
