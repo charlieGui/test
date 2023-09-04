@@ -12,6 +12,7 @@ $color-btn : #222;
 $color-light: #fafafa;
 $color-red: #CC2936;
 $color-hover: #cac037;
+$duration: .3s;
 
 @mixin tablet-only{
     @media only screen and (min-width: 576px){

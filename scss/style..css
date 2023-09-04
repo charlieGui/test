@@ -114,13 +114,14 @@ a {
   }
 }
 .header__nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   opacity: 0;
   height: 100vh;
   background-color: #000;
   width: 100%;
-  transition: 0.3s;
+  transition: opacity 0.3s;
+  z-index: 800;
 }
 @media only screen and (min-width: 1024px) {
   .header__nav {
@@ -190,7 +191,6 @@ a {
 
 .showMenu {
   opacity: 1;
-  z-index: 800;
 }
 
 .header__burger {
