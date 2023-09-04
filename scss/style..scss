@@ -1,10 +1,10 @@
 // Import des fichiers
 
-@import '_global';
-@import '_header';
-@import '_accueil';
-@import '_checkDate';
-@import '_footer';
+@import 'partials/_global.scss';
+@import 'partials/header.scss';
+@import 'partials/_accueil.scss';
+@import 'partials/checkDate.scss';
+@import 'partials/_footer.scss';
 
 // GLOBAL
 // @font-face {
