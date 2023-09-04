@@ -42,13 +42,15 @@
         }
     }
     &__nav{
+
         position: fixed;
         top: 0;
+        right: -100%;
         opacity: 0;
         height: 100vh;
         background-color: $color-primary;
         width: 100%;
-        transition: opacity $duration ;
+        transition:  all $duration ;
         z-index: 800;
         @include desktop-only{
             flex: 1 0 65%;
@@ -89,7 +91,7 @@
     }
 }
 
-.header, .header__logo :first-child, .header .flex_row a{
+.header, .header__logo :first-child/*, .header .flex_row a*/{
     z-index: 800;
 }
 
@@ -108,6 +110,7 @@
 
 .showMenu{
     opacity: 1;
+    right: 0%;
 }
 
 // MENU BURGER

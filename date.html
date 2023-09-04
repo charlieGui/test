@@ -49,33 +49,22 @@
          </nav>
          
       </header> 
-      <main class="reservation">
-            <div class="main_bloc">
+      <main class="date">
+           <div class="main__bloc flex_col">
+            <div class="main__bloc-step"></div>
             <h3 class="main__content-title">Réservation</h3>
             <section class="main__content flex_col">
-                  <img class="main__content-logo" src="logo/destination.svg" alt="Logo agenda">
-               <div>
-                  <h4 class="main__content-title">Devis de transport</h4>
-                  <form action="" method="">
-                     <div>
-                        <input type="text" id="depart" name="depart" placeholder="Départ" required>
-                     </div>
-                    <div>
-                     <input type="text" name="arrivee" id="arrivee" placeholder="Arrivée">
-                    </div>
-                    <div>
-                     <select name="passager" id="passager" >
-                        <option value="" selected >Passagers: </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                     </select>
-                    </div>
-                  </form>
-               </div>
+                <img class="main__content-logo" src="logo/calendar.svg" alt="Logo agenda">
+                <div>
+                    <h4 class="main__content-title">Date et heure de rendez-vous</h4>
+                    <!-- calendrier en php -->
+                </div>
+                <div>
+                    <button class="main__content-btn"><i class="fi fi-rr-arrow-small-left"></i>Retour</button>
+                    <button class="main__content-btn">Suivant<i class="fi fi-rr-arrow-small-right"></i></button>
+                </div>
             </section>
-            </div>                
+           </div>
             
          </main>
            <footer class="footer">
