@@ -51,7 +51,7 @@ function headerSize(){
 
     if(window.innerWidth < 576) { /*Version mobile */
        
-        if(currentPage(chaine) == 'index.html') {  
+        if(currentPage(chaine) == 'index.html' || currentPage(chaine) == '') {  
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
                 headerSmall();
