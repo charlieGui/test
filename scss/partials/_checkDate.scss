@@ -1,20 +1,17 @@
 
-    .main__content-date{
+    .main__content-reserved{
         width: 100%;
         & .flex_row{
             justify-content: space-around;
         }
     }
 
-    // .main__content-btn{
-    //     padding:  .2rem .8rem;
-    // }
-    // .main__content-btn-iLeft{
-    //     margin-right: .3em;
-    // }
-    // .main__content-btn-iRight{
-    //     margin-left: .3em;
-    // }
+    .main__content  a:first-child>i{
+        margin-left: 0;
+        margin-right: .1em;
+     }
+  
+
 
 
 

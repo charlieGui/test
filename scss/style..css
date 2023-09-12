@@ -603,7 +603,7 @@ a {
 }
 .main__content-btn i {
   line-height: 0.5em;
-  vertical-align: -0.25em;
+  vertical-align: -0.24em;
   margin-left: 5%;
   color: #CC2936;
   font-size: 1.5em;
@@ -615,11 +615,33 @@ a {
   margin-left: 0;
 }
 
-.main__content-date {
+.main__content-reserved {
   width: 100%;
 }
-.main__content-date .flex_row {
+.main__content-reserved .flex_row {
   justify-content: space-around;
+}
+
+.main__content a:first-child > i {
+  margin-left: 0;
+  margin-right: 0.1em;
+}
+
+.form {
+  margin-bottom: 5%;
+}
+.form :nth-child(2) {
+  margin: 2% 0;
+}
+.form__input, .form__select {
+  padding: 1em;
+  border-radius: 0.3em;
+}
+.form__input {
+  width: 100%;
+}
+.form__select {
+  width: 50%;
 }
 
 .footer {

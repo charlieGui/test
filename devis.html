@@ -54,17 +54,17 @@
             <h3 class="main__content-title">Réservation</h3>
             <section class="main__content flex_col">
                   <img class="main__content-logo" src="logo/destination.svg" alt="Logo agenda">
-               <div>
+               <div class="main__content-reserved">
                   <h4 class="main__content-title">Devis de transport</h4>
-                  <form action="" method="">
-                     <div>
-                        <input type="text" id="depart" name="depart" placeholder="Départ" required>
+                  <form class="form" action="" method="">
+                     <div >
+                        <input class="form__input"  type="text" id="depart" name="depart" placeholder="Adresse de départ" required>
                      </div>
                     <div>
-                     <input type="text" name="arrivee" id="arrivee" placeholder="Arrivée">
+                     <input class="form__input" type="text" name="arrivee" id="arrivee" placeholder="Adresse d'arrivée">
                     </div>
                     <div>
-                     <select name="passager" id="passager" >
+                     <select class="form__select" name="passager" id="passager" >
                         <option value="" selected >Passagers: </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -73,6 +73,10 @@
                      </select>
                     </div>
                   </form>
+                  <div class="flex_row">
+                     <a href="date.html" class="main__content-btn"><i class="fi fi-rr-arrow-small-left "></i>Retour</a>
+                     <a href="devis.html" class="main__content-btn">Suivant<i class="fi fi-rr-arrow-small-right"></i></a>
+                 </div>
                </div>
             </section>
             </div>                
