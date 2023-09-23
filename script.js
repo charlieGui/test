@@ -54,14 +54,14 @@ function headerSize(){
         if(currentPage(chaine) == 'index.html' || currentPage(chaine) == '') {  
         window.addEventListener('scroll', ()=>{
             if(window.scrollY > stickPosition){
-                headerSmall();
+                // headerSmall();
             }
             else {
-                headerXl();
+                // headerXl();
             }
         }); 
         }else {
-            headerSmall();
+            // headerSmall();
         }
     }
 }
