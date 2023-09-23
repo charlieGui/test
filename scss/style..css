@@ -63,7 +63,7 @@ a {
 
 .header {
   width: 100%;
-  padding: 0 5%;
+  padding: 1% 5%;
   background-color: #000;
   position: sticky;
   overflow: hidden;
@@ -99,13 +99,8 @@ a {
     flex-flow: row wrap;
   }
 }
-.header__logo a.flag-position {
-  position: fixed;
-  top: 1%;
-  right: 2%;
-}
 .header__logo > a {
-  width: 25%;
+  width: 35%;
   margin-top: 1%;
 }
 @media only screen and (min-width: 576px) {
@@ -138,6 +133,14 @@ a {
   padding-bottom: 1.5%;
   border-bottom: 1px solid #CC2936;
 }
+.header__nav-flags {
+  width: 5%;
+  position: fixed;
+  opacity: 1;
+  top: 4%;
+  left: 80%;
+  transition: 0.3s;
+}
 .header .flex_row {
   align-items: center;
   gap: 0.4em;
@@ -151,7 +154,7 @@ a {
   line-height: 0.25em;
   vertical-align: middle;
   font-size: 5vw;
-  color: #CC2936;
+  color: #fafafa;
 }
 @media only screen and (min-width: 576px) {
   .header .flex_row i {
@@ -198,6 +201,11 @@ a {
 .showMenu {
   opacity: 1;
   right: 0%;
+}
+
+.flag-position {
+  opacity: 1;
+  left: 5%;
 }
 
 .header__burger {
@@ -314,7 +322,7 @@ a {
   background-color: #000;
   max-height: 0;
   overflow: hidden;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .header__nav__sousMenu li {
   border-bottom: none;
