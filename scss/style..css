@@ -66,8 +66,9 @@ a {
   padding: 1% 5%;
   background-color: #000;
   position: sticky;
-  overflow: hidden;
   top: 0;
+  overflow: hidden;
+  transition: 0.5s ease;
 }
 @media only screen and (min-width: 576px) {
   .header {
@@ -183,6 +184,10 @@ a {
 
 .header, .header__logo :first-child {
   z-index: 800;
+}
+
+.hideMenu {
+  top: -20%;
 }
 
 .header-shadow {

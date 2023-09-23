@@ -2,83 +2,38 @@
 
 
 /**
- *Fonction qui ajoute des styles afin d'adapter le menuMobile au scroll
+ *Fonction qui gère le show et le hide du lenu au scroll
  */
 
 var header;
-function headerSize(){
-    let logoBox, logo, burger, phone, stickPosition, chaine;
-
+function hideMenu(){
+    let header, position = 0;
     header = document.getElementById('header');
-    logoBox = header.firstElementChild;
-    logo = logoBox.firstElementChild;
-    burger = logoBox.lastElementChild;
-    phone = logo.nextElementSibling.firstElementChild.nextElementSibling;
-    stickPosition = header.getBoundingClientRect().top;
-
-// # a la fin du href ???
-    function currentPage(ch){ 
-        ch = location.href;
-        console.log(ch);
-        ch = ch.split('/').pop();
-        console.log(ch);
-        return ch;
-    }
-
-    function addClass(el, cl){
-        el.classList.add(cl);
-    }
-
-    function removeClass(el, cl){
-        el.classList.remove(cl);
-    }
-
-    function headerSmall(){
-        logo.style.width='23%';
-        logoBox.style.flexDirection='row';
-        addClass(header, 'header-shadow');
-        addClass(phone, 'is-hide');
-        removeClass(burger, 'header__burger-position');
-    }
-    
-    function headerXl(){
-        logo.style.width='50%';
-        logoBox.style.flexDirection='column';
-        addClass(burger, 'header__burger-position');
-        removeClass(phone, 'is-hide');
-        removeClass(header, 'header-shadow');
-    }
-
-    if(window.innerWidth < 576) { /*Version mobile */
-       
-        if(currentPage(chaine) == 'index.html' || currentPage(chaine) == '') {  
-        window.addEventListener('scroll', ()=>{
-            if(window.scrollY > stickPosition){
-                // headerSmall();
-            }
-            else {
-                // headerXl();
-            }
-        }); 
-        }else {
-            // headerSmall();
+    window.addEventListener('scroll', ()=>{
+        if((document.body.getBoundingClientRect()).top < position ){
+            header.classList.add('hideMenu');
         }
-    }
+        else{
+            header.classList.remove('hideMenu');
+        }
+        position = document.body.getBoundingClientRect().top;
+    });
 }
-
 /**
  * Fonction qui gère l'ouverture du menu Mobile au clic
  */
 
 function displayMenu(){
-    let navMobile, checkBurger;
+    let navMobile, checkBurger, checkFlags;
     
     checkBurger = document.querySelector('.header__burger');
+    checkFlags = document.querySelector('.header__nav-flags');
     navMobile = document.querySelector('.header__nav');
     checkBurger.addEventListener('click', ()=>{
         checkBurger.classList.toggle('burger');
         navMobile.classList.toggle('showMenu');
-        header.classList.toggle('header_main-change');
+        checkFlags.classList.toggle('flag-position');
+        // header.classList.toggle('header_main-change');
     });
 }
 
@@ -208,6 +163,7 @@ window.addEventListener('load', ()=>{
     scrollToTop();
     activeLink();
     slideShow();
-    headerSize();
+    hideMenu();
+    // headerSize();
     displayMenu();
 });
