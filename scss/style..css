@@ -70,17 +70,11 @@ a {
   overflow: hidden;
   transition: 0.5s ease;
 }
-@media only screen and (min-width: 576px) {
-  .header {
-    padding: initial;
-  }
-}
 @media only screen and (min-width: 1024px) {
   .header {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 0 2%;
     position: static;
     overflow: initial;
     border-bottom: 2px solid #CC2936;
@@ -89,7 +83,6 @@ a {
 }
 .header__logo {
   justify-content: space-between;
-  align-items: center;
 }
 .header__logo h1 {
   margin: 0;
@@ -98,6 +91,24 @@ a {
   .header__logo {
     padding: initial;
     flex-flow: row wrap;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header__logo-phone {
+    order: 1;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header__logo-phone a:first-child i {
+    color: #CC2936;
+  }
+}
+.header__logo-phone a:last-child {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .header__logo-phone a:last-child {
+    display: inline-block;
   }
 }
 .header__logo > a {
@@ -112,6 +123,7 @@ a {
 @media only screen and (min-width: 1024px) {
   .header__logo > a {
     width: 35%;
+    order: 0;
   }
 }
 .header__nav {
@@ -136,11 +148,18 @@ a {
 }
 .header__nav-flags {
   width: 5%;
-  position: fixed;
-  opacity: 1;
-  top: 4%;
+  position: absolute;
+  top: -1%;
   left: 80%;
   transition: 0.3s;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav-flags {
+    position: relative;
+    width: 25%;
+    top: 8%;
+    left: 96%;
+  }
 }
 .header .flex_row {
   align-items: center;
@@ -209,7 +228,9 @@ a {
 }
 
 .flag-position {
+  position: fixed;
   opacity: 1;
+  top: -1%;
   left: 5%;
 }
 
