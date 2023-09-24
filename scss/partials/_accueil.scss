@@ -90,18 +90,17 @@
         margin-bottom:10%;
     }
  }
- 
+
 .main__content{
+    border: 1px solid #414141;
     align-items: center;
-     width: 100%;
+     width: 95%;
+     margin: 0 auto;
      padding: 10% 2%;
      margin-bottom: 3%;
      background-color: $color-secondary;
-    //  background-image: url("image/diapo1.webp");
-    //  background-position: center;
-    //  background-repeat: no-repeat;
-    //  background-size: cover;
-    border-radius: 20px;
+    
+    border-radius: 5px;
     font-size: 1rem;
     
      @include tablet-only{
