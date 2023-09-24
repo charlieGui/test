@@ -2,12 +2,11 @@
 
 
 /**
- *Fonction qui gère le show et le hide du lenu au scroll
+ *Fonction qui gère le show et le hide du Menu au scroll
  */
 
-var header;
 function hideMenu(){
-    let  position = 0;
+    let header,  position = 0;
     header = document.getElementById('header');
     window.addEventListener('scroll', ()=>{
         if((document.body.getBoundingClientRect()).top < position ){
@@ -166,6 +165,5 @@ window.addEventListener('load', ()=>{
     activeLink();
     slideShow();
     hideMenu();
-    // headerSize();
     displayMenu();
 });

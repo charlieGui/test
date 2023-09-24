@@ -77,6 +77,7 @@
 
 
 .main_bloc{
+   
     padding: 2% 0;
     p{
         margin: 0 5% 15% 5%;
@@ -91,12 +92,16 @@
  }
  
 .main__content{
-     align-items: center;
+    align-items: center;
      width: 100%;
      padding: 10% 2%;
      margin-bottom: 3%;
      background-color: $color-secondary;
-     border-radius: 20px;
+    //  background-image: url("image/diapo1.webp");
+    //  background-position: center;
+    //  background-repeat: no-repeat;
+    //  background-size: cover;
+    border-radius: 20px;
     font-size: 1rem;
     
      @include tablet-only{

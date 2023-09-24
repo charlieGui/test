@@ -1,6 +1,4 @@
-
 // HEADER
-
 .header{
     width: 100%;
     padding: 1% 5% ;
@@ -9,12 +7,11 @@
     top: 0;
     overflow: hidden;
     transition: .5s ease;
-
+    box-shadow:0px 5px 10px -8px $color-light ;
     @include desktop-only{
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        // padding: 0 2%;
         position: static;
         overflow: initial;
         border-bottom: 2px solid $color-red;
@@ -112,35 +109,17 @@
                 font-size: 1.8vw;
             }
         }
-    }
-    
-}
-
-.header, .header__logo :first-child/*, .header .flex_row a*/{
-    z-index: 800;
+    }    
 }
 
 .hideMenu{
-    top: -20%;
+    top: -30%;
+    
 }
-
-.header-shadow{
-    box-shadow:0px 5px 10px -8px $color-light ;
-    padding: initial;
-}
-
-.header_main-change{
-    overflow: initial;   
-}
-
-.is-hide{
-    display: none;
-} 
 
 .showMenu{
     opacity: 1;
     right: 0%;
-   
 }
 
 .flag-position{
@@ -150,9 +129,6 @@
     left:5%;
 }
 
-.unScroll{
-    overflow-y: hidden;
-}
 // MENU BURGER
 .header__burger{
     width: 5.5%;
@@ -233,10 +209,7 @@
         position: initial;
         opacity: 1;
         height: initial;
-        padding: 1% 0;
-        background-color: $color-primary;
         .active-link{
-            transform: scale(1.5) translateY(-8%);
             font-style: italic;
             color: $color-hover;
          }
@@ -249,44 +222,20 @@
             justify-content: space-evenly;
             margin: 0;
         }
-        a  {
+        a {
             display: block;
             padding: 10% 0 1%;
             text-transform: uppercase;
+            transition: $duration;
             @include tablet-only{
                 font-size: 1em;
             }
             @include desktop-only{
                 text-transform: initial;
-                padding: 8% 0 3%;
             }
         }
     }
-    &__sousMenu{
-        text-align: center;
-        background-color: $color-primary;
-        max-height: 0;
-        overflow: hidden;
-        transition: $duration;
-        & li{
-            border-bottom: none;
-        }
-        & a{
-            padding: 5% 0;
-            @include desktop-only{
-                padding: 5% 0;}
-        }
-        @include desktop-only{
-            position: absolute;
-            max-height: 0px;
-            width: 100%;
-            opacity: initial;
-            background-color: $color-primary;
-            overflow: hidden;
-            padding: 0;
-            z-index: 999;   
-        }
-    }
+   
     &-item{
         span{
             display: inline-block;
@@ -307,12 +256,10 @@
             }
             .header__nav__sousMenu {
                 max-height: 500px;
-                transition: .7s  ;
+                transition: 1s  ;
                 @include desktop-only{
-                    padding-top: .5em;
                     max-height: 5.5em;
                     border-bottom: 4px solid $color-red;
-                    transition: .3s;
                 }
             }
         }
@@ -321,7 +268,22 @@
             width: 100%;
             padding: 0;
             border-bottom: none;
-            position: relative;
+        }
+    }
+    &__sousMenu{
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: $duration;
+        & li{
+            border-bottom: none;
+        }
+        & a{
+            padding: 5% 0;
+        }
+        @include desktop-only{
+            position: absolute;
+            background-color: $color-primary;
         }
     }
     a:hover{
