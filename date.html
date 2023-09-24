@@ -17,37 +17,38 @@
 <body>
    <div class="wrapper">
       <header id="header" class="header">
-      
-                                          <!-- BARRE DE NAVIGATION -->
-         <div class="header__logo flex_col" >
-            <a href="index.html" >
-                  <h1><img  src="logo/logo-abcd.svg" alt="ABCD Taxi"></h1>
-            </a>
-            <div class="flex_row" >
-               <a href="tel:0664142034"><i class="fi fi-sr-circle-phone"></i></a>
+       
+                  <!-- BARRE DE NAVIGATION -->
+         <div class="header__logo flex_row" >
+            <div class="header__logo-phone">
+               <a href="tel:0664142034"><i class="fi fi-tr-phone-call"></i> </a>
                <a href="tel:+33664142034" ><span>06 64 14 20 34</span> </a> 
             </div>
-                              <!-- MENU BURGER -->
-            <div class="header__burger header__burger-position">
+            <a href="index.html" >
+               <h1><img  src="logo/logo-abcd.svg" alt="ABCD Taxi"></h1>
+            </a>
+            <!-- MENU BURGER -->
+            <div class="header__burger">
                <span></span>
             </div>
-            
          </div>
          <nav id="nav_menu" class="header__nav">
             <ul class="header__nav-list">
-               <li class="header__nav-item"><a href="index.html" title="Accueil">Accueil</a></li>
+               <li><a href="#" class="header__nav-flags" ><img src="logo/france.svg" alt="Choix de langues"></a></li>
+               <li class="header__nav-item"><a href="index.html" title="Accueil" >Accueil</a></li>
                <li class="header__nav-item "><a href="#" class="header__nav-bottom" title="Réservation">Réservation<span><i class="fi fi-rs-angle-small-down"></i></span></a>
                   <ul class="header__nav__sousMenu">
-                     <li><a href="#" title="Réservation de transport">Réserver un transport</a></li>
+                     <li><a href="date.html" title="Réservation de transport">Réserver un transport</a></li>
                      <li><a href="#" title="Annulation de transport">Annuler un transport</a></li>
                   </ul>
                </li>
-               <li class="header__nav-item"><a href="#" title="Contact">Contact</a></li>
-               <li class="header__nav-item"><a href="#" title="A propos">&Agrave; propos</a></li>
+               <li class="header__nav-item"><a href="#" title="Contact" >Contact</a></li>
+               <li class="header__nav-item"><a href="#" title="Contact" >Gallerie</a></li>
+               <li class="header__nav-item"><a href="#" title="A propos" >&Agrave; propos</a></li>
             </ul>
             <p id="abcd">Arrivez Bien à Chaque Destination</p>
          </nav>
-         
+
       </header> 
       <main class="date">
            <div class="main__bloc flex_col">

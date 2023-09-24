@@ -10,11 +10,11 @@
 }
 
 body {
-  background-color: #0C0C0C;
+  background-color: #0f0f0f;
 }
 
 body:not(h4) {
-  color: #fafafa;
+  color: #c9c9c9;
 }
 
 img {
@@ -33,7 +33,7 @@ ul li {
 
 a {
   text-decoration: none;
-  color: #fafafa;
+  color: #c9c9c9;
 }
 
 .wrapper {
@@ -61,12 +61,12 @@ a {
   display: none;
   bottom: 2%;
   font-size: 1.5em;
-  color: #fafafa;
+  color: #c9c9c9;
   opacity: 0.2;
 }
 
 .header-shadow {
-  box-shadow: 0px 5px 10px -8px #fafafa;
+  box-shadow: 0px 5px 10px -8px #c9c9c9;
   padding: initial;
 }
 
@@ -85,12 +85,11 @@ a {
 .header {
   width: 100%;
   padding: 1% 5%;
-  background-color: #0C0C0C;
+  background-color: #0f0f0f;
   position: sticky;
   top: 0;
   overflow: hidden;
   transition: 0.5s ease;
-  box-shadow: 0px 5px 10px -8px #fafafa;
 }
 @media only screen and (min-width: 1024px) {
   .header {
@@ -148,7 +147,7 @@ a {
   right: -100%;
   opacity: 0;
   height: 100vh;
-  background-color: #0C0C0C;
+  background-color: #0f0f0f;
   width: 100%;
   transition: all 0.3s;
   z-index: 800;
@@ -187,7 +186,7 @@ a {
   line-height: 0.25em;
   vertical-align: middle;
   font-size: 5vw;
-  color: #fafafa;
+  color: #c9c9c9;
 }
 @media only screen and (min-width: 576px) {
   .header .flex_row i {
@@ -263,7 +262,7 @@ a {
   display: block;
   top: 50%;
   left: 50%;
-  background-color: #fafafa;
+  background-color: #c9c9c9;
   width: 100%;
   height: 0.05em;
   transform: translateX(-50%) translateY(-50%);
@@ -278,7 +277,7 @@ a {
   display: block;
   width: 100%;
   height: 0.05em;
-  background-color: #fafafa;
+  background-color: #c9c9c9;
   transform-origin: 50% 50%;
   transition: background 0.3s, transform 0.3s;
 }
@@ -397,7 +396,7 @@ a {
 @media only screen and (min-width: 1024px) {
   .header__nav__sousMenu {
     position: absolute;
-    background-color: #0C0C0C;
+    background-color: #0f0f0f;
   }
 }
 .header__nav a:hover {
@@ -424,7 +423,7 @@ a {
 .diapo {
   border: none;
   overflow: hidden;
-  background-color: #0C0C0C;
+  background-color: #0f0f0f;
   position: relative;
 }
 .diapo .flex_row {
@@ -440,9 +439,9 @@ a {
   width: 1em;
   height: 1em;
   font-size: 1.5em;
-  border: 1px solid #fafafa;
+  border: 1px solid #c9c9c9;
   border-radius: 50%;
-  background-color: #0C0C0C;
+  background-color: #0f0f0f;
   padding-bottom: 0.5%;
   opacity: 0.1;
   transition: 0.6s;
@@ -484,7 +483,7 @@ a {
   padding: 0.1em;
   width: 1em;
   margin: 0 2px;
-  background-color: #fafafa;
+  background-color: #c9c9c9;
   display: inline-block;
   transition: 0.6s ease;
 }
@@ -523,7 +522,7 @@ a {
   margin: 0 auto;
   padding: 10% 2%;
   margin-bottom: 3%;
-  background-color: #0f0f0f;
+  background-color: #0f0d0d;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -593,8 +592,8 @@ a {
 .main__content-btn {
   border: 1px solid #CC2936;
   border-radius: 5px;
-  background-color: #222;
-  color: #fafafa;
+  background-color: #1a1010;
+  color: #c9c9c9;
   font-style: italic;
   font-size: 0.9em;
   padding: 0.4em 3em;
@@ -619,11 +618,11 @@ a {
   }
 }
 .main__content-btn:hover {
-  border: 1px solid #fafafa;
+  border: 1px solid #c9c9c9;
   color: #cac037;
 }
 .main__content-btn:hover i {
-  color: #fafafa;
+  color: #c9c9c9;
 }
 .main__content-btn i {
   line-height: 0.5em;
