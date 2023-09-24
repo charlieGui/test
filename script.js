@@ -7,7 +7,7 @@
 
 var header;
 function hideMenu(){
-    let header, position = 0;
+    let  position = 0;
     header = document.getElementById('header');
     window.addEventListener('scroll', ()=>{
         if((document.body.getBoundingClientRect()).top < position ){
@@ -24,8 +24,9 @@ function hideMenu(){
  */
 
 function displayMenu(){
-    let navMobile, checkBurger, checkFlags;
-    
+    let navMobile, checkBurger, checkFlags, page, body;
+    page = document.querySelector('html');
+    body = document.querySelector('body');
     checkBurger = document.querySelector('.header__burger');
     checkFlags = document.querySelector('.header__nav-flags');
     navMobile = document.querySelector('.header__nav');
@@ -33,7 +34,8 @@ function displayMenu(){
         checkBurger.classList.toggle('burger');
         navMobile.classList.toggle('showMenu');
         checkFlags.classList.toggle('flag-position');
-        // header.classList.toggle('header_main-change');
+        page.classList.toggle('unSroll');
+        body.classList.toggle('unScroll');
     });
 }
 

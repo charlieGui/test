@@ -115,14 +115,8 @@ a {
   width: 35%;
   margin-top: 1%;
 }
-@media only screen and (min-width: 576px) {
-  .header__logo > a {
-    width: 23%;
-  }
-}
 @media only screen and (min-width: 1024px) {
   .header__logo > a {
-    width: 35%;
     order: 0;
   }
 }
@@ -148,17 +142,14 @@ a {
 }
 .header__nav-flags {
   width: 5%;
-  position: absolute;
-  top: -1%;
+  position: relative;
   left: 80%;
   transition: 0.3s;
 }
 @media only screen and (min-width: 1024px) {
   .header__nav-flags {
-    position: relative;
     width: 25%;
-    top: 8%;
-    left: 96%;
+    left: 120%;
   }
 }
 .header .flex_row {
@@ -234,6 +225,10 @@ a {
   left: 5%;
 }
 
+.unScroll {
+  overflow-y: hidden;
+}
+
 .header__burger {
   width: 5.5%;
   height: 5.5%;
@@ -286,8 +281,18 @@ a {
   transform-origin: 50% 50%;
   transition: background 0.3s, transform 0.3s;
 }
+@media only screen and (min-width: 576px) {
+  .header__burger span::before, .header__burger span::after {
+    transform: translateY(-8px);
+  }
+}
 .header__burger span::after {
   transform: translateY(6px);
+}
+@media only screen and (min-width: 576px) {
+  .header__burger span::after {
+    transform: translateY(8px);
+  }
 }
 .header__burger.burger span {
   background-color: transparent;
