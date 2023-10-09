@@ -511,9 +511,6 @@ a {
 .main_bloc article {
   align-items: center;
 }
-.main_bloc img[src*=handicap] {
-  margin-bottom: 10%;
-}
 
 .main__content {
   border: 1px solid #414141;
@@ -545,16 +542,16 @@ a {
   }
 }
 .main__content-logo {
-  margin: 5% 0;
+  margin: 10% 0;
   width: 50%;
   border-radius: 50%;
 }
 @media only screen and (min-width: 576px) {
   .main__content-logo {
-    margin-bottom: 0;
+    margin: 0;
     width: 20%;
   }
-  .main__content-logo:not(img[src*=logo-eve]) {
+  .main__content-logo:not(img[src*=events]) {
     order: 1;
   }
   .main__content-logo--change {

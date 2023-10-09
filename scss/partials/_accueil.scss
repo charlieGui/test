@@ -86,25 +86,21 @@
     article{
         align-items: center;
     }
-    img[src*="handicap"]{
-        margin-bottom:10%;
-    }
  }
 
 .main__content{
     border: 1px solid #414141;
     align-items: center;
-     width: 95%;
-     margin: 0 auto;
-     padding: 5% 2%;
-     margin-bottom: 3%;
-     background-color: $color-secondary;
-    
+    width: 95%;
+    margin: 0 auto;
+    padding: 5% 2%;
+    margin-bottom: 3%;
+    background-color: $color-secondary;
     border-radius: 5px;
     font-size: 1rem;
     
      @include tablet-only{
-       flex-flow: row nowrap;
+        flex-flow: row nowrap;
         &--change-width{width: 75%;}
     }
     @include desktop-only{
@@ -114,18 +110,19 @@
         &--change-width{width: 50%;}
     }
      &-logo{
-        margin: 5% 0;
+        margin: 10% 0;
         width: 50%;
         border-radius: 50%;
+      
         @include tablet-only{
-            margin-bottom: 0;
+            margin: 0;
             width: 20%;
-            &:not(img[src*="logo-eve"]) {order: 1;}
-            &--change{width: 20%; }
+            &:not(img[src*="events"]) {order: 1;}
+            &--change{width: 20%;  }
         } 
         @include desktop-only{
             width: 15%;
-            &--change{width: 13%; }
+            &--change{width: 13%;}
         }
      }
      &-title{
