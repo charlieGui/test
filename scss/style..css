@@ -520,7 +520,7 @@ a {
   align-items: center;
   width: 95%;
   margin: 0 auto;
-  padding: 10% 2%;
+  padding: 5% 2%;
   margin-bottom: 3%;
   background-color: #131010;
   border-radius: 5px;
@@ -545,8 +545,9 @@ a {
   }
 }
 .main__content-logo {
-  margin-bottom: 10%;
-  width: 25%;
+  margin: 5% 0;
+  width: 50%;
+  border-radius: 50%;
 }
 @media only screen and (min-width: 576px) {
   .main__content-logo {

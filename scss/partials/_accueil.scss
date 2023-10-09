@@ -96,7 +96,7 @@
     align-items: center;
      width: 95%;
      margin: 0 auto;
-     padding: 10% 2%;
+     padding: 5% 2%;
      margin-bottom: 3%;
      background-color: $color-secondary;
     
@@ -114,8 +114,9 @@
         &--change-width{width: 50%;}
     }
      &-logo{
-        margin-bottom: 10%;
-        width: 25%;
+        margin: 5% 0;
+        width: 50%;
+        border-radius: 50%;
         @include tablet-only{
             margin-bottom: 0;
             width: 20%;
