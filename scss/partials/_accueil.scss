@@ -86,10 +86,6 @@
     article{
         align-items: center;
     }
-    &_logo{
-        width: 5em;
-        margin: 0 auto;
-    }
  }
 
 .main__content{
@@ -104,6 +100,7 @@
     border-radius: 5px;
 
     font-size: 1rem;
+    font-weight: 100;
      @include tablet-only{
         flex-flow: row nowrap;
         &:nth-child(2) div{
