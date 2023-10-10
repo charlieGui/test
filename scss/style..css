@@ -524,8 +524,6 @@ a {
   margin: 0 auto;
   padding: 5% 2%;
   margin-bottom: 3%;
-  background-image: url("../image/taxi.jpg");
-  box-shadow: 0 0 0 1440px rgba(0, 0, 0, 0.8) inset;
   background-color: #1a1a1a;
   border-radius: 5px;
   font-size: 1rem;
@@ -550,7 +548,8 @@ a {
 }
 .main__content-logo {
   margin: 10% 0;
-  width: 100%;
+  width: 40%;
+  border-radius: 50%;
 }
 @media only screen and (min-width: 576px) {
   .main__content-logo {

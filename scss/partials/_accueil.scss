@@ -100,15 +100,12 @@
     margin: 0 auto;
     padding: 5% 2%;
     margin-bottom: 3%;
-    background-image: url("../image/taxi.jpg");
-    box-shadow: 0 0 0 1440px rgba(0, 0, 0, 0.8)inset;
     background-color: $color-secondary;
-   
     border-radius: 5px;
+
     font-size: 1rem;
      @include tablet-only{
         flex-flow: row nowrap;
-        // &--change-width{width: 75%;}
         &:nth-child(2) div{
             margin-left: 1%;
         }
@@ -121,8 +118,8 @@
     }
      &-logo{
         margin: 10% 0;
-        width: 100%;
-        // border-radius: 50%;
+        width: 40%;
+        border-radius: 50%;
       
         @include tablet-only{
             margin: 0;
