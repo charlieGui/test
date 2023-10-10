@@ -54,25 +54,21 @@
          <main class="accueil">
                                <!-- Contenur diapo  -->
             <section class="diapo">
-               <div id="main_diapo" class="flex_row" >
-                  <picture class="diapo__slide slide-show">
-                     <source srcset="image/diapo1-small.jpg" media="(max-width:576px)">
-                     <source srcset="image/diapo1-medium.jpg" media="(max-width:900px)">
-                     <source srcset="image/diapo1.webp" media="(min-width:901px)">
-                     <img  class="diapo__slide__img" src="image/diapo1.webp"  alt="taxi">
-                  </picture>
-                  <picture class="diapo__slide">
-                     <source srcset="image/diapo2-small.jpg" media="(max-width:576px)">
-                     <source srcset="image/diapo2-medium.jpg" media="(max-width:900px)">
-                     <source srcset="image/diapo2.webp" media="(max-width:901px)">
-                     <img class="diapo__slide__img" src="image/diapo2.webp" alt="taxi">
-                  </picture>
-                  <picture class="diapo__slide">
-                     <source srcset="image/diapo3-small.jpg" media="(max-width:576px)">
-                     <source srcset="image/diapo3-medium.jpg" media="(max-width:1080px)">
-                     <source srcset="image/diapo3.webp" media="(max-width:901px)">
-                     <img class="diapo__slide__img" src="image/diapo3.webp" alt="taxi">
-                  </picture>
+               <div id="main_diapo" class="flex_row">
+                  <img  class="diapo__slide slide-show"
+                        srcset="image/img3-small.jpg 500w, image/img3-medium.jpg 820w, image/img3.jpg 1280w"
+                        sizes="(max-width:576px) 500px, (max-width:900px) 820px, 1280px"
+                        src="image/img3.jpg" alt="taxi">
+
+                  <img  class="diapo__slide "
+                        srcset="image/diapo2-small.jpg 500w, image/diapo2-medium.jpg 820w, image/diapo2.webp 1280w"
+                        sizes="(max-width:576px) 500px, (max-width:900px) 820px, 1280px"
+                        src="image/diapo2.webp" alt="taxi">
+                        
+                  <img  class="diapo__slide "
+                        srcset="image/diapo3-small.jpg 500w, image/diapo3-medium.jpg 820w, image/diapo3.webp 1280w"
+                        sizes="(max-width:576px) 500px, (max-width:900px) 820px, 1280px"
+                        src="image/diapo3.webp" alt="taxi">
                </div>
                <a class="diapo__prev" title="Précédent">&lsaquo;</a>
                <a class="diapo__next" title="Suivant">&rsaquo;</a>

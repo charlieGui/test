@@ -45,7 +45,7 @@ function slideShow(){
     let slide,  slider, decal, start, next, prev, dots, slideWidth, count=0;
      
     slide = document.getElementById('main_diapo');
-    slider = document.querySelectorAll('picture.diapo__slide');
+    slider = document.querySelectorAll('img.diapo__slide');
     dots = document.querySelectorAll('span.slide__dot__item');
     next = document.querySelector('a.diapo__next');
     prev = document.querySelector('a.diapo__prev');
