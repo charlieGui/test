@@ -547,13 +547,13 @@ a {
 }
 .main__content-logo {
   margin: 10% 0;
-  width: 50%;
+  width: 30%;
   border-radius: 50%;
 }
 @media only screen and (min-width: 576px) {
   .main__content-logo {
     margin: 0;
-    width: 30%;
+    width: 20%;
   }
   .main__content-logo:not(img[src*=events]) {
     order: 1;
@@ -564,7 +564,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   .main__content-logo {
-    width: 30%;
+    width: 20%;
   }
   .main__content-logo--change {
     width: 13%;
@@ -592,9 +592,9 @@ a {
   margin-left: 0;
 }
 .main__content-btn {
-  border: 1px solid #CC2936;
+  border: 1px solid #414141;
   border-radius: 5px;
-  background-color: #1f2727;
+  background-color: #1a1717;
   color: #c9c9c9;
   font-style: italic;
   font-size: 0.9em;
