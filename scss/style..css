@@ -582,7 +582,7 @@ a {
 }
 .main__content-border {
   margin: 0 2%;
-  border-left: 3px solid #CC2936;
+  border-left: 1px solid #CC2936;
 }
 .main__content-border--change {
   margin: 0 2%;
