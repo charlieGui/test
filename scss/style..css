@@ -682,6 +682,7 @@ a {
 }
 .footer .flex_row:first-child {
   flex-direction: row;
+  margin: 5% 0;
 }
 .footer_logo {
   width: 5em;
