@@ -93,16 +93,19 @@
  }
 
 .main__content{
+    position: relative;
     border: 1px solid #414141;
     align-items: center;
     width: 95%;
     margin: 0 auto;
     padding: 5% 2%;
     margin-bottom: 3%;
+    background-image: url("../image/taxi.jpg");
+    box-shadow: 0 0 0 1440px rgba(0, 0, 0, 0.8)inset;
     background-color: $color-secondary;
+   
     border-radius: 5px;
     font-size: 1rem;
-
      @include tablet-only{
         flex-flow: row nowrap;
         // &--change-width{width: 75%;}
@@ -118,8 +121,8 @@
     }
      &-logo{
         margin: 10% 0;
-        width: 30%;
-        border-radius: 50%;
+        width: 100%;
+        // border-radius: 50%;
       
         @include tablet-only{
             margin: 0;
@@ -146,7 +149,7 @@
       
         &--change{
             margin: 0 2%;
-            border-right: 3px solid $color-red;
+            border-right: 1px solid $color-red;
             & :first-child{
                 margin-left: 0;
             }
