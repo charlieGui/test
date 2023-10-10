@@ -11,6 +11,10 @@
         margin-bottom: 3%;
         background-color: rgba(250, 250, 250, .5);
     }
+    & .flex_row:first-child{
+        flex-direction: row;
+        background-color: $color-secondary;
+    }
     .flex_row{
         flex-wrap: nowrap;
         gap: 1%;
