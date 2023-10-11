@@ -86,6 +86,9 @@
     article{
         align-items: center;
     }
+    @include tablet-only{
+        padding: 2% 0 0;
+    }
  }
 
 .main__content{
@@ -111,7 +114,7 @@
         padding: 2% 2% 5%;
         justify-content: space-around;
         margin-bottom: 2%;
-        &--change-width{width: 75%;}
+        &--change-width{width: 50%;}
     }
      &-logo{
         margin: 10% 0;

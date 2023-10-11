@@ -3,15 +3,12 @@
     font-size: .9rem;
     line-height: 1.4em;
     & .flex_row:first-child {
-        background-color: $color-footer;
+        // background-color: $color-footer;
         flex-direction: row;
-        padding: 5% 0;
+        padding-bottom: 5%;
         @include tablet-only {
-            padding: 2% 0  0;
+            padding-bottom: 2%;
         }
-    }
-    &_logo:nth-child(2){
-        // width: 5em;
     }
     &_logo {
         width: 5em;

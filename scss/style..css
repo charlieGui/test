@@ -511,6 +511,11 @@ a {
 .main_bloc article {
   align-items: center;
 }
+@media only screen and (min-width: 576px) {
+  .main_bloc {
+    padding: 2% 0 0;
+  }
+}
 
 .main__content {
   position: relative;
@@ -540,7 +545,7 @@ a {
     margin-bottom: 2%;
   }
   .main__content--change-width {
-    width: 75%;
+    width: 50%;
   }
 }
 .main__content-logo {
@@ -672,13 +677,12 @@ a {
   line-height: 1.4em;
 }
 .footer .flex_row:first-child {
-  background-color: #222121;
   flex-direction: row;
-  padding: 5% 0;
+  padding-bottom: 5%;
 }
 @media only screen and (min-width: 576px) {
   .footer .flex_row:first-child {
-    padding: 2% 0 0;
+    padding-bottom: 2%;
   }
 }
 .footer_logo {
