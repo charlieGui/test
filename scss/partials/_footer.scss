@@ -1,75 +1,85 @@
 
-.footer{
-    padding: 2% 5% 0;
+.footer {
     font-size: .9rem;
     line-height: 1.4em;
-    &::before{
-        content: "";
-        display: inline-block;
-        width: 100%;
-        height: .02em;
-        margin-bottom: 5%;
-        background-color: rgba(250, 250, 250, .5);
-    }
-    & .flex_row:first-child{
+    & .flex_row:first-child {
+        background-color: $color-footer;
         flex-direction: row;
-        margin: 5% 0;
+        padding: 5% 0;
+        @include tablet-only {
+            padding: 2% 0  0;
+        }
     }
-    &_logo{
+    &_logo {
         width: 5em;
         margin: 0 auto;
     }
-    .flex_row{
+    .flex_row {
         flex-wrap: nowrap;
-        gap: 1%;
     }
-    @include tablet-only{
-        font-size: 1rem;
-        &--reverse{order: 1;}
-        &__icon--center{justify-content: center;}
-        &--space-between{margin-bottom: 20%;}
-        .flex_row{gap: 3%;}
+    > .flex_col {
+        padding: 0% 3%;
+        background-color: $color-footer;
     }
-    @include desktop-only{
-       &__icon--center{justify-content: flex-start;}
-    }
-    &-title{
+   
+    &-title {
         color: $color-red;
         margin-bottom: 2%;
-        @include tablet-only{
-            margin-bottom: 4%;
+        @include tablet-only {
+         margin: 0;
         }
     }
-    &__nav{
-        margin-top: 2%;
-        @include tablet-only{
-            text-align: left;
+    &__nav {
+        background-color: $color-footer;
+        padding: 2% 3%;
+       @include tablet-only {
+        padding: 0% 2%;
+            &  ul {
+                display: flex;
+                justify-content: space-around;
+            }
         }
     }
-    > p{
-        margin-top: 5%;
+    >p {
         font-size: .65em;
         text-align: center;
         text-transform: uppercase;
         color: $color-red;
-        & > a{
+        & > a {
             color: $color-red;
         }
     }
-    &-icon{
+    &-icon {
         font-size: 1.8rem;
     }
-    > div.flex_row{
+    > div.flex_row {
         flex-direction: column;
-        @include tablet-only{
-            flex-direction: row;
-            justify-content: space-evenly;
-            text-align: center;
-        }
-        @include desktop-only{
-            justify-content: space-around;
+        @include desktop-only {
             text-align: start;
         }
+    }
+    @include tablet-only {
+        > .flex_col {
+            padding: 1% 5%;
+            background-color: $color-footer;
+        }
+        font-size: 1rem;
+        &--reverse {
+            flex-direction: row ;
+            order: 1;
+            justify-content: space-between;
+            text-align: center;
+       }
+        &--space-between {
+            align-self: center;
+            & .flex_row {
+                justify-content: center;
+                gap: 10%;
+            }
+        }
+    }
+    @include desktop-only {
+       &__icon--center{justify-content: flex-start;}
     }
 }
 
