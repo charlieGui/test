@@ -64,6 +64,10 @@ a{
     color: $color-light;
 }
 
+a:hover{
+    color: $color-hover;
+    transition: $duration;
+}
 .wrapper{
     max-width: 1280px;
     margin: 0 auto;

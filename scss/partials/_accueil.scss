@@ -125,13 +125,12 @@
             margin: 0;
             width: 20%;
             &:not(img[src*="events"]) {order: 1;}
-            &--change{width: 20%;  }
-        } 
+            }
         @include desktop-only{
             width: 20%;
-            &--change{width: 13%;}
+            
         }
-     }
+    }
      &-title{
         margin-left: 2%;
         font-style: italic;

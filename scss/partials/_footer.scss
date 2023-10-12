@@ -3,17 +3,25 @@
     font-size: .9rem;
     line-height: 1.4em;
     & .flex_row:first-child {
-        // background-color: $color-footer;
         flex-direction: row;
         padding-bottom: 5%;
         @include tablet-only {
             padding-bottom: 2%;
         }
     }
-    &_logo {
-        width: 5em;
-        margin: 0 auto;
+
+    &_logo > *{
+        width: 3em;
     }
+    &_logo :nth-child(2){
+        width: 10em;
+    }
+    &_logo {
+        justify-content: center;
+        align-items: center;
+       gap: 5%;
+    }
+
     .flex_row {
         flex-wrap: nowrap;
     }
@@ -33,7 +41,7 @@
         background-color: $color-footer;
         padding: 2% 3%;
        @include tablet-only {
-        padding: 0% 2%;
+        padding: 2% 0% 0;
             &  ul {
                 display: flex;
                 justify-content: space-around;
@@ -60,7 +68,7 @@
     }
     @include tablet-only {
         > .flex_col {
-            padding: 1% 5%;
+            padding: 2% 5% 0;
             background-color: $color-footer;
         }
         font-size: 1rem;
