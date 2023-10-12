@@ -1,6 +1,8 @@
 'use strict';
 
 
+
+
 /**
  *Fonction qui gère le show et le hide du Menu au scroll
  */
@@ -23,12 +25,14 @@ function hideMenu(){
  */
 
 function displayMenu(){
+
     let navMobile, checkBurger, checkFlags, page, body;
     page = document.querySelector('html');
     body = document.querySelector('body');
     checkBurger = document.querySelector('.header__burger');
     checkFlags = document.querySelector('.header__nav-flags');
     navMobile = document.querySelector('.header__nav');
+
     checkBurger.addEventListener('click', ()=>{
         checkBurger.classList.toggle('burger');
         navMobile.classList.toggle('showMenu');
@@ -58,7 +62,7 @@ function slideShow(){
         slide.addEventListener('mouseout', startTimer);
         next.addEventListener('click', slideNext);
         prev.addEventListener('click', slidePrev);
-
+        slideDots();
         //Redimensionne la fenetre pour le responsive
         window.addEventListener('resize', ()=>{
             slideWidth = slide.getBoundingClientRect().width;
@@ -73,6 +77,16 @@ function slideShow(){
         }
         nextSlide(decal, slideWidth, count, slide);
         setClass(dots, slider);
+    }
+
+    function slideDots(){
+        for(let i = 0; i < dots.length; ++i){
+            dots[i].addEventListener('click', ()=>{
+                count  = i;
+                nextSlide(decal, slideWidth, count, slide);
+                setClass(dots, slider);
+            });
+        }
     }
 
     // Fais défiler vers la gauche

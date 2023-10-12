@@ -444,11 +444,10 @@ a:hover {
   width: 1em;
   height: 1em;
   font-size: 1.5em;
-  border: 1px solid #c9c9c9;
   border-radius: 50%;
   background-color: #1a1919;
   padding-bottom: 0.5%;
-  opacity: 0.1;
+  opacity: 0.3;
   transition: 0.6s;
 }
 @media only screen and (min-width: 576px) {
