@@ -152,15 +152,18 @@
         }
     }
     &-btn{
-        border: 1px solid #414141;
+        // border-left : 2px solid $color-light;
+        // border: 2px solid #1a0003;
+        border: none;
         border-radius: 5px;
-        background-color: $color-btn;
+        background: linear-gradient(90deg, rgba(66,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
         color: $color-light;
         font-style: italic;
+        font-weight: bold;
         font-size: .9em; 
         padding: .4em 3em;
         &, & i{
-            transition: $duration;
+            transition: $duration ease;
         }
         @include tablet-only{
             font-size: 1em;
@@ -172,8 +175,13 @@
             align-self: center;
         }
         &:hover{
-            border: 1px solid $color-light;
-            color: $color-hover;
+            box-sizing: border-box;
+            transform:scale(110%, 110%);
+            // border: 2px solid #558855;
+            // border: 1px solid $color-btn;
+            box-shadow:0px 0px 0px 1px $color-btn inset;
+            // background-color: $color-btn;
+            // color: $color-hover;
             i{
                 color:$color-light;
             }
@@ -182,7 +190,7 @@
             line-height: .5em;
             vertical-align: -.24em;
             margin-left: 5%;
-            color: $color-red;
+            color: $color-light;
             font-size: 1.5em;
         }
     }

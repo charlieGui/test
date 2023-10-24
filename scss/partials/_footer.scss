@@ -1,5 +1,7 @@
 
 .footer {
+    
+    background-color: $color-primary;
     font-size: .9rem;
     line-height: 1.4em;
     & .flex_row:first-child {
@@ -8,6 +10,9 @@
         @include tablet-only {
             padding-bottom: 2%;
         }
+    }
+    @include desktop-only{
+        background: $color-header;
     }
 
     &_logo > *{
@@ -27,8 +32,12 @@
     }
     > .flex_col {
         padding: 0% 3%;
-        background-color: $color-footer;
+        background-color: $color-primary;
+        @include desktop-only{
+            background: $color-header;
+        }
     }
+
    
     &-title {
         color: $color-red;
@@ -38,7 +47,7 @@
         }
     }
     &__nav {
-        background-color: $color-footer;
+        background-color: $color-primary;
         padding: 2% 3%;
        @include tablet-only {
         padding: 2% 0% 0;
@@ -46,6 +55,9 @@
                 display: flex;
                 justify-content: space-around;
             }
+        }
+        @include desktop-only{
+            background: $color-header;
         }
     }
     >p {
@@ -69,7 +81,7 @@
     @include tablet-only {
         > .flex_col {
             padding: 2% 5% 0;
-            background-color: $color-footer;
+            background-color: $color-primary
         }
         font-size: 1rem;
         &--reverse {
