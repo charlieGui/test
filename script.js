@@ -1,41 +1,57 @@
 'use strict';
 
-/**
- *Fonction qui gère le show et le hide du Menu au scroll
- */
-function hideMenu(){
-    let header,  position = 0;
-    header = document.getElementById('header');
-    window.addEventListener('scroll', ()=>{
-        if((document.body.getBoundingClientRect()).top < position ){
-            header.classList.add('hideMenu');
-        }
-        else{
-            header.classList.remove('hideMenu');
-        }
-        position = document.body.getBoundingClientRect().top;
-    });
-}
+window.addEventListener('load', ()=>{
+    menuManager(), slideShow(), scrollToTop();
+ });
 
-/**
- * Fonction qui gère l'ouverture du menu Mobile au clic
- */
-function displayMenu(){
+function menuManager(){
 
-    let navMobile, checkBurger, checkFlags, page, body;
-    page = document.querySelector('html');
-    body = document.querySelector('body');
-    checkBurger = document.querySelector('.header__burger');
-    checkFlags = document.querySelector('.header__nav-flags');
-    navMobile = document.querySelector('.header__nav');
+    function displayMenu(){
 
-    checkBurger.addEventListener('click', ()=>{
-        checkBurger.classList.toggle('burger');
-        navMobile.classList.toggle('showMenu');
-        checkFlags.classList.toggle('flag-position');
-        page.classList.toggle('unSroll');
-        body.classList.toggle('unScroll');
-    });
+        let navMobile, checkBurger, checkFlags, page, body;
+        page = document.querySelector('html');
+        body = document.querySelector('body');
+        checkBurger = document.querySelector('.header__burger');
+        checkFlags = document.querySelector('.header__nav-flags');
+        navMobile = document.querySelector('.header__nav');
+    
+        checkBurger.addEventListener('click', ()=>{
+            checkBurger.classList.toggle('burger');
+            navMobile.classList.toggle('showMenu');
+            checkFlags.classList.toggle('flag-position');
+            page.classList.toggle('unSroll');
+            body.classList.toggle('unScroll');
+        });
+    }
+
+    function hideMenu(){
+        let header,  position = 0;
+        header = document.getElementById('header');
+        window.addEventListener('scroll', ()=>{
+            if((document.body.getBoundingClientRect()).top < position ){
+                header.classList.add('hideMenu');
+            }
+            else{
+                header.classList.remove('hideMenu');
+            }
+            position = document.body.getBoundingClientRect().top;
+        });
+    }
+
+    function activeLink(){
+        let link = document.querySelectorAll('#nav_menu a');
+    
+        link.forEach((el)=>{
+            el.addEventListener('click', ()=>{
+                link.forEach((active)=>{
+                    if(active.classList.contains('active-link'))
+                        active.classList.remove('active-link');
+                });
+                el.classList.add('active-link');
+            });
+        });
+    }
+    displayMenu(), hideMenu(), activeLink();
 }
 
 /**
@@ -53,14 +69,12 @@ function slideShow(){
     if(slide){
         
         slideWidth = slide.getBoundingClientRect().width;
-        startTimer();
+        startTimer(), slideDots(), touchFinger();
+
         slide.addEventListener('mouseover', stopTimer);
         slide.addEventListener('mouseout', startTimer);
         next.addEventListener('click', slideNext);
         prev.addEventListener('click', slidePrev);
-
-        slideDots();
-        toucheFinger();
 
         //Redimensionne la fenetre pour le responsive
         window.addEventListener('resize', ()=>{
@@ -70,23 +84,33 @@ function slideShow(){
     }
 
     // Gère la détection du touchSlide
-    function toucheFinger(){
+    function touchFinger(){
+       
         if(screen.width <= 1024) {
-            let between, touch, startX =0; 
+            let distance; let touch, start=0; 
+            // let between = 20;
             // Au premier point de contact
             window.addEventListener("touchstart", function(evt) {
                 // Récupère les "touches" effectuées
                 touch = evt.changedTouches[0];
-                startX = touch.pageX;
-                between = 0;
+                start = touch.pageX;
+                distance = 0;
             });
+            // Stop l'évènement au simple clic
+            window.addEventListener('touchmove', (evt)=>{
+                evt.stopPropagation();
+            })
             // Quand le contact s'arrête
             window.addEventListener("touchend", function(evt) {
                  touch = evt.changedTouches[0];
-                 between = touch.pageX - startX;
-        
+                //  console.log(touch.length());
+                 distance = touch.pageX - start;
                 // Si le slide effectué > 0, on change l'image appropriée
-                between > 0 ? slideNext() : slidePrev();
+                if(distance > 0){
+                    slideNext();
+                }else if(distance < 0){
+                   slidePrev();
+                }
             });
         }
     }
@@ -101,7 +125,19 @@ function slideShow(){
         setClass(dots, slider);
     }
 
+     // Fais défiler vers la gauche
+     function slidePrev(){
+        count--;
+        if(count < 0){
+            count= slider.length -1;
+        }
+        nextSlide(decal, slideWidth, count, slide);
+        setClass(dots, slider);
+    }
+
+    // Permet au clic sur les dots le défilements des photos
     function slideDots(){
+        
         for(let i = 0; i < dots.length; ++i){
             dots[i].addEventListener('click', ()=>{
                 count  = i;
@@ -111,17 +147,7 @@ function slideShow(){
         }
     }
 
-    // Fais défiler vers la gauche
-    function slidePrev(){
-        count--;
-        if(count < 0){
-            count= slider.length -1;
-        }
-        nextSlide(decal, slideWidth, count, slide);
-        setClass(dots, slider);
-    }
-
-    // Fonction qui supprime les classes en bouclant et les rajoute
+   // Fonction qui supprime les classes en bouclant et les rajoute
     // selon l'index de count
     function setClass(dt, sl){
         for(let i=0; i<sl.length; ++i){
@@ -152,19 +178,6 @@ function slideShow(){
 /**
  * Fonction qui gère les l'ajout de classe des liens de menus
  */
-function activeLink(){
-    let link = document.querySelectorAll('#nav_menu a');
-
-    link.forEach((el)=>{
-        el.addEventListener('click', ()=>{
-            link.forEach((active)=>{
-                if(active.classList.contains('active-link'))
-                    active.classList.remove('active-link');
-            });
-            el.classList.add('active-link');
-        });
-    });
-}
 
 function scrollToTop(){
     let arrow = document.createElement('i');
@@ -196,10 +209,4 @@ function scrollToTop(){
     });
 }
 
-window.addEventListener('load', ()=>{
-    scrollToTop();
-    activeLink();
-    slideShow();
-    hideMenu();
-    displayMenu();
-});
+
