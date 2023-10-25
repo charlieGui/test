@@ -54,7 +54,9 @@
     &__item{
         cursor: pointer;
         padding: .1em;
-        width: 1em;
+        width: .5em;
+        height: .5em;
+        border-radius: 50%;
         margin: 0 2px;
         background-color: $color-light;
         display: inline-block;
@@ -73,6 +75,8 @@
 
 .active{
     background-color: $color-red;
+    width: 1em;
+    border-radius: 50px 50px;
 }
 
 

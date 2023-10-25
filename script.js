@@ -1,12 +1,8 @@
 'use strict';
 
-
-
-
 /**
  *Fonction qui gère le show et le hide du Menu au scroll
  */
-
 function hideMenu(){
     let header,  position = 0;
     header = document.getElementById('header');
@@ -20,10 +16,10 @@ function hideMenu(){
         position = document.body.getBoundingClientRect().top;
     });
 }
+
 /**
  * Fonction qui gère l'ouverture du menu Mobile au clic
  */
-
 function displayMenu(){
 
     let navMobile, checkBurger, checkFlags, page, body;
@@ -62,13 +58,39 @@ function slideShow(){
         slide.addEventListener('mouseout', startTimer);
         next.addEventListener('click', slideNext);
         prev.addEventListener('click', slidePrev);
+
         slideDots();
+        toucheFinger();
+
         //Redimensionne la fenetre pour le responsive
         window.addEventListener('resize', ()=>{
             slideWidth = slide.getBoundingClientRect().width;
             slideNext();
         });
     }
+
+    // Gère la détection du touchSlide
+    function toucheFinger(){
+        if(screen.width <= 1024) {
+            let between, touch, startX =0; 
+            // Au premier point de contact
+            window.addEventListener("touchstart", function(evt) {
+                // Récupère les "touches" effectuées
+                touch = evt.changedTouches[0];
+                startX = touch.pageX;
+                between = 0;
+            });
+            // Quand le contact s'arrête
+            window.addEventListener("touchend", function(evt) {
+                 touch = evt.changedTouches[0];
+                 between = touch.pageX - startX;
+        
+                // Si le slide effectué > 0, on change l'image appropriée
+                between > 0 ? slideNext() : slidePrev();
+            });
+        }
+    }
+
      // Fonction qui fait défiler vers la droite.
      function slideNext(){
         count++;

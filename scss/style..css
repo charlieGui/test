@@ -107,11 +107,6 @@ a:hover {
     background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
     gap: 3em;
   }
-  .header.borderBottom {
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-image: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 88%);
-  }
 }
 .header__logo {
   justify-content: space-between;
@@ -492,7 +487,9 @@ a:hover {
 .slide__dot__item {
   cursor: pointer;
   padding: 0.1em;
-  width: 1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
   margin: 0 2px;
   background-color: #c9c9c9;
   display: inline-block;
@@ -510,6 +507,8 @@ a:hover {
 
 .active {
   background-color: #850202;
+  width: 1em;
+  border-radius: 50px 50px;
 }
 
 .main_bloc {

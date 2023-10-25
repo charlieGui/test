@@ -14,13 +14,8 @@
         align-items: center;
         position: static;
         overflow: initial;
-        background: $color-header;
-        &.borderBottom{
-           border-width: 0 0 2px 0;
-            border-style: solid;
-            
-            border-image:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(66,0,0,1) 88%);
-        }
+        background: $color-gradient;
+       
         // border-bottom: 2px solid red;
         gap: 3em;    
     }
