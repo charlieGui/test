@@ -724,11 +724,6 @@ a:hover {
   color: #850202;
   margin-bottom: 2%;
 }
-@media only screen and (min-width: 576px) {
-  .footer-title {
-    margin: 0;
-  }
-}
 .footer__nav {
   background-color: #000000;
   padding: 2% 3%;
@@ -767,6 +762,9 @@ a:hover {
     text-align: start;
   }
 }
+.footer--space-between .flex_row {
+  gap: 2%;
+}
 @media only screen and (min-width: 576px) {
   .footer {
     font-size: 1rem;
@@ -786,7 +784,7 @@ a:hover {
   }
   .footer--space-between .flex_row {
     justify-content: center;
-    gap: 10%;
+    gap: 5%;
   }
 }
 @media only screen and (min-width: 1024px) {

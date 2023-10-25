@@ -43,7 +43,7 @@
         color: $color-red;
         margin-bottom: 2%;
         @include tablet-only {
-         margin: 0;
+        //  margin: 0;
         }
     }
     &__nav {
@@ -78,6 +78,9 @@
             text-align: start;
         }
     }
+    &--space-between .flex_row{
+        gap: 2%;
+    }
     @include tablet-only {
         > .flex_col {
             padding: 2% 5% 0;
@@ -94,7 +97,7 @@
             align-self: center;
             & .flex_row {
                 justify-content: center;
-                gap: 10%;
+                gap: 5%;
             }
         }
     }
