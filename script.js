@@ -59,7 +59,7 @@ function menuManager(){
 */
 function slideShow(){
     let slide,  slider, decal, start, next, prev, dots, slideWidth, count=0;
-     
+    
     slide = document.getElementById('main_diapo');
     slider = document.querySelectorAll('img.diapo__slide');
     dots = document.querySelectorAll('span.slide__dot__item');
@@ -79,6 +79,7 @@ function slideShow(){
         //Redimensionne la fenetre pour le responsive
         window.addEventListener('resize', ()=>{
             slideWidth = slide.getBoundingClientRect().width;
+            // réactualise le size lors du changement de la taille d'écran
             slideNext();
         });
     }
@@ -90,18 +91,18 @@ function slideShow(){
             let distance; let touch, start=0; 
             // let between = 20;
             // Au premier point de contact
-            window.addEventListener("touchstart", function(evt) {
+            slide.addEventListener("touchstart", function(evt) {
                 // Récupère les "touches" effectuées
                 touch = evt.changedTouches[0];
                 start = touch.pageX;
                 distance = 0;
             });
             // Stop l'évènement au simple clic
-            window.addEventListener('touchmove', (evt)=>{
+            slide.addEventListener('touchmove', (evt)=>{
                 evt.stopPropagation();
             })
             // Quand le contact s'arrête
-            window.addEventListener("touchend", function(evt) {
+            slide.addEventListener("touchend", function(evt) {
                  touch = evt.changedTouches[0];
                 //  console.log(touch.length());
                  distance = touch.pageX - start;
