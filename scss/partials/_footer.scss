@@ -1,9 +1,10 @@
 
 .footer {
     
-    background-color: $color-primary;
+    background-color: $color-secondary;
     font-size: .9rem;
     line-height: 1.4em;
+    padding-top: 2%;
     & .flex_row:first-child {
         flex-direction: row;
         padding-bottom: 5%;
@@ -14,10 +15,10 @@
     @include desktop-only{
         background: $color-gradient;
     }
-
     &_logo > *{
         width: 3em;
     }
+    
     &_logo :nth-child(2){
         width: 6em;
     }
@@ -32,7 +33,7 @@
     }
     > .flex_col {
         padding: 0% 3%;
-        background-color: $color-primary;
+        background-color: $color-secondary;
         @include desktop-only{
             background: $color-gradient;
         }
@@ -47,7 +48,7 @@
         }
     }
     &__nav {
-        background-color: $color-primary;
+        background-color: $color-secondary;
         padding: 2% 3%;
        @include tablet-only {
         padding: 2% 0% 0;
@@ -84,7 +85,7 @@
     @include tablet-only {
         > .flex_col {
             padding: 2% 5% 0;
-            background-color: $color-primary
+            background-color: $color-secondary
         }
         font-size: 1rem;
         &--reverse {

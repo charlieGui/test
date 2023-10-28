@@ -686,9 +686,10 @@ a:hover {
 }
 
 .footer {
-  background-color: #1a1919;
+  background-color: #131010;
   font-size: 0.9rem;
   line-height: 1.4em;
+  padding-top: 2%;
 }
 .footer .flex_row:first-child {
   flex-direction: row;
@@ -720,7 +721,7 @@ a:hover {
 }
 .footer > .flex_col {
   padding: 0% 3%;
-  background-color: #1a1919;
+  background-color: #131010;
 }
 @media only screen and (min-width: 1024px) {
   .footer > .flex_col {
@@ -732,7 +733,7 @@ a:hover {
   margin-bottom: 2%;
 }
 .footer__nav {
-  background-color: #1a1919;
+  background-color: #131010;
   padding: 2% 3%;
 }
 @media only screen and (min-width: 576px) {
@@ -778,7 +779,7 @@ a:hover {
   }
   .footer > .flex_col {
     padding: 2% 5% 0;
-    background-color: #1a1919;
+    background-color: #131010;
   }
   .footer--reverse {
     flex-direction: row;
