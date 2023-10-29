@@ -1,0 +1,44 @@
+@use '../utils/variables' as color ;
+@use '../utils/mixins';
+
+.main__content{
+    position: relative;
+    border: 1px solid #414141;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: 5% 2%;
+    margin-bottom: 3%;
+    background-color: color.$color-secondary;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 100;
+
+    &-border{
+        margin: 0 2%;
+        border-left: 1px solid color.$color-red;
+
+        &--change{
+            margin: 0 2%;
+            border-right: 1px solid color.$color-red;
+            & :first-child{
+                margin-left: 0;
+            }
+        }
+    }
+
+     @include mixins.tablet-only{
+        flex-flow: row nowrap;
+        &:nth-child(2) div{
+            margin-left: 1%;
+        }
+    }
+
+    @include mixins.desktop-only{
+        padding: 2% 2% 5%;
+        justify-content: space-around;
+        margin-bottom: 2%;
+        &--change-width{width: 50%;}
+    }
+}
+

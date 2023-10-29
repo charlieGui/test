@@ -1,0 +1,44 @@
+// GlobalRules
+@use 'variables' as color;
+
+
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: color.$color-primary;
+}
+
+body:not(h4){
+    color: color.$color-light;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+nav {
+    ul {
+        padding-left: 0;
+    }
+} 
+
+ul {
+    li {
+        list-style-type: none;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: color.$color-light;
+}
+
+a:hover{
+    color: color.$color-hover;
+    transition: color.$duration;
+}

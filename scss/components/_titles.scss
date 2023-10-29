@@ -1,0 +1,24 @@
+// TITLE CONTENT
+@use '../utils/variables' as color ;
+@use '../utils/mixins';
+
+.main__content-title{
+    margin-left: 2%;
+    font-style: italic;
+    font-size:1.3em;
+    font-family: 'sansation', sans-serif;
+
+    @include mixins.tablet-only{
+        font-size: 1.7em;
+    }
+}
+
+// TITLE FOOTER
+.footer-title {
+    color: color.$color-red;
+    margin-bottom: 2%;
+    
+    @include mixins.tablet-only {
+    //  margin: 0;
+    }
+}

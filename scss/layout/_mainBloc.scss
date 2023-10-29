@@ -1,0 +1,15 @@
+@use '../utils/mixins';
+
+.main_bloc{
+    padding: 2% 0;
+    p{
+        margin: 0 5% 15% 5%;
+        line-height: 1.5em;
+    }
+    article{
+        align-items: center;
+    }
+    @include mixins.tablet-only{
+        padding: 2% 0 0;
+    }
+ }

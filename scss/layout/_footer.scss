@@ -1,0 +1,84 @@
+@use '../utils/variables' as color ;
+@use '../utils/mixins';
+
+.footer {
+    background-color: color.$color-secondary;
+    font-size: .9rem;
+    line-height: 1.4em;
+    padding-top: 2%;
+
+    & .flex_row:first-child {
+        flex-direction: row;
+        padding-bottom: 5%;
+        @include mixins.tablet-only {
+            padding-bottom: 2%;
+        }
+    }
+   
+    > .flex_col {
+        padding: 0% 3%;
+        background-color: color.$color-secondary;
+        @include mixins.desktop-only{
+            background: color.$color-gradient;
+        }
+    }
+
+    > p {
+        font-size: .65em;
+        text-align: center;
+        text-transform: uppercase;
+        color: color.$color-red;
+        & > a {
+            color: color.$color-red;
+        }
+    }
+
+    &--space-between .flex_row{
+        gap: 2%;
+    }
+
+    @include mixins.tablet-only {
+        font-size: 1rem;
+
+        > .flex_col {
+            padding: 2% 5% 0;
+            background-color: color.$color-secondary
+        }
+
+        &--reverse {
+            flex-direction: row ;
+            order: 1;
+            justify-content: space-between;
+            text-align: center;
+       }
+
+        &--space-between {
+            align-self: center;
+            & .flex_row {
+                justify-content: center;
+                gap: 5%;
+            }
+        }
+    }
+   
+    @include mixins.desktop-only {
+        background: color.$color-gradient;
+
+        &__icon--center{
+        justify-content: flex-start;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
