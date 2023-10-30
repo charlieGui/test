@@ -41,7 +41,7 @@
         }
 
     &-list {
-        margin: 50% 5% 0;
+        margin: 40% 5% 0;
         position: relative;
         @include mixins.desktop-only{
             display: flex;
@@ -52,8 +52,9 @@
         a {
             display: block;
             padding: 10% 0 1%;
-            text-transform: uppercase;
-            transition: var.$duration;
+            font-family: 'Sansation';
+            // text-transform: uppercase;
+            // transition: var.$duration;
             @include mixins.tablet-only{
                 font-size: 1em;
             }
@@ -89,7 +90,7 @@
                 transition: 1s  ;
                 @include mixins.desktop-only{
                     max-height: 5.5em;
-                    border-bottom: 4px solid var.$color-red;
+                    // border-bottom: 4px solid var.$color-red;
                 }
             }
         }
@@ -114,7 +115,7 @@
         }
         @include mixins.desktop-only{
             position: absolute;
-            background-color: var.$color-primary;
+            background:  var.$color-sousMenu;
         }
     }
 
@@ -165,6 +166,6 @@
     }
 
     @include mixins.desktop-only{
-        background: var.$color-gradient;
+        background: var.$color-secondary;
     }
 }

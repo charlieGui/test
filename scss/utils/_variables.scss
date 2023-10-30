@@ -1,9 +1,11 @@
 // Variables color
 
 $color-gradient:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(66,0,0,1) 100%);
+$color-sousMenu: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(19,0,0,1) 100%);
 $color-secondary :/*#0C0C0C;#0f0d0d;*/#131010;/* #000000;/*#1d1e1f;*/
 $color-primary : /*#0f0f0f*//*#131212*/ #1a1919;/*#000000;*/
-$color-btn : /*#1a1717;*//*#520008*/#420000;
+$color-btn: linear-gradient(90deg, rgba(66,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+$color-btnShadow : /*#1a1717;*//*#520008*//*#420000;*/#420000;
 $color-light: /*#fafafa*/#c9c9c9;
 $color-red: #850202;
 $color-hover: #c7c27a;

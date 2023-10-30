@@ -4,8 +4,14 @@
 .diapo{
     border: none;
     overflow: hidden;
-    background-color: color.$color-primary;
-    position: relative;
+    background: color.$color-gradient;
+   
+    @include mixins.desktop-only{
+ // background: color.$color-gradient;
+ position: relative;
+ width: 95%;
+ margin: 1% auto;
+    }
     .flex_row{
         flex-wrap: nowrap;
     }
@@ -22,6 +28,7 @@
         // border: 1px solid $color-light;
         border-radius: 50%;
         background-color: color.$color-primary;
+        background: color.$color-gradient;
         padding-bottom: .5%;
         opacity: .3;
         transition: .6s;

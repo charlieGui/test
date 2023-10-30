@@ -19,7 +19,7 @@
         padding: 0% 3%;
         background-color: color.$color-secondary;
         @include mixins.desktop-only{
-            background: color.$color-gradient;
+            background: color.$color-secondary;
         }
     }
 
@@ -41,8 +41,8 @@
         font-size: 1rem;
 
         > .flex_col {
-            padding: 2% 5% 0;
-            background-color: color.$color-secondary
+            padding: 0 5%;
+            background-color: color.$color-secondary;
         }
 
         &--reverse {
@@ -62,7 +62,7 @@
     }
    
     @include mixins.desktop-only {
-        background: color.$color-gradient;
+        background: color.$color-secondary;
 
         &__icon--center{
         justify-content: flex-start;

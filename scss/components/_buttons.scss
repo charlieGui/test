@@ -4,7 +4,7 @@
 .main__content-btn{
     border: none;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgba(66,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    background: var.$color-btn;
     color: var.$color-light;
     font-style: italic;
     font-weight: bold;
@@ -28,7 +28,7 @@
     &:hover{
         box-sizing: border-box;
         transform:scale(110%, 110%);
-        box-shadow:0px 0px 0px 1px var.$color-btn inset;
+        box-shadow:0px 0px 0px 1px var.$color-btnShadow inset;
 
         i{
             color:var.$color-light;

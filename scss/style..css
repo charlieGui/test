@@ -16,7 +16,7 @@
 /* #000000;/*#1d1e1f;*/
 /*#000000;*/
 .wrapper {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -63,15 +63,17 @@
 
 * {
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   background-color: #1a1919;
+  height: 100vh;
 }
 
 body:not(h4) {
   color: #c9c9c9;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
 }
 
 img {
@@ -119,7 +121,7 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .footer > .flex_col {
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
+    background: #131010;
   }
 }
 .footer > p {
@@ -139,7 +141,7 @@ a:hover {
     font-size: 1rem;
   }
   .footer > .flex_col {
-    padding: 2% 5% 0;
+    padding: 0 5%;
     background-color: #131010;
   }
   .footer--reverse {
@@ -158,7 +160,7 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .footer {
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
+    background: #131010;
   }
   .footer__icon--center {
     justify-content: flex-start;
@@ -168,7 +170,7 @@ a:hover {
 .header {
   width: 100%;
   padding: 1% 5%;
-  background-color: #1a1919;
+  background-color: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -238,6 +240,11 @@ a:hover {
 @media only screen and (min-width: 576px) {
   .main_bloc {
     padding: 2% 0 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .main_bloc {
+    padding: 0 0 2% 0;
   }
 }
 
@@ -416,8 +423,14 @@ a:hover {
 .diapo {
   border: none;
   overflow: hidden;
-  background-color: #1a1919;
-  position: relative;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
+}
+@media only screen and (min-width: 1024px) {
+  .diapo {
+    position: relative;
+    width: 95%;
+    margin: 1% auto;
+  }
 }
 .diapo .flex_row {
   flex-wrap: nowrap;
@@ -434,6 +447,7 @@ a:hover {
   font-size: 1.5em;
   border-radius: 50%;
   background-color: #1a1919;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
   padding-bottom: 0.5%;
   opacity: 0.3;
   transition: 0.6s;
@@ -609,7 +623,7 @@ a:hover {
   border-bottom: 1px solid #850202;
 }
 .header__nav-list {
-  margin: 50% 5% 0;
+  margin: 40% 5% 0;
   position: relative;
 }
 @media only screen and (min-width: 1024px) {
@@ -622,8 +636,7 @@ a:hover {
 .header__nav-list a {
   display: block;
   padding: 10% 0 1%;
-  text-transform: uppercase;
-  transition: 0.5s;
+  font-family: "Sansation";
 }
 @media only screen and (min-width: 576px) {
   .header__nav-list a {
@@ -660,7 +673,6 @@ a:hover {
 @media only screen and (min-width: 1024px) {
   .header__nav-item:hover .header__nav__sousMenu {
     max-height: 5.5em;
-    border-bottom: 4px solid #850202;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -686,7 +698,7 @@ a:hover {
 @media only screen and (min-width: 1024px) {
   .header__nav__sousMenu {
     position: absolute;
-    background-color: #1a1919;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(19, 0, 0) 100%);
   }
 }
 .header__nav a:hover {
@@ -738,7 +750,7 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .footer__nav {
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
+    background: #131010;
   }
 }
 

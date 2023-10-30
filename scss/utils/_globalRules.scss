@@ -4,15 +4,19 @@
 
 *{
     box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    // font-family: Helvetica, Arial, sans-serif;
 }
 
 body{
     background-color: color.$color-primary;
+    height: 100vh;
 }
 
 body:not(h4){
     color: color.$color-light;
+    background: color.$color-gradient;
+   
 }
 
 img{
