@@ -5,13 +5,13 @@
     border: none;
     overflow: hidden;
     background: color.$color-gradient;
-   position:relative;
-    @include mixins.desktop-only{
- // background: color.$color-gradient;
- //position: relative;
- width: 95%;
- margin: 1% auto;
-    }
+    position: relative;
+//     @include mixins.desktop-only{
+//  // background: color.$color-gradient;
+
+// //  width: 95%;
+// //  margin: 1% auto;
+//     }
     .flex_row{
         flex-wrap: nowrap;
     }
@@ -25,12 +25,11 @@
         width: 1em;
         height: 1em;
         font-size: 1.5em;
-        // border: 1px solid $color-light;
         border-radius: 50%;
         background-color: color.$color-primary;
-        background: color.$color-gradient;
+        // background: color.$color-gradient;
         padding-bottom: .5%;
-        opacity: .3;
+        opacity: .5;
         transition: .6s;
         @include mixins.tablet-only{
             width: 1.5em;
@@ -80,7 +79,7 @@
 }  
 
 .diapo__prev:hover, .diapo__next:hover{
-    opacity: .5;
+    opacity: .8;
 }
 
 .active{

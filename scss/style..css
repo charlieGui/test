@@ -67,13 +67,13 @@
 }
 
 body {
-  background-color: #1a1919;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
   height: 100vh;
+  padding: 0 2%;
 }
 
 body:not(h4) {
   color: #c9c9c9;
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
 }
 
 img {
@@ -101,14 +101,13 @@ a:hover {
 }
 
 .footer {
-  background-color: #131010;
   font-size: 0.9rem;
   line-height: 1.4em;
   padding-top: 2%;
 }
 .footer .flex_row:first-child {
   flex-direction: row;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
 @media only screen and (min-width: 576px) {
   .footer .flex_row:first-child {
@@ -117,11 +116,13 @@ a:hover {
 }
 .footer > .flex_col {
   padding: 0% 3%;
-  background-color: #131010;
 }
-@media only screen and (min-width: 1024px) {
-  .footer > .flex_col {
-    background: #131010;
+.footer > .flex_col, .footer .footer__nav {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 576px) {
+  .footer > .flex_col, .footer .footer__nav {
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 .footer > p {
@@ -142,7 +143,6 @@ a:hover {
   }
   .footer > .flex_col {
     padding: 0 5%;
-    background-color: #131010;
   }
   .footer--reverse {
     flex-direction: row;
@@ -160,7 +160,7 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .footer {
-    background: #131010;
+    padding-top: 0;
   }
   .footer__icon--center {
     justify-content: flex-start;
@@ -170,7 +170,7 @@ a:hover {
 .header {
   width: 100%;
   padding: 1% 5%;
-  background-color: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -183,7 +183,6 @@ a:hover {
     align-items: center;
     position: static;
     overflow: initial;
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
     gap: 3em;
   }
 }
@@ -228,11 +227,14 @@ a:hover {
 }
 
 .main_bloc {
-  padding: 2% 0;
+  padding-top: 2%;
 }
 .main_bloc p {
   margin: 0 5% 15% 5%;
   line-height: 1.5em;
+}
+.main_bloc .devisArticle {
+  margin-bottom: 0;
 }
 .main_bloc article {
   align-items: center;
@@ -252,10 +254,8 @@ a:hover {
   position: relative;
   border: 1px solid #414141;
   align-items: center;
-  width: 95%;
-  margin: 0 auto;
   padding: 5% 2%;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
   background-color: #131010;
   border-radius: 5px;
   font-size: 1rem;
@@ -263,11 +263,11 @@ a:hover {
 }
 .main__content-border {
   margin: 0 2%;
-  border-left: 1px solid #850202;
+  border-left: 3px solid #850202;
 }
 .main__content-border--change {
   margin: 0 2%;
-  border-right: 1px solid #850202;
+  border-right: 3px solid #850202;
 }
 .main__content-border--change :first-child {
   margin-left: 0;
@@ -275,6 +275,9 @@ a:hover {
 @media only screen and (min-width: 576px) {
   .main__content {
     flex-flow: row nowrap;
+  }
+  .main__content--change-width {
+    width: 75%;
   }
   .main__content:nth-child(2) div {
     margin-left: 1%;
@@ -284,7 +287,6 @@ a:hover {
   .main__content {
     padding: 2% 2% 5%;
     justify-content: space-around;
-    margin-bottom: 2%;
   }
   .main__content--change-width {
     width: 50%;
@@ -377,7 +379,7 @@ a:hover {
   font-style: italic;
   font-weight: bold;
   font-size: 0.9em;
-  padding: 0.4em 3em;
+  padding: 0.4em 3em 0.2em 3em;
 }
 .main__content-btn, .main__content-btn i {
   transition: 0.5s ease;
@@ -408,29 +410,28 @@ a:hover {
 }
 .main__content-btn i {
   line-height: 0.5em;
-  vertical-align: -0.24em;
+  vertical-align: -0.33em;
   margin-left: 5%;
   color: #c9c9c9;
   font-size: 1.5em;
 }
 .main__content-btn--change {
-  padding: 0.4rem 1rem 0.4rem 1rem;
+  padding: 0.4rem 1rem 0.2rem 1rem;
 }
 .main__content-btn--change i {
   margin-left: 0;
+}
+
+.btnDevis {
+  border-radius: 50px 50px;
+  margin: 6% 5% 8%;
 }
 
 .diapo {
   border: none;
   overflow: hidden;
   background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
-}
-@media only screen and (min-width: 1024px) {
-  .diapo {
-    position: relative;
-    width: 95%;
-    margin: 1% auto;
-  }
+  position: relative;
 }
 .diapo .flex_row {
   flex-wrap: nowrap;
@@ -447,9 +448,8 @@ a:hover {
   font-size: 1.5em;
   border-radius: 50%;
   background-color: #1a1919;
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(66, 0, 0) 100%);
   padding-bottom: 0.5%;
-  opacity: 0.3;
+  opacity: 0.5;
   transition: 0.6s;
 }
 @media only screen and (min-width: 576px) {
@@ -502,7 +502,7 @@ a:hover {
 }
 
 .diapo__prev:hover, .diapo__next:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .active {
@@ -637,20 +637,17 @@ a:hover {
   display: block;
   padding: 10% 0 1%;
   font-family: "Sansation";
-}
-@media only screen and (min-width: 576px) {
-  .header__nav-list a {
-    font-size: 1em;
-  }
+  font-size: 1.5em;
 }
 @media only screen and (min-width: 1024px) {
   .header__nav-list a {
     text-transform: initial;
+    font-size: 1em;
   }
 }
 .header__nav-item span {
   display: inline-block;
-  vertical-align: -0.2em;
+  vertical-align: -0.4em;
   transform: rotate(0) translate(0, 0);
   transform-origin: center;
   transition: 0.5s;
@@ -736,12 +733,11 @@ a:hover {
 }
 
 .footer__nav {
-  background-color: #131010;
   padding: 2% 3%;
 }
 @media only screen and (min-width: 576px) {
   .footer__nav {
-    padding: 2% 0% 0;
+    padding: 2% 0% 1%;
   }
   .footer__nav ul {
     display: flex;

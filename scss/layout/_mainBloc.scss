@@ -1,10 +1,13 @@
 @use '../utils/mixins';
 
 .main_bloc{
-    padding: 2% 0;
+    padding-top: 2%;
     p{
         margin: 0 5% 15% 5%;
         line-height: 1.5em;
+    }
+    .devisArticle{
+        margin-bottom: 0;
     }
     article{
         align-items: center;
