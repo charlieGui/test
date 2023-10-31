@@ -5,10 +5,10 @@
     border: none;
     overflow: hidden;
     background: color.$color-gradient;
-   
+   position:relative;
     @include mixins.desktop-only{
  // background: color.$color-gradient;
- position: relative;
+ //position: relative;
  width: 95%;
  margin: 1% auto;
     }
