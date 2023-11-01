@@ -274,11 +274,11 @@ a:hover {
   .main__content {
     flex-flow: row nowrap;
   }
-  .main__content--change-width {
-    width: 75%;
+  .main__content-border--change {
+    width: 90%;
   }
   .main__content:nth-child(2) div {
-    margin-left: 1%;
+    margin-left: 5%;
   }
 }
 @media only screen and (min-width: 1024px) {

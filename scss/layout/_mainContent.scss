@@ -26,9 +26,12 @@
 
      @include mixins.tablet-only{
         flex-flow: row nowrap;
-        &--change-width{width: 75%;}
+        &-border--change{
+            width: 90%;
+        }
         &:nth-child(2) div{
-            margin-left: 1%;
+           
+            margin-left: 5%;
         }
     }
 
