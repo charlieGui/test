@@ -13,7 +13,7 @@
     font-style: italic;
     font-weight: bold;
     font-size: .9em; 
-    padding: .5em 3em .3em 3em;
+    padding: .6em 3em .4em 3em;
 
     &, & i{
         transition: var.$duration ease;
@@ -50,7 +50,7 @@
     }
     
     &--change{
-        padding: .5rem 1rem .3rem 1rem;
+        padding: .6rem 1rem .4rem 1rem;
         i{
             margin-left: 0;
         }
@@ -63,7 +63,7 @@
         align-self: start;
         margin: 5%;
     }
-    
+
     @include mixins.desktop-only{
         align-self: center;
         margin-left: 10%;

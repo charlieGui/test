@@ -376,12 +376,12 @@ a:hover {
   margin: 10% 0;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(90deg, rgb(66, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgb(133, 2, 2) 0%, rgb(19, 16, 16) 50%, rgb(19, 16, 16) 100%);
   color: #c9c9c9;
   font-style: italic;
   font-weight: bold;
   font-size: 0.9em;
-  padding: 0.5em 3em 0.3em 3em;
+  padding: 0.6em 3em 0.4em 3em;
 }
 .main__content-btn, .main__content-btn i {
   transition: 0.5s ease;
@@ -418,7 +418,7 @@ a:hover {
   font-size: 1.5em;
 }
 .main__content-btn--change {
-  padding: 0.5rem 1rem 0.3rem 1rem;
+  padding: 0.6rem 1rem 0.4rem 1rem;
 }
 .main__content-btn--change i {
   margin-left: 0;
