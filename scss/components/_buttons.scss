@@ -2,6 +2,10 @@
 @use '../utils/mixins';
 
 .main__content-btn{
+    
+    width:50%;
+    align-self: center;
+    margin: 10% 0;
     border: none;
     border-radius: 5px;
     background: var.$color-btn;
@@ -9,19 +13,22 @@
     font-style: italic;
     font-weight: bold;
     font-size: .9em; 
-    padding: .4em 3em .2em 3em;
+    padding: .5em 3em .3em 3em;
+
     &, & i{
         transition: var.$duration ease;
     }
 
     @include mixins.tablet-only{
         font-size: 1em;
+        margin-left:8%;
         align-self: flex-start;
-        margin-left:5%;
-        &--right{align-self: flex-end; margin-right: 5%;}
+        &--right{
+            align-self: flex-end; margin-right: 8%;
+        }
     }
     @include mixins.desktop-only{
-        align-self: center;
+        align-self: center;       
     }
 
     &:hover{
@@ -43,7 +50,7 @@
     }
     
     &--change{
-        padding: .4rem 1rem .2rem 1rem;
+        padding: .5rem 1rem .3rem 1rem;
         i{
             margin-left: 0;
         }
@@ -51,6 +58,14 @@
 }
 
 .btnDevis{
-    border-radius: 50px 50px;
-    margin: 6% 5% 8%;
+    width: 53%;
+    @include mixins.tablet-only{
+        align-self: start;
+        margin: 5%;
+    }
+    
+    @include mixins.desktop-only{
+        align-self: center;
+        margin-left: 10%;
+    }
 }
