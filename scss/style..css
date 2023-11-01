@@ -196,8 +196,7 @@ a:hover {
   }
 }
 .header .flex_row i {
-  line-height: 0.25em;
-  vertical-align: middle;
+  vertical-align: -0.15em;
   font-size: 5vw;
   color: #c9c9c9;
 }
@@ -419,9 +418,6 @@ a:hover {
 }
 .main__content-btn--change {
   padding: 0.6rem 1rem 0.4rem 1rem;
-}
-.main__content-btn--change i {
-  margin-left: 0;
 }
 
 .btnDevis {

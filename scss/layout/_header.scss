@@ -17,7 +17,6 @@
         align-items: center;
         position: static;
         overflow: initial;
-        // background: color.$color-gradient;
         gap: 3em;    
     }
 
@@ -30,8 +29,7 @@
         }
 
         i{
-            line-height: .25em;
-            vertical-align: middle;
+            vertical-align: -.15em;
             font-size: 5vw;
             color: color.$color-light;
 
