@@ -11,6 +11,7 @@
     > a{
         width:35%;
         margin-top: 1%;
+        font-family:  'Sansation', sans-serif; 
         @include mixins.desktop-only{
             order: 0;
         }
