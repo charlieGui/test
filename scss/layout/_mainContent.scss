@@ -3,9 +3,8 @@
 
 .main__content{
     position: relative;
-    // border: 1px solid #414141;
     align-items: center;
-    padding: 5% 2%;
+    padding: 5% 2% 0;
     margin-bottom: 1%;
     background-color: color.$color-secondary;
     border-radius: 5px;
@@ -27,7 +26,6 @@
      @include mixins.tablet-only{
         flex-flow: row nowrap;
         &-border--change{
-            // width: 90%;
             align-self: flex-end;
         }
         &:nth-child(2) div{
@@ -37,7 +35,7 @@
     }
 
     @include mixins.desktop-only{
-        padding: 2% 2% 5%;
+        padding: 2% 2% 0%;
         justify-content: space-around;
         &--change-width{width: 50%;}
     }

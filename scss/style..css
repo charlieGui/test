@@ -13,8 +13,6 @@
   src: url("base/Sansation_Bold.ttf") format("truetype");
   font-weight: bold;
 }
-/* #000000;/*#1d1e1f;*/
-/*#000000;*/
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -252,7 +250,7 @@ a:hover {
 .main__content {
   position: relative;
   align-items: center;
-  padding: 5% 2%;
+  padding: 5% 2% 0;
   margin-bottom: 1%;
   background-color: #131010;
   border-radius: 5px;
@@ -283,7 +281,7 @@ a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .main__content {
-    padding: 2% 2% 5%;
+    padding: 2% 2% 0%;
     justify-content: space-around;
   }
   .main__content--change-width {
