@@ -275,7 +275,7 @@ a:hover {
     flex-flow: row nowrap;
   }
   .main__content-border--change {
-    width: 90%;
+    align-self: flex-end;
   }
   .main__content:nth-child(2) div {
     margin-left: 5%;
